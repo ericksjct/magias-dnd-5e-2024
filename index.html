@@ -1,0 +1,251 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>Lista Magias D&D 5E</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+
+    <script src="js/spells-by-class.js"></script>
+
+    <script>
+    $(document).ready(function() {
+
+        var visibleSpells = null;
+        var onlyKnown = false;
+        var maxLevel = 9;
+
+        var spellList = $('#spell-list');
+
+        // --- localStorage ---
+        function saveState() {
+            var knownSpells = [];
+            $('.spell-item[data-known="true"]').each(function() {
+                knownSpells.push($(this).attr('data-name'));
+            });
+            localStorage.setItem('dnd_known', JSON.stringify(knownSpells));
+            localStorage.setItem('dnd_class', $('#class-select').val());
+            localStorage.setItem('dnd_level', $('#level-select').val());
+            localStorage.setItem('dnd_onlyKnown', onlyKnown ? '1' : '0');
+        }
+
+        function loadState() {
+            // Spells conhecidas
+            var knownSpells = JSON.parse(localStorage.getItem('dnd_known') || '[]');
+            $.each(knownSpells, function(i, name) {
+                $('.spell-item[data-name="' + name + '"]').attr('data-known', 'true');
+            });
+
+            // Filtro de classe
+            var savedClass = localStorage.getItem('dnd_class');
+            if (savedClass) {
+                $('#class-select').val(savedClass);
+                visibleSpells = savedClass == 'all' ? null : spellByClass[savedClass];
+            }
+
+            // Filtro de nível
+            var savedLevel = localStorage.getItem('dnd_level');
+            if (savedLevel) {
+                $('#level-select').val(savedLevel);
+                maxLevel = parseInt(savedLevel);
+            }
+
+            // Só conhecidas
+            var savedOnlyKnown = localStorage.getItem('dnd_onlyKnown');
+            if (savedOnlyKnown === '1') {
+                onlyKnown = true;
+                $('#show-known img').attr('src', 'img/known.svg');
+            }
+        }
+        // --- fim localStorage ---
+
+        function shouldShowItem(spellItem) {
+            var isKnown = spellItem.attr('data-known') == 'true';
+            var forClass = !visibleSpells || $.inArray(spellItem.attr('data-name'), visibleSpells) >= 0;
+            var forLevel = parseInt(spellItem.attr('data-level')) <= maxLevel;
+            return forLevel && ((!visibleSpells && !onlyKnown) || isKnown || (!onlyKnown && forClass));
+        }
+
+        function applyLayout() {
+            $('#empty-message').css('display', 'none');
+
+            // Remove dummies anteriores
+            $('.level-dummy').remove();
+
+            var level = -1;
+
+            // Passe único: atualizar tudo antes do Isotope rodar
+            $('.spell-item').each(function() {
+                var spellItem = $(this);
+                var shouldDisplay = shouldShowItem(spellItem);
+                var current = spellItem.attr('data-level');
+                var levelTitle = spellItem.find('.level');
+                var isKnown = spellItem.attr('data-known') == 'true';
+                var forClass = !visibleSpells || $.inArray(spellItem.attr('data-name'), visibleSpells) >= 0;
+
+                // Ícone
+                var knownIcon = spellItem.find('.known img');
+                if (shouldDisplay && visibleSpells && !forClass) {
+                    knownIcon.attr('src', 'img/outside.svg');
+                } else {
+                    knownIcon.attr('src', isKnown ? 'img/known.svg' : 'img/unknown.svg');
+                }
+
+                // Título de nível
+                spellItem.removeClass('has-level');
+                levelTitle.css('display', '');
+
+                if (shouldDisplay && current != level) {
+                    level = current;
+                    spellItem.addClass('has-level');
+                    // Insere card dummy antes deste card
+                    var dummy = $('<div class="level-dummy"></div>');
+                    dummy.insertBefore(spellItem);
+                    spellList.isotope('appended', dummy);
+                } else {
+                    levelTitle.css('display', 'none');
+                }
+            });
+
+            // Isotope só filtra visibilidade, classes já foram aplicadas
+            spellList.isotope('arrange');
+        }
+
+        // Carrega estado ANTES de inicializar o isotope
+        loadState();
+
+        // Inicializa isotope uma vez
+        spellList.isotope({
+            layoutMode: 'masonry',
+            itemSelector: '.spell-item, .level-dummy',
+            filter: function() { 
+                if ($(this).hasClass('level-dummy')) return true;
+                return shouldShowItem($(this)); 
+            },
+            masonry: {
+                columnWidth: '.grid-size',
+                gutter: '.gutter-size'
+            }
+        });
+
+        var stateLoaded = false;
+        spellList.on('arrangeComplete', function(event, filteredItems) {
+            if (filteredItems.length === 0) {
+                $('#empty-message').css('display', 'block');
+            }
+        });
+
+        $('#level-select').change(function() {
+            maxLevel = parseInt($(this).val());
+            saveState();
+            applyLayout();
+        });
+
+        $('#class-select').change(function() {
+            var className = $(this).val();
+            visibleSpells = className == 'all' ? null : spellByClass[className];
+            saveState();
+            applyLayout();
+        });
+
+        $('#show-known').click(function() {
+            var icon = $(this).find('img');
+            onlyKnown = !onlyKnown;
+            icon.attr('src', onlyKnown ? 'img/known.svg' : 'img/unknown.svg');
+            saveState();
+            applyLayout();
+        });
+
+        $('.known').click(function() {
+            var icon = $(this).find('img');
+            var spell = $(this).closest('.spell-item');
+            var isOutside = icon.attr('src') == 'img/outside.svg';
+            var isKnown = spell.attr('data-known') == 'true';
+            if (isKnown) {
+                icon.attr('src', 'img/unknown.svg');
+                spell.removeAttr('data-known');
+            } else {
+                icon.attr('src', 'img/known.svg');
+                spell.attr('data-known', 'true');
+            }
+            saveState();
+            if (onlyKnown || isOutside) {
+                applyLayout();
+            }
+        });
+
+        applyLayout();
+    });
+    </script>
+
+    <div id="menu-container">
+        <div id="menu">
+            <div class="menu-item">
+                <p>Classe</p>
+                <div style="width:2em"></div>
+                <select id="class-select" style="text-align-last:center;">
+                    <option value="all">-----</option>
+                    <option value="bardo">Bardo</option>
+                    <option value="bruxo">Bruxo</option>
+                    <option value="clérigo">Clérigo</option>
+                    <option value="druida">Druida</option>
+                    <option value="feiticeiro">Feiticeiro</option>
+                    <option value="mago">Mago</option>
+                    <option value="paladino">Paladino</option>
+                    <option value="patrulheiro">Patrulheiro</option>
+                </select>
+            </div>
+            <div style="width:1em"></div>
+            <div class="menu-item">
+                <p>Nível</p>
+                <div style="width:2em"></div>
+                <select id="level-select" style="text-align-last:center;">
+                    <option value="9">-----</option>
+                    <option value="0">Truques</option>
+                    <option value="1">Até 1</option>
+                    <option value="2">Até 2</option>
+                    <option value="3">Até 3</option>
+                    <option value="4">Até 4</option>
+                    <option value="5">Até 5</option>
+                    <option value="6">Até 6</option>
+                    <option value="7">Até 7</option>
+                    <option value="8">Até 8</option>
+                    <option value="9">Até 9</option>
+                </select>
+            </div>
+            <div class="menu-space"></div>
+            <div id="show-known" class="menu-item">
+                <p>Conhecidas</p>
+                <img src="img/unknown.svg">
+            </div>
+        </div>
+    </div>
+    <div id="spell-list">
+        <div id="empty-message">
+            Nenhuma magia selecionada
+        </div>
+        <div class="separator"></div>
+        <div class="grid-size"></div>
+        <div class="gutter-size"></div>
+        <script src="js/spells.js"></script>
+    </div>
+
+
+    <div id="legenda">
+        <div class="legenda-item">
+            <img src="img/known.svg"> Magia conhecida
+        </div>
+        <div class="legenda-item">
+            <img src="img/outside.svg"> Conhecida, fora da classe
+        </div>
+    </div>
+    <p><strong>Autor desse projeto:</strong> Erick Teixeira &mdash; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#ccc;">CC BY-NC-SA 4.0</a></p>
+    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.3); margin: 8px 0;">
+    <p>Trabalho baseado em <a href="https://avribacki.gitlab.io/magias5e/" target="_blank" style="color:#ccc;">avribacki.gitlab.io/magias5e/</a> — autores originais: Alfa Design, Creative Stall, Alexander Bogomolov, Nikita Kozin, Gregor Cresnar, Yazmin Alanis, Delwar Hossain, Edward Boatman, Luis Prado.</p>
+    <p>Imagens obtidas no <a href="https://thenounproject.com" target="_blank" style="color:#ccc;">The Noun Project</a> sob a licença Creative Commons.</p>
+    <p>Tradução 5.5e obtida em <a href="https://apoia.se/heroisanonimos" target="_blank" style="color:#ccc;">apoia.se/heroisanonimos</a> — <strong>Heróis Anônimos</strong>.</p>
+</footer>
+
+</body></html>
