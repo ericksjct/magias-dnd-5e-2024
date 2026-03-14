@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Card Test</title>
 <link rel="stylesheet" href="css/style.css">
 <style>
@@ -56,15 +57,35 @@
         flex: 1;
         border-top: 1px dotted #aaa;
     }
-    #menu-container { position: static; background: none; }
-    #menu { margin: 20px auto 0; }
+    #layout {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+    }
+    #menu-container {
+        position: static;
+        background: none;
+        flex-shrink: 0;
+        width: auto;
+    }
+    #menu {
+        flex-direction: column;
+        width: auto;
+        min-width: 9em;
+        margin: 0;
+        gap: 8px;
+        padding-bottom: 15px;
+    }
+    #menu .menu-space { display: none; }
+    .spell-grid {
+        margin: 0;
+        max-width: none;
+        width: 20cm;
+    }
     #lang-flags {
-        position: fixed;
-        top: 0.6em;
-        right: 1em;
         display: flex;
         gap: 0.2em;
-        z-index: 20;
     }
     .flag-btn {
         font-size: 1.4em;
@@ -81,17 +102,16 @@
     .flag-btn.active { opacity: 1; border-color: #aaa; }
 
     #legenda {
-        position: fixed;
-        bottom: 1em;
-        right: 1em;
+        position: static;
         background: #EEEEEE;
         border: 1px solid #ccc;
         border-radius: 8px;
         font-family: 'Roboto', sans-serif;
         font-size: 10pt;
-        z-index: 10;
-        box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
         overflow: hidden;
+        margin-top: 10px;
+        padding: 0;
+        box-shadow: none;
     }
     #legenda-toggle {
         display: flex;
@@ -109,11 +129,105 @@
         line-height: 1;
         transition: transform 0.2s ease;
     }
-    #legenda.collapsed #legenda-toggle span {
+    @media (min-width: 1600px) {
+        .spell-grid {
+            columns: 3;
+            width: 30cm;
+        }
+    }
+    /* ── topbar mobile ── */
+    #topbar {
+        display: none;
+    }
+    @media (max-width: 600px) {
+        body { padding: 0; }
+        #topbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 200;
+            background: #c8c8c8;
+            padding: 8px 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        #topbar #search-mobile {
+            flex: 1;
+            padding: 0.35em 0.9em;
+            font-size: 10pt;
+            font-family: 'Roboto', sans-serif;
+            border: 1px solid #bbb;
+            border-radius: 999px;
+            background: #f8f8f8;
+        }
+        #known-mobile {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        #known-mobile img {
+            height: 1.5em;
+        }
+        #hamburger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 0 4px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        #layout {
+            display: block;
+            margin-top: 44px;
+            padding: 10px;
+        }
+        #menu-container {
+            display: none;
+        }
+        #menu-container.open {
+            display: block;
+            position: fixed;
+            top: 44px; left: 0; right: 0; bottom: 0;
+            overflow-y: auto;
+            background: #eee;
+            z-index: 199;
+            padding: 12px 15px 20px;
+            box-sizing: border-box;
+        }
+        #menu {
+            border: none;
+            background: transparent;
+            padding: 0;
+            width: 100%;
+            min-width: unset;
+        }
+        .spell-grid {
+            columns: 1;
+            width: 100%;
+        }
+        .spell-item {
+            width: 100%;
+        }
+        #menu-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 198;
+            background: rgba(0,0,0,0.35);
+        }
+        #menu-backdrop.open { display: block; }
+    }
+    #legenda.collapsed #legenda-toggle span:last-child {
         transform: rotate(180deg);
     }
     #legenda-body {
-        padding: 0.3em 0.8em 0.6em;
+        padding: 0.3em 0.8em 0.8em;
         border-top: 1px solid #ccc;
         transition: max-height 0.25s ease, opacity 0.25s ease;
         max-height: 200px;
@@ -136,61 +250,186 @@
     .legenda-item img {
         height: 1.2em;
     }
+
+    /* ── filtros ── */
+    #search-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.35em 0.9em;
+        font-size: 10pt;
+        font-family: 'Roboto', sans-serif;
+        border: 1px solid #ccc;
+        border-radius: 999px;
+        background: #f8f8f8;
+    }
+    .filter-section {
+        margin-top: 6px;
+    }
+    .filter-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 9pt;
+        font-variant: small-caps;
+        font-weight: bold;
+        color: #555;
+        cursor: pointer;
+        padding: 0.25em 0;
+        user-select: none;
+        border-bottom: 1px solid #ccc;
+    }
+    .filter-arrow {
+        transition: transform 0.2s;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+    }
+    .filter-section.collapsed .filter-arrow {
+        transform: rotate(-90deg);
+    }
+    .filter-body {
+        max-height: 160px;
+        overflow-y: auto;
+        opacity: 1;
+        transition: max-height 0.2s ease, opacity 0.2s ease;
+        padding: 3px 0 2px;
+    }
+    .filter-section.collapsed .filter-body {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+    .filter-body label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 9pt;
+        cursor: pointer;
+        padding: 1px 2px;
+        color: #333;
+        white-space: nowrap;
+    }
+    .filter-body label:hover { color: #000; }
+    #grid-area {
+        flex: none;
+    }
+    #site-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        font-variant: small-caps;
+        text-align: center;
+        color: #444;
+        margin: 0 0 16px 0;
+        letter-spacing: 0.5px;
+    }
+    @media (max-width: 600px) {
+        #site-title { font-size: 26px; }
+    }
 </style>
 </head>
 <body style="background:#ddd; padding: 20px;">
 
+    <div id="topbar">
+        <button id="hamburger">☰</button>
+        <input type="text" id="search-mobile" placeholder="Pesquisar...">
+        <div id="known-mobile"><img src="img/unknown.svg"></div>
+    </div>
+    <div id="menu-backdrop"></div>
+
+    <div id="layout">
     <div id="menu-container">
         <div id="menu">
-            <div class="menu-item">
-                <select id="class-select" style="text-align-last:center;">
-                    <option value="all" data-i18n="classe">Classe</option>
-                </select>
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+                    <div id="show-known" class="menu-item">
+                    <p data-i18n="conhecidas">Conhecidas</p>
+                    <img src="img/unknown.svg">
+                </div>
+                <div id="lang-flags">
+                    <button class="flag-btn active" data-lang="ptbr" title="PT-BR">🇧🇷</button>
+                    <button class="flag-btn" data-lang="en" title="EN">🇬🇧</button>
+                </div>
             </div>
-            <div style="width:1em"></div>
-            <div class="menu-item">
-                <select id="version-select" style="text-align-last:center;">
-                    <option value="" data-i18n="versao">Versão</option>
-                </select>
+
+            <div style="margin-top:8px;">
+                <input type="text" id="search-input" placeholder="Pesquisar...">
             </div>
-            <div class="menu-space"></div>
-            <div id="show-known" class="menu-item">
-                <p data-i18n="conhecidas">Conhecidas</p>
-                <img src="img/unknown.svg">
+
+            <div class="filter-section">
+                <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-versions"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_class">Classe</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-classes"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_level">Nível</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-levels"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_school">Escola</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-schools"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_casttime">Conjuração</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-casttimes"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_range">Alcance</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-ranges"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_components">Componentes</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-components"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_duration">Duração</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-durations"></div>
+            </div>
+
+            <div id="legenda">
+                <div id="legenda-toggle">
+                    <span data-i18n="legenda">Legenda</span> <span>▲</span>
+                </div>
+                <div id="legenda-body">
+                    <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
+                    <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
+                    <div class="legenda-item"><img src="img/unknown.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
+                    <div class="legenda-item"><img src="img/ritual.svg"> <span data-i18n="leg_ritual">Ritual</span></div>
+                    <div class="legenda-item"><img src="img/concentration.svg"> <span data-i18n="leg_concentration">Concentração</span></div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div id="lang-flags">
-        <button class="flag-btn active" data-lang="ptbr" title="PT-BR">🇧🇷</button>
-        <button class="flag-btn" data-lang="en" title="EN">🇬🇧</button>
     </div>
 
     <div id="fetch-error" style="display:none; max-width:20cm; margin: 20px auto; padding: 1em; background:#f8d7da; border:1px solid #f5c2c7; border-radius:8px; font-family:helvetica,sans-serif; color:#842029;">
         ⚠️ Não foi possível carregar as magias. Abra a página pelo <strong>Live Server</strong> (botão "Go Live" no VS Code) em vez de abrir o arquivo diretamente.
     </div>
 
-    <div class="spell-grid" id="spell-grid"></div>
-
-    <div id="legenda">
-        <div id="legenda-toggle">
-            <span data-i18n="legenda">Legenda</span> <span>▲</span>
-        </div>
-        <div id="legenda-body">
-            <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
-            <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
-            <div class="legenda-item"><img src="img/unknown.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
-            <div class="legenda-item"><img src="img/ritual.svg"> <span data-i18n="leg_ritual">Ritual</span></div>
-            <div class="legenda-item"><img src="img/concentration.svg"> <span data-i18n="leg_concentration">Concentração</span></div>
-        </div>
+    <div id="grid-area">
+        <h1 id="site-title">Grimório do Jogador</h1>
+        <div class="spell-grid" id="spell-grid"></div>
+    </div>
     </div>
 
     <script>
     var spells2 = [];
     var FADE = 200;
-    var selectedClass = 'all';
+    var selectedClasses = new Set();
     var onlyKnown = false;
     var knownSpells = {};
+
+    var filters = {
+        text:       '',
+        levels:     new Set(),
+        schools:    new Set(),
+        castTimes:  new Set(),
+        ranges:     new Set(),
+        components: new Set(),
+        durations:  new Set()
+    };
 
     var TIER_SYMBOLS = ['○','◆','◆◆','◆◆◆','◆◆◆◆','★','★★','★★★','✶','✶✶'];
 
@@ -216,16 +455,44 @@
     }
 
     function forClass(spell) {
-        return selectedClass === 'all' || spell.classe.indexOf(selectedClass) >= 0;
+        if (selectedClasses.size === 0) return true;
+        return spell.classe.some(function(c) { return selectedClasses.has(c); });
+    }
+
+    function hasComponent(spell, comp) {
+        return spell.components.split(',').some(function(c) { return c.trim().startsWith(comp); });
+    }
+
+    function spellMatchesFilters(spell) {
+        if (filters.text) {
+            var q = filters.text.toLowerCase();
+            var inName = spell.displayName.toLowerCase().indexOf(q) >= 0;
+            var inDesc = spell.description ? spell.description.toLowerCase().indexOf(q) >= 0 : false;
+            if (!inName && !inDesc) return false;
+        }
+        if (filters.levels.size     > 0 && !filters.levels.has(spell.level))       return false;
+        if (filters.schools.size    > 0 && !filters.schools.has(spell.school))      return false;
+        if (filters.castTimes.size  > 0 && !filters.castTimes.has(spell.castTime))  return false;
+        if (filters.ranges.size     > 0 && !filters.ranges.has(spell.range))        return false;
+        if (filters.durations.size  > 0 && !filters.durations.has(spell.duration))  return false;
+        if (filters.components.size > 0) {
+            var allPresent = true;
+            filters.components.forEach(function(comp) {
+                if (!hasComponent(spell, comp)) allPresent = false;
+            });
+            if (!allPresent) return false;
+        }
+        return true;
     }
 
     function shouldShow(spell) {
+        if (!spellMatchesFilters(spell)) return false;
         if (onlyKnown) return isKnown(spell.name);
         return forClass(spell) || isKnown(spell.name);
     }
 
     function knownIcon(spell) {
-        if (isKnown(spell.name) && selectedClass !== 'all' && !forClass(spell)) return 'img/outside.svg';
+        if (isKnown(spell.name) && selectedClasses.size > 0 && !forClass(spell)) return 'img/outside.svg';
         if (isKnown(spell.name)) return 'img/known.svg';
         return 'img/unknown.svg';
     }
@@ -276,6 +543,62 @@
         return card;
     }
 
+    function buildCheckboxGroup(containerId, values, filterSet, labelFn) {
+        var container = document.getElementById(containerId);
+        container.innerHTML = '';
+        values.forEach(function(val) {
+            var label = document.createElement('label');
+            var cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.checked = filterSet.has(val);
+            cb.addEventListener('change', function() {
+                if (this.checked) filterSet.add(val);
+                else filterSet.delete(val);
+                applyFilter();
+                alignMenu();
+            });
+            label.appendChild(cb);
+            label.appendChild(document.createTextNode('\u00a0' + labelFn(val)));
+            container.appendChild(label);
+        });
+    }
+
+    function buildFilterUI(resetState) {
+        var t = i18n[currentLang];
+        if (resetState !== false) {
+            filters.levels.clear(); filters.schools.clear(); filters.castTimes.clear();
+            filters.ranges.clear(); filters.components.clear(); filters.durations.clear();
+            filters.text = '';
+            document.getElementById('search-input').value = '';
+        }
+        buildClassFilter(resetState);
+        buildCheckboxGroup('filter-levels',
+            Array.from(new Set(spells2.map(function(s) { return s.level; }))).sort(function(a,b){return a-b;}),
+            filters.levels,
+            function(v) { return v === 0 ? t.level_cantrip : t.level_n + v; }
+        );
+        buildCheckboxGroup('filter-schools',
+            Array.from(new Set(spells2.map(function(s) { return s.school; }))).sort(),
+            filters.schools, function(v) { return v; }
+        );
+        buildCheckboxGroup('filter-casttimes',
+            Array.from(new Set(spells2.map(function(s) { return s.castTime; }))).sort(),
+            filters.castTimes, function(v) { return v; }
+        );
+        buildCheckboxGroup('filter-ranges',
+            Array.from(new Set(spells2.map(function(s) { return s.range; }))).sort(),
+            filters.ranges, function(v) { return v; }
+        );
+        buildCheckboxGroup('filter-components',
+            ['V', 'S', 'M'],
+            filters.components, function(v) { return v; }
+        );
+        buildCheckboxGroup('filter-durations',
+            Array.from(new Set(spells2.map(function(s) { return s.duration; }))).sort(),
+            filters.durations, function(v) { return v; }
+        );
+    }
+
     function render() {
         var grid = document.getElementById('spell-grid');
         grid.innerHTML = '';
@@ -294,6 +617,24 @@
         });
 
         applyFilter(true);
+        alignMenu();
+    }
+
+    var menuPaddingTop = null;
+
+    function alignMenu() {
+        var menuContainer = document.getElementById('menu-container');
+        var firstCard = document.querySelector('.spell-item:not([style*="display: none"])');
+        if (!firstCard) {
+            if (menuPaddingTop !== null)
+                menuContainer.style.paddingTop = menuPaddingTop;
+            return;
+        }
+        menuContainer.style.paddingTop = '0';
+        var menuTop = menuContainer.getBoundingClientRect().top;
+        var cardTop = firstCard.getBoundingClientRect().top;
+        menuPaddingTop = Math.max(0, cardTop - menuTop) + 'px';
+        menuContainer.style.paddingTop = menuPaddingTop;
     }
 
     function fadeOut(el) {
@@ -343,14 +684,33 @@
         }
     }
 
-    document.getElementById('class-select').addEventListener('change', function() {
-        selectedClass = this.value;
+    function onSearchInput(val) {
+        filters.text = val.trim();
         applyFilter();
+        alignMenu();
+    }
+    document.getElementById('search-input').addEventListener('input', function() { onSearchInput(this.value); });
+    document.getElementById('search-mobile').addEventListener('input', function() { onSearchInput(this.value); });
+
+    document.querySelectorAll('.filter-title').forEach(function(title) {
+        title.addEventListener('click', function() {
+            this.closest('.filter-section').classList.toggle('collapsed');
+        });
     });
 
+    function syncKnownIcons() {
+        var src = onlyKnown ? 'img/known.svg' : 'img/unknown.svg';
+        document.querySelector('#show-known img').src = src;
+        document.querySelector('#known-mobile img').src = src;
+    }
     document.getElementById('show-known').addEventListener('click', function() {
         onlyKnown = !onlyKnown;
-        this.querySelector('img').src = onlyKnown ? 'img/known.svg' : 'img/unknown.svg';
+        syncKnownIcons();
+        applyFilter();
+    });
+    document.getElementById('known-mobile').addEventListener('click', function() {
+        onlyKnown = !onlyKnown;
+        syncKnownIcons();
         applyFilter();
     });
 
@@ -379,7 +739,15 @@
             leg_ritual:        'Ritual',
             leg_concentration: 'Concentração',
             level_cantrip:     'Truques',
-            level_n:           'Nível '
+            level_n:           'Nível ',
+            filter_version:    'Versão',
+            filter_class:      'Classe',
+            filter_level:      'Nível',
+            filter_school:     'Escola',
+            filter_casttime:   'Conjuração',
+            filter_range:      'Alcance',
+            filter_components: 'Componentes',
+            filter_duration:   'Duração'
         },
         en: {
             classe:            'Class',
@@ -392,7 +760,15 @@
             leg_ritual:        'Ritual',
             leg_concentration: 'Concentration',
             level_cantrip:     'Cantrips',
-            level_n:           'Level '
+            level_n:           'Level ',
+            filter_version:    'Version',
+            filter_class:      'Class',
+            filter_level:      'Level',
+            filter_school:     'School',
+            filter_casttime:   'Cast Time',
+            filter_range:      'Range',
+            filter_components: 'Components',
+            filter_duration:   'Duration'
         }
     };
 
@@ -403,15 +779,24 @@
         });
     }
 
-    function populateClassSelect() {
-        selectedClass = 'all';
-        var sel = document.getElementById('class-select');
-        sel.innerHTML = '<option value="all">' + i18n[currentLang].classe + '</option>';
+    function buildClassFilter(resetState) {
+        if (resetState !== false) selectedClasses.clear();
+        var container = document.getElementById('filter-classes');
+        container.innerHTML = '';
         currentClasses.forEach(function(cls) {
-            var opt = document.createElement('option');
-            opt.value = cls.key;
-            opt.textContent = cls[currentLang] || cls.key;
-            sel.appendChild(opt);
+            var label = document.createElement('label');
+            var cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.checked = selectedClasses.has(cls.key);
+            cb.addEventListener('change', function() {
+                if (this.checked) selectedClasses.add(cls.key);
+                else selectedClasses.delete(cls.key);
+                applyFilter();
+                alignMenu();
+            });
+            label.appendChild(cb);
+            label.appendChild(document.createTextNode('\u00a0' + (cls[currentLang] || cls.key)));
+            container.appendChild(label);
         });
     }
 
@@ -422,31 +807,38 @@
                 document.getElementById('fetch-error').style.display = 'none';
                 spells2 = data.spells;
                 currentClasses = data.classes;
-                populateClassSelect();
                 render();
+                buildFilterUI(true);
             })
             .catch(function() {
                 document.getElementById('fetch-error').style.display = 'block';
             });
     }
 
-    // Carrega versões disponíveis no select de versão
     function initVersions() {
-        var versionSelect = document.getElementById('version-select');
         var loaded = 0;
-        VERSIONS.forEach(function(v, i) {
+        VERSIONS.forEach(function(v) {
             fetch('js/' + v.file + '.json')
                 .then(function(r) { return r.json(); })
                 .then(function(data) {
                     v.label = data.version;
                     loaded++;
                     if (loaded === VERSIONS.length) {
-                        versionSelect.innerHTML = '';
-                        VERSIONS.forEach(function(ver) {
-                            var opt = document.createElement('option');
-                            opt.value = ver.file;
-                            opt.textContent = ver.label;
-                            versionSelect.appendChild(opt);
+                        var container = document.getElementById('filter-versions');
+                        container.innerHTML = '';
+                        VERSIONS.forEach(function(ver, i) {
+                            var label = document.createElement('label');
+                            var rb = document.createElement('input');
+                            rb.type = 'radio';
+                            rb.name = 'version-radio';
+                            rb.value = ver.file;
+                            rb.checked = (i === 0);
+                            rb.addEventListener('change', function() {
+                                loadSpells(this.value);
+                            });
+                            label.appendChild(rb);
+                            label.appendChild(document.createTextNode('\u00a0' + ver.label));
+                            container.appendChild(label);
                         });
                         loadSpells(VERSIONS[0].file);
                     }
@@ -457,10 +849,6 @@
         });
     }
 
-    document.getElementById('version-select').addEventListener('change', function() {
-        loadSpells(this.value);
-    });
-
     document.querySelectorAll('.flag-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             currentLang = this.dataset.lang;
@@ -468,7 +856,7 @@
                 b.classList.toggle('active', b.dataset.lang === currentLang);
             });
             applyI18n();
-            populateClassSelect();
+            buildFilterUI(false);
             // Atualiza textos dos separadores de nível
             document.querySelectorAll('.level-separator').forEach(function(sep) {
                 sep.textContent = levelLabel(parseInt(sep.dataset.sepLevel));
@@ -477,7 +865,16 @@
         });
     });
 
+    function toggleMenu() {
+        var open = document.getElementById('menu-container').classList.toggle('open');
+        document.getElementById('menu-backdrop').classList.toggle('open');
+        document.getElementById('hamburger').textContent = open ? '✕' : '☰';
+    }
+    document.getElementById('hamburger').addEventListener('click', toggleMenu);
+    document.getElementById('menu-backdrop').addEventListener('click', toggleMenu);
+
     initVersions();
+    window.addEventListener('resize', alignMenu);
     </script>
 
 </body>
