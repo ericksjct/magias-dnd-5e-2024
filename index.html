@@ -1,251 +1,484 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+<head>
 <meta charset="UTF-8">
-<title>Lista Magias D&D 5E</title>
+<title>Card Test</title>
 <link rel="stylesheet" href="css/style.css">
+<style>
+    .spell-grid {
+        columns: 2;
+        column-gap: 5px;
+        max-width: 20cm;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .spell-item {
+        break-inside: avoid;
+        display: inline-block;
+        width: 100%;
+        background: transparent;
+        margin-bottom: 5px;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0);
+        transition: opacity 0.2s ease, transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    }
+    .spell-item:hover {
+        transform: translateY(-3px) scale(1.01);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+        z-index: 2;
+    }
+    .spell-item:hover .spell-body {
+        border-color: var(--accent) !important;
+    }
+    .spell-item.fading {
+        opacity: 0;
+    }
+    .level-separator {
+        transition: opacity 0.2s ease;
+    }
+    .level-separator.fading {
+        opacity: 0;
+    }
+    .level-separator {
+        column-span: all;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 12px 0 12px 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 11pt;
+        color: #666;
+        user-select: none;
+    }
+    .level-separator::before,
+    .level-separator::after {
+        content: '';
+        flex: 1;
+        border-top: 1px dotted #aaa;
+    }
+    #menu-container { position: static; background: none; }
+    #menu { margin: 20px auto 0; }
+    #lang-flags {
+        position: fixed;
+        top: 0.6em;
+        right: 1em;
+        display: flex;
+        gap: 0.2em;
+        z-index: 20;
+    }
+    .flag-btn {
+        font-size: 1.4em;
+        background: none;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 0.1em 0.2em;
+        line-height: 1;
+        opacity: 0.4;
+        transition: opacity 0.15s, border-color 0.15s;
+    }
+    .flag-btn:hover { opacity: 0.7; }
+    .flag-btn.active { opacity: 1; border-color: #aaa; }
+
+    #legenda {
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+        background: #EEEEEE;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 10pt;
+        z-index: 10;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+        overflow: hidden;
+    }
+    #legenda-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+        padding: 0.4em 0.8em;
+        cursor: pointer;
+        user-select: none;
+        font-weight: bold;
+        color: #555;
+    }
+    #legenda-toggle span {
+        font-size: 12pt;
+        line-height: 1;
+        transition: transform 0.2s ease;
+    }
+    #legenda.collapsed #legenda-toggle span {
+        transform: rotate(180deg);
+    }
+    #legenda-body {
+        padding: 0.3em 0.8em 0.6em;
+        border-top: 1px solid #ccc;
+        transition: max-height 0.25s ease, opacity 0.25s ease;
+        max-height: 200px;
+        opacity: 1;
+        overflow: hidden;
+    }
+    #legenda.collapsed #legenda-body {
+        max-height: 0;
+        opacity: 0;
+        border-top: none;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .legenda-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        margin: 0.3em 0;
+    }
+    .legenda-item img {
+        height: 1.2em;
+    }
+</style>
 </head>
-
-<body>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-
-    <script src="js/spells-by-class.js"></script>
-
-    <script>
-    $(document).ready(function() {
-
-        var visibleSpells = null;
-        var onlyKnown = false;
-        var maxLevel = 9;
-
-        var spellList = $('#spell-list');
-
-        // --- localStorage ---
-        function saveState() {
-            var knownSpells = [];
-            $('.spell-item[data-known="true"]').each(function() {
-                knownSpells.push($(this).attr('data-name'));
-            });
-            localStorage.setItem('dnd_known', JSON.stringify(knownSpells));
-            localStorage.setItem('dnd_class', $('#class-select').val());
-            localStorage.setItem('dnd_level', $('#level-select').val());
-            localStorage.setItem('dnd_onlyKnown', onlyKnown ? '1' : '0');
-        }
-
-        function loadState() {
-            // Spells conhecidas
-            var knownSpells = JSON.parse(localStorage.getItem('dnd_known') || '[]');
-            $.each(knownSpells, function(i, name) {
-                $('.spell-item[data-name="' + name + '"]').attr('data-known', 'true');
-            });
-
-            // Filtro de classe
-            var savedClass = localStorage.getItem('dnd_class');
-            if (savedClass) {
-                $('#class-select').val(savedClass);
-                visibleSpells = savedClass == 'all' ? null : spellByClass[savedClass];
-            }
-
-            // Filtro de nível
-            var savedLevel = localStorage.getItem('dnd_level');
-            if (savedLevel) {
-                $('#level-select').val(savedLevel);
-                maxLevel = parseInt(savedLevel);
-            }
-
-            // Só conhecidas
-            var savedOnlyKnown = localStorage.getItem('dnd_onlyKnown');
-            if (savedOnlyKnown === '1') {
-                onlyKnown = true;
-                $('#show-known img').attr('src', 'img/known.svg');
-            }
-        }
-        // --- fim localStorage ---
-
-        function shouldShowItem(spellItem) {
-            var isKnown = spellItem.attr('data-known') == 'true';
-            var forClass = !visibleSpells || $.inArray(spellItem.attr('data-name'), visibleSpells) >= 0;
-            var forLevel = parseInt(spellItem.attr('data-level')) <= maxLevel;
-            return forLevel && ((!visibleSpells && !onlyKnown) || isKnown || (!onlyKnown && forClass));
-        }
-
-        function applyLayout() {
-            $('#empty-message').css('display', 'none');
-
-            // Remove dummies anteriores
-            $('.level-dummy').remove();
-
-            var level = -1;
-
-            // Passe único: atualizar tudo antes do Isotope rodar
-            $('.spell-item').each(function() {
-                var spellItem = $(this);
-                var shouldDisplay = shouldShowItem(spellItem);
-                var current = spellItem.attr('data-level');
-                var levelTitle = spellItem.find('.level');
-                var isKnown = spellItem.attr('data-known') == 'true';
-                var forClass = !visibleSpells || $.inArray(spellItem.attr('data-name'), visibleSpells) >= 0;
-
-                // Ícone
-                var knownIcon = spellItem.find('.known img');
-                if (shouldDisplay && visibleSpells && !forClass) {
-                    knownIcon.attr('src', 'img/outside.svg');
-                } else {
-                    knownIcon.attr('src', isKnown ? 'img/known.svg' : 'img/unknown.svg');
-                }
-
-                // Título de nível
-                spellItem.removeClass('has-level');
-                levelTitle.css('display', '');
-
-                if (shouldDisplay && current != level) {
-                    level = current;
-                    spellItem.addClass('has-level');
-                    // Insere card dummy antes deste card
-                    var dummy = $('<div class="level-dummy"></div>');
-                    dummy.insertBefore(spellItem);
-                    spellList.isotope('appended', dummy);
-                } else {
-                    levelTitle.css('display', 'none');
-                }
-            });
-
-            // Isotope só filtra visibilidade, classes já foram aplicadas
-            spellList.isotope('arrange');
-        }
-
-        // Carrega estado ANTES de inicializar o isotope
-        loadState();
-
-        // Inicializa isotope uma vez
-        spellList.isotope({
-            layoutMode: 'masonry',
-            itemSelector: '.spell-item, .level-dummy',
-            filter: function() { 
-                if ($(this).hasClass('level-dummy')) return true;
-                return shouldShowItem($(this)); 
-            },
-            masonry: {
-                columnWidth: '.grid-size',
-                gutter: '.gutter-size'
-            }
-        });
-
-        var stateLoaded = false;
-        spellList.on('arrangeComplete', function(event, filteredItems) {
-            if (filteredItems.length === 0) {
-                $('#empty-message').css('display', 'block');
-            }
-        });
-
-        $('#level-select').change(function() {
-            maxLevel = parseInt($(this).val());
-            saveState();
-            applyLayout();
-        });
-
-        $('#class-select').change(function() {
-            var className = $(this).val();
-            visibleSpells = className == 'all' ? null : spellByClass[className];
-            saveState();
-            applyLayout();
-        });
-
-        $('#show-known').click(function() {
-            var icon = $(this).find('img');
-            onlyKnown = !onlyKnown;
-            icon.attr('src', onlyKnown ? 'img/known.svg' : 'img/unknown.svg');
-            saveState();
-            applyLayout();
-        });
-
-        $('.known').click(function() {
-            var icon = $(this).find('img');
-            var spell = $(this).closest('.spell-item');
-            var isOutside = icon.attr('src') == 'img/outside.svg';
-            var isKnown = spell.attr('data-known') == 'true';
-            if (isKnown) {
-                icon.attr('src', 'img/unknown.svg');
-                spell.removeAttr('data-known');
-            } else {
-                icon.attr('src', 'img/known.svg');
-                spell.attr('data-known', 'true');
-            }
-            saveState();
-            if (onlyKnown || isOutside) {
-                applyLayout();
-            }
-        });
-
-        applyLayout();
-    });
-    </script>
+<body style="background:#ddd; padding: 20px;">
 
     <div id="menu-container">
         <div id="menu">
             <div class="menu-item">
-                <p>Classe</p>
-                <div style="width:2em"></div>
                 <select id="class-select" style="text-align-last:center;">
-                    <option value="all">-----</option>
-                    <option value="bardo">Bardo</option>
-                    <option value="bruxo">Bruxo</option>
-                    <option value="clérigo">Clérigo</option>
-                    <option value="druida">Druida</option>
-                    <option value="feiticeiro">Feiticeiro</option>
-                    <option value="mago">Mago</option>
-                    <option value="paladino">Paladino</option>
-                    <option value="patrulheiro">Patrulheiro</option>
+                    <option value="all" data-i18n="classe">Classe</option>
                 </select>
             </div>
             <div style="width:1em"></div>
             <div class="menu-item">
-                <p>Nível</p>
-                <div style="width:2em"></div>
-                <select id="level-select" style="text-align-last:center;">
-                    <option value="9">-----</option>
-                    <option value="0">Truques</option>
-                    <option value="1">Até 1</option>
-                    <option value="2">Até 2</option>
-                    <option value="3">Até 3</option>
-                    <option value="4">Até 4</option>
-                    <option value="5">Até 5</option>
-                    <option value="6">Até 6</option>
-                    <option value="7">Até 7</option>
-                    <option value="8">Até 8</option>
-                    <option value="9">Até 9</option>
+                <select id="version-select" style="text-align-last:center;">
+                    <option value="" data-i18n="versao">Versão</option>
                 </select>
             </div>
             <div class="menu-space"></div>
             <div id="show-known" class="menu-item">
-                <p>Conhecidas</p>
+                <p data-i18n="conhecidas">Conhecidas</p>
                 <img src="img/unknown.svg">
             </div>
         </div>
     </div>
-    <div id="spell-list">
-        <div id="empty-message">
-            Nenhuma magia selecionada
-        </div>
-        <div class="separator"></div>
-        <div class="grid-size"></div>
-        <div class="gutter-size"></div>
-        <script src="js/spells.js"></script>
+
+    <div id="lang-flags">
+        <button class="flag-btn active" data-lang="ptbr" title="PT-BR">🇧🇷</button>
+        <button class="flag-btn" data-lang="en" title="EN">🇬🇧</button>
     </div>
 
+    <div id="fetch-error" style="display:none; max-width:20cm; margin: 20px auto; padding: 1em; background:#f8d7da; border:1px solid #f5c2c7; border-radius:8px; font-family:helvetica,sans-serif; color:#842029;">
+        ⚠️ Não foi possível carregar as magias. Abra a página pelo <strong>Live Server</strong> (botão "Go Live" no VS Code) em vez de abrir o arquivo diretamente.
+    </div>
+
+    <div class="spell-grid" id="spell-grid"></div>
 
     <div id="legenda">
-        <div class="legenda-item">
-            <img src="img/known.svg"> Magia conhecida
+        <div id="legenda-toggle">
+            <span data-i18n="legenda">Legenda</span> <span>▲</span>
         </div>
-        <div class="legenda-item">
-            <img src="img/outside.svg"> Conhecida, fora da classe
+        <div id="legenda-body">
+            <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
+            <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
+            <div class="legenda-item"><img src="img/unknown.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
+            <div class="legenda-item"><img src="img/ritual.svg"> <span data-i18n="leg_ritual">Ritual</span></div>
+            <div class="legenda-item"><img src="img/concentration.svg"> <span data-i18n="leg_concentration">Concentração</span></div>
         </div>
     </div>
-    <p><strong>Autor desse projeto:</strong> Erick Teixeira &mdash; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color:#ccc;">CC BY-NC-SA 4.0</a></p>
-    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.3); margin: 8px 0;">
-    <p>Trabalho baseado em <a href="https://avribacki.gitlab.io/magias5e/" target="_blank" style="color:#ccc;">avribacki.gitlab.io/magias5e/</a> — autores originais: Alfa Design, Creative Stall, Alexander Bogomolov, Nikita Kozin, Gregor Cresnar, Yazmin Alanis, Delwar Hossain, Edward Boatman, Luis Prado.</p>
-    <p>Imagens obtidas no <a href="https://thenounproject.com" target="_blank" style="color:#ccc;">The Noun Project</a> sob a licença Creative Commons.</p>
-    <p>Tradução 5.5e obtida em <a href="https://apoia.se/heroisanonimos" target="_blank" style="color:#ccc;">apoia.se/heroisanonimos</a> — <strong>Heróis Anônimos</strong>.</p>
-</footer>
 
-</body></html>
+    <script>
+    var spells2 = [];
+    var FADE = 200;
+    var selectedClass = 'all';
+    var onlyKnown = false;
+    var knownSpells = {};
+
+    var TIER_SYMBOLS = ['○','◆','◆◆','◆◆◆','◆◆◆◆','★','★★','★★★','✶','✶✶'];
+
+    var LEVEL_COLORS = [
+        '#BDBDBD',
+        '#616161',
+        '#00E676',
+        '#021aee',
+        '#d602ee',
+        '#FF9800',
+        '#ee6002',
+        '#E91E63',
+        '#C17900',
+        '#00BFA5'
+    ];
+
+    function levelAccent(lvl) {
+        return LEVEL_COLORS[lvl];
+    }
+
+    function isKnown(name) {
+        return !!knownSpells[name];
+    }
+
+    function forClass(spell) {
+        return selectedClass === 'all' || spell.classe.indexOf(selectedClass) >= 0;
+    }
+
+    function shouldShow(spell) {
+        if (onlyKnown) return isKnown(spell.name);
+        return forClass(spell) || isKnown(spell.name);
+    }
+
+    function knownIcon(spell) {
+        if (isKnown(spell.name) && selectedClass !== 'all' && !forClass(spell)) return 'img/outside.svg';
+        if (isKnown(spell.name)) return 'img/known.svg';
+        return 'img/unknown.svg';
+    }
+
+    function levelLabel(level) {
+        var t = i18n[currentLang];
+        return level === 0 ? t.level_cantrip : t.level_n + level;
+    }
+
+    function buildCard(spell) {
+        var card = document.createElement('div');
+        card.className = 'grid-item spell-item';
+        card.dataset.name = spell.name;
+        card.dataset.level = spell.level;
+        card.dataset.classe = spell.classe.join(',');
+
+        var lvl = spell.level;
+        card.style.setProperty('--accent', levelAccent(lvl));
+
+        card.innerHTML =
+            '<div class="spell-body">' +
+                '<div class="title">' +
+                    '<div class="name">' +
+                        '<p>' + spell.displayName + '</p>' +
+                        (spell.ritual ? '<img src="img/ritual.svg">' : '') +
+                        '<p class="school">' + spell.school + '</p>' +
+                    '</div>' +
+                    '<div class="known"><img src="' + knownIcon(spell) + '"></div>' +
+                '</div>' +
+                '<div class="details">' +
+                    '<div class="meta">' +
+                        '<div class="meta-item"><img src="img/cast.svg"><div class="meta-content">' + spell.castTime + '</div></div>' +
+                        '<div class="meta-item"><img src="img/range.svg"><div class="meta-content">' + spell.range + '</div></div>' +
+                        '<div class="meta-item"><img src="img/components.svg"><div class="meta-content">' + spell.components + '</div></div>' +
+                        '<div class="meta-item"><img src="img/duration.svg">' + (spell.concentration ? '<img src="img/concentration.svg">' : '') + '<div class="meta-content">' + spell.duration + '</div></div>' +
+                    '</div>' +
+                    '<div class="description">' + spell.description + '</div>' +
+                '</div>' +
+                '<div class="tier-badge" aria-label="Spell level ' + lvl + '">(' + lvl + ') ' + TIER_SYMBOLS[lvl] + '</div>' +
+            '</div>';
+
+        card.querySelector('.known').addEventListener('click', function() {
+            knownSpells[spell.name] = !knownSpells[spell.name];
+            card.querySelector('.known img').src = knownIcon(spell);
+            if (onlyKnown) render();
+        });
+
+        return card;
+    }
+
+    function render() {
+        var grid = document.getElementById('spell-grid');
+        grid.innerHTML = '';
+
+        var lastLevel = -1;
+        spells2.forEach(function(spell) {
+            if (spell.level !== lastLevel) {
+                lastLevel = spell.level;
+                var sep = document.createElement('div');
+                sep.className = 'level-separator';
+                sep.dataset.sepLevel = spell.level;
+                sep.textContent = levelLabel(spell.level);
+                grid.appendChild(sep);
+            }
+            grid.appendChild(buildCard(spell));
+        });
+
+        applyFilter(true);
+    }
+
+    function fadeOut(el) {
+        if (el.style.display === 'none') return;
+        el.classList.add('fading');
+        setTimeout(function() {
+            el.style.display = 'none';
+            el.classList.remove('fading');
+        }, FADE);
+    }
+
+    function fadeInAll(els) {
+        els.forEach(function(el) {
+            el.style.display = '';
+            el.classList.add('fading');
+        });
+        void document.getElementById('spell-grid').offsetHeight; // único reflow
+        els.forEach(function(el) { el.classList.remove('fading'); });
+    }
+
+    function applyFilter(instant) {
+        var toShow = [];
+        var toHide = [];
+
+        document.querySelectorAll('.spell-item').forEach(function(card) {
+            // atualiza ícone
+            var spell = spells2.find(function(s) { return s.name === card.dataset.name; });
+            if (spell) card.querySelector('.known img').src = knownIcon(spell);
+
+            (shouldShow(spell) ? toShow : toHide).push(card);
+        });
+
+        document.querySelectorAll('.level-separator').forEach(function(sep) {
+            var level = parseInt(sep.dataset.sepLevel);
+            var hasVisible = spells2.some(function(s) {
+                return s.level === level && shouldShow(s);
+            });
+            (hasVisible ? toShow : toHide).push(sep);
+        });
+
+        if (instant) {
+            toHide.forEach(function(el) { el.style.display = 'none'; });
+            toShow.forEach(function(el) { el.style.display = ''; });
+        } else {
+            toHide.forEach(fadeOut);
+            setTimeout(function() { fadeInAll(toShow); }, FADE);
+        }
+    }
+
+    document.getElementById('class-select').addEventListener('change', function() {
+        selectedClass = this.value;
+        applyFilter();
+    });
+
+    document.getElementById('show-known').addEventListener('click', function() {
+        onlyKnown = !onlyKnown;
+        this.querySelector('img').src = onlyKnown ? 'img/known.svg' : 'img/unknown.svg';
+        applyFilter();
+    });
+
+    document.getElementById('legenda-toggle').addEventListener('click', function() {
+        document.getElementById('legenda').classList.toggle('collapsed');
+    });
+
+    // Versões disponíveis — adicione aqui novos arquivos no futuro
+    var VERSIONS = [
+        { file: 'spells-ptbr', label: null },
+        { file: 'spells-en',   label: null }
+    ];
+
+    var currentLang = 'ptbr';
+    var currentClasses = [];
+
+    var i18n = {
+        ptbr: {
+            classe:            'Classe',
+            versao:            'Versão',
+            conhecidas:        'Conhecidas',
+            legenda:           'Legenda',
+            leg_known:         'Magia conhecida',
+            leg_outside:       'Conhecida, fora da classe',
+            leg_unknown:       'Não conhecida',
+            leg_ritual:        'Ritual',
+            leg_concentration: 'Concentração',
+            level_cantrip:     'Truques',
+            level_n:           'Nível '
+        },
+        en: {
+            classe:            'Class',
+            versao:            'Version',
+            conhecidas:        'Known',
+            legenda:           'Legend',
+            leg_known:         'Known spell',
+            leg_outside:       'Known, outside class',
+            leg_unknown:       'Unknown spell',
+            leg_ritual:        'Ritual',
+            leg_concentration: 'Concentration',
+            level_cantrip:     'Cantrips',
+            level_n:           'Level '
+        }
+    };
+
+    function applyI18n() {
+        var t = i18n[currentLang];
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            el.textContent = t[el.dataset.i18n] || el.textContent;
+        });
+    }
+
+    function populateClassSelect() {
+        selectedClass = 'all';
+        var sel = document.getElementById('class-select');
+        sel.innerHTML = '<option value="all">' + i18n[currentLang].classe + '</option>';
+        currentClasses.forEach(function(cls) {
+            var opt = document.createElement('option');
+            opt.value = cls.key;
+            opt.textContent = cls[currentLang] || cls.key;
+            sel.appendChild(opt);
+        });
+    }
+
+    function loadSpells(file) {
+        fetch('js/' + file + '.json')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                document.getElementById('fetch-error').style.display = 'none';
+                spells2 = data.spells;
+                currentClasses = data.classes;
+                populateClassSelect();
+                render();
+            })
+            .catch(function() {
+                document.getElementById('fetch-error').style.display = 'block';
+            });
+    }
+
+    // Carrega versões disponíveis no select de versão
+    function initVersions() {
+        var versionSelect = document.getElementById('version-select');
+        var loaded = 0;
+        VERSIONS.forEach(function(v, i) {
+            fetch('js/' + v.file + '.json')
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    v.label = data.version;
+                    loaded++;
+                    if (loaded === VERSIONS.length) {
+                        versionSelect.innerHTML = '';
+                        VERSIONS.forEach(function(ver) {
+                            var opt = document.createElement('option');
+                            opt.value = ver.file;
+                            opt.textContent = ver.label;
+                            versionSelect.appendChild(opt);
+                        });
+                        loadSpells(VERSIONS[0].file);
+                    }
+                })
+                .catch(function() {
+                    document.getElementById('fetch-error').style.display = 'block';
+                });
+        });
+    }
+
+    document.getElementById('version-select').addEventListener('change', function() {
+        loadSpells(this.value);
+    });
+
+    document.querySelectorAll('.flag-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            currentLang = this.dataset.lang;
+            document.querySelectorAll('.flag-btn').forEach(function(b) {
+                b.classList.toggle('active', b.dataset.lang === currentLang);
+            });
+            applyI18n();
+            populateClassSelect();
+            // Atualiza textos dos separadores de nível
+            document.querySelectorAll('.level-separator').forEach(function(sep) {
+                sep.textContent = levelLabel(parseInt(sep.dataset.sepLevel));
+            });
+            applyFilter(true);
+        });
+    });
+
+    initVersions();
+    </script>
+
+</body>
+</html>

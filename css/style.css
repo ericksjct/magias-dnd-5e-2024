@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 #menu-container {
     width: 100%;
     position: fixed;
@@ -17,7 +23,7 @@
     box-sizing: border-box;
     border-radius: 8px;
     border: 1px solid #ccc;
-    font-family: "helvetica", "sans-serif";
+    font-family: 'Roboto', sans-serif;
     font-size: 13pt;
     user-select: none;
     display: flex;
@@ -46,7 +52,7 @@
 }
 .menu-item button {
     font-size: 11pt;
-    font-family: "helvetica", "sans-serif";
+    font-family: 'Roboto', sans-serif;
     padding: 0 0.6em;
     height: 100%;
     border: 1px solid #ccc;
@@ -70,7 +76,7 @@
     box-sizing: border-box;
     padding: 0;
     font-size: 0;
-    font-family: "helvetica", "sans-serif";
+    font-family: 'Roboto', sans-serif;
 }
 .grid-size, .spell-item {
     width: calc(50% - 3px);
@@ -86,7 +92,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 0.5em 0.8em;
-    font-family: "helvetica", "sans-serif";
+    font-family: 'Roboto', sans-serif;
     font-size: 10pt;
     z-index: 10;
     box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
@@ -103,7 +109,7 @@
 #empty-message {
     padding: 1em;
     font-size: 20pt;
-    font-family: "helvetica", "sans-serif";
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     background: gray;
     color: white;
@@ -134,9 +140,11 @@
 }
 .spell-body {
     margin: 0;
-    padding: 0.1em 0.2em 0.1em 0.7em;
+    padding: 0.1em 0.2em 1.4em 0.7em;
     border: 1px solid;
     border-radius: 8px;
+    overflow: hidden;
+    position: relative;
 }
 .long-spell {
     width: 100%;
@@ -239,7 +247,7 @@ footer {
     padding: 15px;
 }
 footer p {
-    font-family: "helvetica", "sans-serif";
+    font-family: 'Roboto', sans-serif;
     font-size: 12pt;
     margin: 0;
     margin-top: 0.1em;
@@ -267,36 +275,31 @@ footer p {
     }
 }
 
-/* Cores de borda com gradiente por nível */
 .spell-item[data-level] .spell-body {
     border: 1px solid #ccc;
     background: #EEEEEE;
 }
-.spell-item[data-level="0"] .spell-body { border-color: #BDBDBD; border-right: 4px solid #BDBDBD; }
-.spell-item[data-level="1"] .spell-body { border-color: #616161; border-right: 4px solid #616161; }
-.spell-item[data-level="2"] .spell-body { border-color: #4CAF50; border-right: 4px solid #4CAF50; }
-.spell-item[data-level="3"] .spell-body { border-color: #2196F3; border-right: 4px solid #2196F3; }
-.spell-item[data-level="4"] .spell-body { border-color: #9C27B0; border-right: 4px solid #9C27B0; }
-.spell-item[data-level="5"] .spell-body { border-color: #FF9800; border-right: 4px solid #FF9800; }
-.spell-item[data-level="6"] .spell-body { border-color: #F44336; border-right: 4px solid #F44336; }
-.spell-item[data-level="7"] .spell-body { border-color: #E91E63; border-right: 4px solid #E91E63; }
-.spell-item[data-level="8"] .spell-body { border-color: #FFD700; border-right: 4px solid #FFD700; }
-.spell-item[data-level="9"] .spell-body { border-color: #00E5FF; border-right: 4px solid #00E5FF; }
 
 
-/* Cores do título de nível */
+/* Borda uniforme para títulos de nível */
 .spell-item[data-level] .level {
     background: #EEEEEE;
     color: #333;
     border: 1px solid #ccc;
 }
-.spell-item[data-level="0"] .level { border-color: #BDBDBD; border-right: 4px solid #BDBDBD; }
-.spell-item[data-level="1"] .level { border-color: #616161; border-right: 4px solid #616161; }
-.spell-item[data-level="2"] .level { border-color: #4CAF50; border-right: 4px solid #4CAF50; }
-.spell-item[data-level="3"] .level { border-color: #2196F3; border-right: 4px solid #2196F3; }
-.spell-item[data-level="4"] .level { border-color: #9C27B0; border-right: 4px solid #9C27B0; }
-.spell-item[data-level="5"] .level { border-color: #FF9800; border-right: 4px solid #FF9800; }
-.spell-item[data-level="6"] .level { border-color: #F44336; border-right: 4px solid #F44336; }
-.spell-item[data-level="7"] .level { border-color: #E91E63; border-right: 4px solid #E91E63; }
-.spell-item[data-level="8"] .level { border-color: #FFD700; border-right: 4px solid #FFD700; }
-.spell-item[data-level="9"] .level { border-color: #00E5FF; border-right: 4px solid #00E5FF; }
+
+/* Tier badge */
+.tier-badge {
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
+    font-size: 9pt;
+    color: var(--accent, #888);
+    opacity: 0.9;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    user-select: none;
+    line-height: 1;
+}
+
+
