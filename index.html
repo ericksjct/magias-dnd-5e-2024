@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Card Test</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="stylesheet" href="css/style.css">
 <style>
     .spell-grid {
@@ -79,6 +80,7 @@
         font-size: 14px;
     }
     #menu .menu-space { display: none; }
+    #show-known { align-items: center; }
     #show-known p { margin: 0; }
     .spell-grid {
         margin: 0;
@@ -135,33 +137,25 @@
     }
     #share-btn-mobile:hover { opacity: 1; }
     #theme-toggle-mobile { display: none; }
+    .legend-separator {
+        text-align: center;
+        color: var(--surface2, #aaa);
+        letter-spacing: 4px;
+        font-size: 10px;
+        margin: 10px 0 4px;
+        user-select: none;
+    }
     #legenda {
         position: static;
-        background: #EEEEEE;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 13px;
-        overflow: hidden;
-        margin-top: 10px;
+        bottom: auto;
+        right: auto;
+        background: none;
+        border: none;
+        border-radius: 0;
         padding: 0;
+        font-size: inherit;
+        z-index: auto;
         box-shadow: none;
-    }
-    #legenda-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1em;
-        padding: 0.4em 0.8em;
-        cursor: pointer;
-        user-select: none;
-        font-weight: bold;
-        color: #555;
-    }
-    #legenda-toggle span {
-        font-size: 12pt;
-        line-height: 1;
-        transition: transform 0.2s ease;
     }
     @media (min-width: 1600px) {
         .spell-grid {
@@ -262,29 +256,13 @@
         }
         #menu-backdrop.open { display: block; }
     }
-    #legenda.collapsed #legenda-toggle span:last-child {
-        transform: rotate(180deg);
-    }
-    #legenda-body {
-        padding: 0.3em 0.8em 0.8em;
-        border-top: 1px solid #ccc;
-        transition: max-height 0.25s ease, opacity 0.25s ease;
-        max-height: 200px;
-        opacity: 1;
-        overflow: hidden;
-    }
-    #legenda.collapsed #legenda-body {
-        max-height: 0;
-        opacity: 0;
-        border-top: none;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
     .legenda-item {
         display: flex;
         align-items: center;
         gap: 0.5em;
-        margin: 0.3em 0;
+        font-size: 12px;
+        color: var(--subtext1, #555);
+        padding: 1px 2px;
     }
     .legenda-item img {
         height: 1.2em;
@@ -449,12 +427,8 @@
     .level-separator::before, .level-separator::after { border-top-color: var(--surface2); }
     /* Menu sidebar */
     #menu { background: var(--surface0); border-color: var(--surface1); color: var(--text); }
-    #legenda { background: var(--surface0); border-color: var(--surface1); }
     [data-theme="light"] #menu { background: var(--base); border-color: var(--surface1); }
-    [data-theme="light"] #legenda { background: var(--base); border-color: var(--surface1); }
     [data-theme="light"] #menu-container.open { background: var(--mantle); }
-    #legenda-toggle { color: var(--text); }
-    #legenda-body { border-top-color: var(--surface1); color: var(--subtext1); }
     /* Flags */
     .flag-btn { color: var(--text); }
     .flag-btn.active { border-color: var(--text); }
@@ -502,7 +476,7 @@
         <button id="hamburger">☰</button>
         <input type="text" id="search-mobile" placeholder="Pesquisar...">
         <button id="theme-toggle-mobile" title="Alternar tema">☀️</button>
-        <div id="known-mobile"><img src="img/unknown.svg"></div>
+        <div id="known-mobile"><img class="unknown-icon" src="img/unknown-dark.svg"></div>
     </div>
     <div id="menu-backdrop"></div>
 
@@ -512,7 +486,7 @@
             <div style="display:flex; align-items:center; justify-content:space-between;">
                     <div id="show-known" class="menu-item">
                     <p data-i18n="conhecidas">Conhecidas</p>
-                    <img src="img/unknown.svg">
+                    <img class="unknown-icon" src="img/unknown-dark.svg">
                 </div>
                 <div style="display:flex; align-items:center; gap:4px;">
                     <div id="lang-flags">
@@ -563,16 +537,18 @@
                 <div class="filter-body" id="filter-durations"></div>
             </div>
 
-            <div id="legenda">
-                <div id="legenda-toggle">
-                    <span data-i18n="legenda">Legenda</span> <span>▲</span>
+            <div class="legend-separator">···</div>
+            <div class="filter-section" id="legenda">
+                <div class="filter-title" id="legenda-toggle">
+                    <span data-i18n="legenda">Legenda</span>
+                    <span class="filter-arrow">▾</span>
                 </div>
-                <div id="legenda-body">
+                <div class="filter-body" id="legenda-body">
                     <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
                     <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
-                    <div class="legenda-item"><img src="img/unknown.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
-                    <div class="legenda-item"><img src="img/ritual.svg"> <span data-i18n="leg_ritual">Ritual</span></div>
-                    <div class="legenda-item"><img src="img/concentration.svg"> <span data-i18n="leg_concentration">Concentração</span></div>
+                    <div class="legenda-item"><img class="unknown-icon" src="img/unknown-dark.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
+                    <div class="legenda-item"><span class="ritual-pill">📖</span> <span data-i18n="leg_ritual">Ritual</span></div>
+                    <div class="legenda-item"><span class="conc-badge">🧠</span> <span data-i18n="leg_concentration">Concentração</span></div>
                 </div>
             </div>
         </div>
@@ -654,10 +630,16 @@
         return forClass(spell) || isKnown(spell.name);
     }
 
+    function unknownIcon() {
+        return document.documentElement.getAttribute('data-theme') === 'light'
+            ? 'img/unknown-light.svg'
+            : 'img/unknown-dark.svg';
+    }
+
     function knownIcon(spell) {
         if (isKnown(spell.name) && selectedClasses.size > 0 && !forClass(spell)) return 'img/outside.svg';
         if (isKnown(spell.name)) return 'img/known.svg';
-        return 'img/unknown.svg';
+        return unknownIcon();
     }
 
     function levelLabel(level) {
@@ -892,7 +874,7 @@
     });
 
     function syncKnownIcons() {
-        var src = onlyKnown ? 'img/known.svg' : 'img/unknown.svg';
+        var src = onlyKnown ? 'img/known.svg' : unknownIcon();
         document.querySelector('#show-known img').src = src;
         document.querySelector('#known-mobile img').src = src;
     }
@@ -907,9 +889,6 @@
         applyFilter();
     });
 
-    document.getElementById('legenda-toggle').addEventListener('click', function() {
-        document.getElementById('legenda').classList.toggle('collapsed');
-    });
 
     // Versões disponíveis — adicione aqui novos arquivos no futuro
     var VERSIONS = [
@@ -1160,6 +1139,11 @@
         var icon = theme === 'dark' ? '☀️' : '🌙';
         document.getElementById('theme-toggle').textContent = icon;
         document.getElementById('theme-toggle-mobile').textContent = icon;
+        var src = theme === 'light' ? 'img/unknown-light.svg' : 'img/unknown-dark.svg';
+        document.querySelectorAll('img.unknown-icon').forEach(function(el) { el.src = src; });
+        document.querySelectorAll('.spell-item .known img').forEach(function(el) {
+            if (el.src.indexOf('unknown') !== -1) el.src = src;
+        });
     }
     function toggleTheme() {
         currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
