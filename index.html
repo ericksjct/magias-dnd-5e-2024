@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 <style>
     .spell-grid {
         columns: 2;
-        column-gap: 5px;
+        column-gap: 10px;
         max-width: 20cm;
         margin: auto;
         margin-top: 20px;
@@ -18,7 +18,7 @@
         display: inline-block;
         width: 100%;
         background: transparent;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         border-radius: 8px;
         box-shadow: 0 6px 16px rgba(0,0,0,0);
         transition: opacity 0.2s ease, transform 0.3s ease-out, box-shadow 0.3s ease-out;
@@ -75,9 +75,11 @@
         min-width: 9em;
         margin: 0;
         gap: 8px;
-        padding-bottom: 15px;
+        padding: 15px 15px 15px;
+        font-size: 14px;
     }
     #menu .menu-space { display: none; }
+    #show-known p { margin: 0; }
     .spell-grid {
         margin: 0;
         max-width: none;
@@ -101,13 +103,45 @@
     .flag-btn:hover { opacity: 0.7; }
     .flag-btn.active { opacity: 1; border-color: #aaa; }
 
+    #share-btn {
+        width: 100%;
+        padding: 6px 14px;
+        font-size: 12px;
+        font-family: 'Roboto', sans-serif;
+        font-variant: small-caps;
+        font-weight: bold;
+        background: #e0e0e0;
+        border: 1px solid #ccc;
+        border-radius: 999px;
+        cursor: pointer;
+        color: #444;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+    #share-btn:hover { background: #d4d4d4; }
+    #share-btn-mobile {
+        display: none;
+        padding: 0.1em 0.4em;
+        background: none;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        color: #555;
+        align-items: center;
+        opacity: 0.6;
+        transition: opacity 0.15s;
+    }
+    #share-btn-mobile:hover { opacity: 1; }
+    #theme-toggle-mobile { display: none; }
     #legenda {
         position: static;
         background: #EEEEEE;
         border: 1px solid #ccc;
         border-radius: 8px;
         font-family: 'Roboto', sans-serif;
-        font-size: 10pt;
+        font-size: 13px;
         overflow: hidden;
         margin-top: 10px;
         padding: 0;
@@ -154,8 +188,8 @@
         }
         #topbar #search-mobile {
             flex: 1;
-            padding: 0.35em 0.9em;
-            font-size: 10pt;
+            padding: 5px 12px;
+            font-size: 13px;
             font-family: 'Roboto', sans-serif;
             border: 1px solid #bbb;
             border-radius: 999px;
@@ -187,6 +221,11 @@
             margin-top: 44px;
             padding: 10px;
         }
+        #show-known { display: none; }
+        #share-btn { display: none; }
+        #share-btn-mobile { display: flex; }
+        #theme-toggle { display: none; }
+        #theme-toggle-mobile { display: flex; align-items: center; }
         #menu-container {
             display: none;
         }
@@ -197,7 +236,7 @@
             overflow-y: auto;
             background: #eee;
             z-index: 199;
-            padding: 12px 15px 20px;
+            padding: 15px 15px 20px;
             box-sizing: border-box;
         }
         #menu {
@@ -252,11 +291,14 @@
     }
 
     /* ── filtros ── */
+    #desktop-search {
+        margin-bottom: 10px;
+    }
     #search-input {
         width: 100%;
         box-sizing: border-box;
-        padding: 0.35em 0.9em;
-        font-size: 10pt;
+        padding: 5px 12px;
+        font-size: 13px;
         font-family: 'Roboto', sans-serif;
         border: 1px solid #ccc;
         border-radius: 999px;
@@ -269,12 +311,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 9pt;
+        font-size: 12px;
         font-variant: small-caps;
         font-weight: bold;
         color: #555;
         cursor: pointer;
-        padding: 0.25em 0;
+        padding: 3px 0;
         user-select: none;
         border-bottom: 1px solid #ccc;
     }
@@ -304,7 +346,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        font-size: 9pt;
+        font-size: 12px;
         cursor: pointer;
         padding: 1px 2px;
         color: #333;
@@ -327,13 +369,139 @@
     @media (max-width: 600px) {
         #site-title { font-size: 26px; }
     }
+
+    /* ── Catppuccin Mocha (dark) ── */
+    [data-theme="dark"] {
+        --base:    #1e1e2e; --mantle:  #181825; --crust:   #11111b;
+        --surface0:#313244; --surface1:#45475a; --surface2:#585b70;
+        --overlay0:#6c7086; --overlay1:#7f849c; --overlay2:#9399b2;
+        --subtext0:#a6adc8; --subtext1:#bac2de; --text:    #cdd6f4;
+        --rosewater:#f5e0dc; --flamingo:#f2cdcd; --pink:#f5c2e7;
+        --mauve:#cba6f7; --red:#f38ba8; --maroon:#eba0ac; --peach:#fab387;
+        --yellow:#f9e2af; --green:#a6e3a1; --teal:#94e2d5;
+        --sky:#89dceb; --sapphire:#74c7ec; --blue:#89b4fa; --lavender:#b4befe;
+        --level-0:#6c7086; --level-1:#89dceb; --level-2:#74c7ec; --level-3:#89b4fa;
+        --level-4:#b4befe; --level-5:#cba6f7; --level-6:#f5c2e7; --level-7:#fab387;
+        --level-8:#f38ba8; --level-9:#a6e3a1;
+    }
+    /* ── Catppuccin Latte (light) ── */
+    [data-theme="light"] {
+        --base:    #eff1f5; --mantle:  #e6e9ef; --crust:   #dce0e8;
+        --surface0:#ccd0da; --surface1:#bcc0cc; --surface2:#acb0be;
+        --overlay0:#9ca0b0; --overlay1:#8c8fa1; --overlay2:#7c7f93;
+        --subtext0:#6c6f85; --subtext1:#5c5f77; --text:    #4c4f69;
+        --rosewater:#dc8a78; --flamingo:#dd7878; --pink:#ea76cb;
+        --mauve:#8839ef; --red:#d20f39; --maroon:#e64553; --peach:#fe640b;
+        --yellow:#df8e1d; --green:#40a02b; --teal:#179299;
+        --sky:#04a5e5; --sapphire:#209fb5; --blue:#1e66f5; --lavender:#7287fd;
+        --level-0:#9ca0b0; --level-1:#04a5e5; --level-2:#209fb5; --level-3:#1e66f5;
+        --level-4:#7287fd; --level-5:#8839ef; --level-6:#ea76cb; --level-7:#fe640b;
+        --level-8:#d20f39; --level-9:#40a02b;
+    }
+    body { background: var(--base); }
+    [data-theme="light"] body { background: var(--mantle); }
+    /* Cards */
+    .spell-body { color: var(--subtext1); padding: 10px 10px 20px 10px; }
+    .spell-item[data-level] .spell-body { background: var(--surface0); border-color: var(--surface1); }
+    [data-theme="light"] .spell-item[data-level] .spell-body { background: var(--base); border-color: var(--surface1); }
+    .name p:not(.school) { color: var(--text); font-size: 15pt; font-weight: bold; }
+    .school { color: var(--subtext1); font-size: 8pt; font-weight: normal; }
+    .name { border-bottom-color: var(--surface2); margin: 0 0 4px 0; }
+    /* Meta line */
+    .meta-line {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 2px 4px;
+        margin: 3px 0 6px 0;
+        font-size: 7.5pt;
+        color: var(--subtext0);
+        line-height: 1.5;
+    }
+    .meta-sep {
+        color: var(--overlay0);
+        user-select: none;
+    }
+    .meta-pill {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 2px;
+        color: var(--subtext1);
+    }
+    .ritual-pill {
+        color: var(--yellow);
+    }
+    @keyframes bookmark-flash {
+        0%   { box-shadow: 0 0 0 0px var(--accent); }
+        50%  { box-shadow: 0 0 0 4px var(--accent); }
+        100% { box-shadow: 0 0 0 0px var(--accent); }
+    }
+    .bookmark-flash .spell-body {
+        animation: bookmark-flash 0.4s ease-out;
+    }
+    .conc-badge {
+        font-size: 7.5pt;
+        color: var(--subtext0);
+        margin-left: 3px;
+    }
+    /* Separadores */
+    .level-separator { color: var(--subtext1); }
+    .level-separator::before, .level-separator::after { border-top-color: var(--surface2); }
+    /* Menu sidebar */
+    #menu { background: var(--surface0); border-color: var(--surface1); color: var(--text); }
+    #legenda { background: var(--surface0); border-color: var(--surface1); }
+    [data-theme="light"] #menu { background: var(--base); border-color: var(--surface1); }
+    [data-theme="light"] #legenda { background: var(--base); border-color: var(--surface1); }
+    [data-theme="light"] #menu-container.open { background: var(--mantle); }
+    #legenda-toggle { color: var(--text); }
+    #legenda-body { border-top-color: var(--surface1); color: var(--subtext1); }
+    /* Flags */
+    .flag-btn { color: var(--text); }
+    .flag-btn.active { border-color: var(--text); }
+    /* Inputs */
+    #search-input { background: var(--mantle); border-color: var(--surface1); color: var(--text); }
+    #search-input::placeholder { color: var(--overlay1); }
+    /* Filtros */
+    .filter-title { color: var(--text); border-bottom-color: var(--surface1); }
+    .filter-body label { color: var(--subtext1); }
+    .filter-body label:hover { color: var(--text); }
+    .filter-body input[type="checkbox"] { accent-color: var(--text); }
+    /* Título */
+    #site-title { color: var(--text); }
+    /* Share */
+    #share-btn { background: var(--surface1); border-color: var(--surface2); color: var(--subtext1); }
+    #share-btn:hover { background: var(--surface2); color: var(--text); }
+    #share-btn-mobile { color: var(--subtext1); }
+    /* Hamburger */
+    #hamburger { color: var(--text); }
+    /* Theme toggle */
+    #theme-toggle, #theme-toggle-mobile {
+        font-size: 1.1em;
+        background: none;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 0.1em 0.2em;
+        line-height: 1;
+        opacity: 0.7;
+        transition: opacity 0.15s;
+    }
+    #theme-toggle:hover, #theme-toggle-mobile:hover { opacity: 1; }
+    /* Mobile */
+    @media (max-width: 600px) {
+        #topbar { background: var(--mantle); box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+        #menu-container.open { background: var(--base); }
+        #topbar #search-mobile { background: var(--surface0); border-color: var(--surface1); color: var(--text); }
+        #topbar #search-mobile::placeholder { color: var(--overlay1); }
+    }
 </style>
 </head>
-<body style="background:#ddd; padding: 20px;">
+<body style="padding: 20px;">
 
     <div id="topbar">
         <button id="hamburger">☰</button>
         <input type="text" id="search-mobile" placeholder="Pesquisar...">
+        <button id="theme-toggle-mobile" title="Alternar tema">☀️</button>
         <div id="known-mobile"><img src="img/unknown.svg"></div>
     </div>
     <div id="menu-backdrop"></div>
@@ -346,15 +514,21 @@
                     <p data-i18n="conhecidas">Conhecidas</p>
                     <img src="img/unknown.svg">
                 </div>
-                <div id="lang-flags">
-                    <button class="flag-btn active" data-lang="ptbr" title="PT-BR">🇧🇷</button>
-                    <button class="flag-btn" data-lang="en" title="EN">🇬🇧</button>
+                <div style="display:flex; align-items:center; gap:4px;">
+                    <div id="lang-flags">
+                        <button class="flag-btn active" data-lang="ptbr" title="PT-BR">🇧🇷</button>
+                        <button class="flag-btn" data-lang="en" title="EN">🇬🇧</button>
+                    </div>
+                    <button id="theme-toggle" title="Alternar tema">☀️</button>
+                    <button id="share-btn-mobile" title="Compartilhar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
                 </div>
             </div>
 
-            <div style="margin-top:8px;">
+            <div id="desktop-search">
                 <input type="text" id="search-input" placeholder="Pesquisar...">
             </div>
+
+            <button id="share-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span data-i18n="share_btn">Compartilhar Grimório</span></button>
 
             <div class="filter-section">
                 <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
@@ -419,7 +593,9 @@
     var FADE = 200;
     var selectedClasses = new Set();
     var onlyKnown = false;
-    var knownSpells = {};
+    var knownSpells = (function() {
+        try { return JSON.parse(localStorage.getItem('knownSpells') || '{}'); } catch(e) { return {}; }
+    })();
 
     var filters = {
         text:       '',
@@ -433,21 +609,8 @@
 
     var TIER_SYMBOLS = ['○','◆','◆◆','◆◆◆','◆◆◆◆','★','★★','★★★','✶','✶✶'];
 
-    var LEVEL_COLORS = [
-        '#BDBDBD',
-        '#616161',
-        '#00E676',
-        '#021aee',
-        '#d602ee',
-        '#FF9800',
-        '#ee6002',
-        '#E91E63',
-        '#C17900',
-        '#00BFA5'
-    ];
-
     function levelAccent(lvl) {
-        return LEVEL_COLORS[lvl];
+        return 'var(--level-' + lvl + ')';
     }
 
     function isKnown(name) {
@@ -502,6 +665,13 @@
         return level === 0 ? t.level_cantrip : t.level_n + level;
     }
 
+    function compactComponents(comp) {
+        return comp.split(',')
+            .map(function(c) { return c.trim().charAt(0).toUpperCase(); })
+            .filter(function(c) { return c === 'V' || c === 'S' || c === 'M'; })
+            .join('\u00a0');
+    }
+
     function buildCard(spell) {
         var card = document.createElement('div');
         card.className = 'grid-item spell-item';
@@ -512,32 +682,55 @@
         var lvl = spell.level;
         card.style.setProperty('--accent', levelAccent(lvl));
 
+        var concBadge = spell.concentration ? '<span class="conc-badge">🧠 Concentração</span>' : '';
+        var ritualPill = spell.ritual
+            ? '<span class="meta-sep">·</span><span class="meta-pill ritual-pill">📖 Ritual</span>'
+            : '';
+
         card.innerHTML =
             '<div class="spell-body">' +
                 '<div class="title">' +
                     '<div class="name">' +
                         '<p>' + spell.displayName + '</p>' +
-                        (spell.ritual ? '<img src="img/ritual.svg">' : '') +
                         '<p class="school">' + spell.school + '</p>' +
                     '</div>' +
                     '<div class="known"><img src="' + knownIcon(spell) + '"></div>' +
                 '</div>' +
-                '<div class="details">' +
-                    '<div class="meta">' +
-                        '<div class="meta-item"><img src="img/cast.svg"><div class="meta-content">' + spell.castTime + '</div></div>' +
-                        '<div class="meta-item"><img src="img/range.svg"><div class="meta-content">' + spell.range + '</div></div>' +
-                        '<div class="meta-item"><img src="img/components.svg"><div class="meta-content">' + spell.components + '</div></div>' +
-                        '<div class="meta-item"><img src="img/duration.svg">' + (spell.concentration ? '<img src="img/concentration.svg">' : '') + '<div class="meta-content">' + spell.duration + '</div></div>' +
-                    '</div>' +
-                    '<div class="description">' + spell.description + '</div>' +
+                '<div class="meta-line">' +
+                    '<span class="meta-pill">⚡\u00a0' + spell.castTime + '</span>' +
+                    '<span class="meta-sep">·</span>' +
+                    '<span class="meta-pill">📏\u00a0' + spell.range + '</span>' +
+                    '<span class="meta-sep">·</span>' +
+                    '<span class="meta-pill">🪄\u00a0' + compactComponents(spell.components) + '</span>' +
+                    '<span class="meta-sep">·</span>' +
+                    '<span class="meta-pill">⏳\u00a0' + spell.duration + concBadge + '</span>' +
+                    ritualPill +
                 '</div>' +
+                '<div class="description">' + spell.description + '</div>' +
                 '<div class="tier-badge" aria-label="Spell level ' + lvl + '">(' + lvl + ') ' + TIER_SYMBOLS[lvl] + '</div>' +
             '</div>';
 
-        card.querySelector('.known').addEventListener('click', function() {
+        function toggleKnown() {
             knownSpells[spell.name] = !knownSpells[spell.name];
+            try { localStorage.setItem('knownSpells', JSON.stringify(knownSpells)); } catch(e) {}
             card.querySelector('.known img').src = knownIcon(spell);
             if (onlyKnown) render();
+        }
+
+        card.querySelector('.known').addEventListener('click', toggleKnown);
+
+        // Double-tap para bookmark (mobile)
+        var lastTap = 0;
+        card.addEventListener('touchend', function(e) {
+            var now = Date.now();
+            if (now - lastTap < 300) {
+                e.preventDefault();
+                toggleKnown();
+                // Feedback visual rápido
+                card.classList.add('bookmark-flash');
+                setTimeout(function() { card.classList.remove('bookmark-flash'); }, 400);
+            }
+            lastTap = now;
         });
 
         return card;
@@ -725,6 +918,15 @@
     ];
 
     var currentLang = 'ptbr';
+    var currentBook  = VERSIONS[0].file;
+
+    var pendingShareState = (function() {
+        try {
+            var hash = window.location.hash;
+            if (hash.indexOf('#g=') !== 0) return null;
+            return JSON.parse(decodeURIComponent(escape(atob(hash.slice(3)))));
+        } catch(e) { return null; }
+    })();
     var currentClasses = [];
 
     var i18n = {
@@ -747,7 +949,9 @@
             filter_casttime:   'Conjuração',
             filter_range:      'Alcance',
             filter_components: 'Componentes',
-            filter_duration:   'Duração'
+            filter_duration:   'Duração',
+            share_btn:         'Compartilhar Grimório',
+            share_copied:      'Link copiado!'
         },
         en: {
             classe:            'Class',
@@ -768,7 +972,9 @@
             filter_casttime:   'Cast Time',
             filter_range:      'Range',
             filter_components: 'Components',
-            filter_duration:   'Duration'
+            filter_duration:   'Duration',
+            share_btn:         'Share Grimoire',
+            share_copied:      'Link copied!'
         }
     };
 
@@ -800,15 +1006,50 @@
         });
     }
 
+    function applyShareState(state) {
+        if (state.lang && i18n[state.lang]) {
+            currentLang = state.lang;
+            document.querySelectorAll('.flag-btn').forEach(function(b) {
+                b.classList.toggle('active', b.dataset.lang === currentLang);
+            });
+            applyI18n();
+        }
+        if (state.known) {
+            state.known.forEach(function(name) { knownSpells[name] = true; });
+            try { localStorage.setItem('knownSpells', JSON.stringify(knownSpells)); } catch(e) {}
+        }
+        onlyKnown = !!state.onlyKnown;
+        syncKnownIcons();
+        selectedClasses.clear();
+        (state.classes || []).forEach(function(c) { selectedClasses.add(c); });
+        var f = state.filters || {};
+        filters.text = f.text || '';
+        document.getElementById('search-input').value = filters.text;
+        filters.levels.clear();     (f.levels     || []).forEach(function(v) { filters.levels.add(v); });
+        filters.schools.clear();    (f.schools    || []).forEach(function(v) { filters.schools.add(v); });
+        filters.castTimes.clear();  (f.castTimes  || []).forEach(function(v) { filters.castTimes.add(v); });
+        filters.ranges.clear();     (f.ranges     || []).forEach(function(v) { filters.ranges.add(v); });
+        filters.components.clear(); (f.components || []).forEach(function(v) { filters.components.add(v); });
+        filters.durations.clear();  (f.durations  || []).forEach(function(v) { filters.durations.add(v); });
+    }
+
     function loadSpells(file) {
+        currentBook = file;
         fetch('js/' + file + '.json')
             .then(function(r) { return r.json(); })
             .then(function(data) {
                 document.getElementById('fetch-error').style.display = 'none';
                 spells2 = data.spells;
                 currentClasses = data.classes;
-                render();
-                buildFilterUI(true);
+                if (pendingShareState) {
+                    applyShareState(pendingShareState);
+                    pendingShareState = null;
+                    render();
+                    buildFilterUI(false);
+                } else {
+                    render();
+                    buildFilterUI(true);
+                }
             })
             .catch(function() {
                 document.getElementById('fetch-error').style.display = 'block';
@@ -826,13 +1067,16 @@
                     if (loaded === VERSIONS.length) {
                         var container = document.getElementById('filter-versions');
                         container.innerHTML = '';
-                        VERSIONS.forEach(function(ver, i) {
+                        var targetBook = pendingShareState && pendingShareState.book;
+                        var initialFile = (targetBook && VERSIONS.find(function(v) { return v.file === targetBook; }))
+                            ? targetBook : VERSIONS[0].file;
+                        VERSIONS.forEach(function(ver) {
                             var label = document.createElement('label');
                             var rb = document.createElement('input');
                             rb.type = 'radio';
                             rb.name = 'version-radio';
                             rb.value = ver.file;
-                            rb.checked = (i === 0);
+                            rb.checked = (ver.file === initialFile);
                             rb.addEventListener('change', function() {
                                 loadSpells(this.value);
                             });
@@ -840,7 +1084,7 @@
                             label.appendChild(document.createTextNode('\u00a0' + ver.label));
                             container.appendChild(label);
                         });
-                        loadSpells(VERSIONS[0].file);
+                        loadSpells(initialFile);
                     }
                 })
                 .catch(function() {
@@ -866,12 +1110,65 @@
     });
 
     function toggleMenu() {
-        var open = document.getElementById('menu-container').classList.toggle('open');
+        var topbarH = document.getElementById('topbar').offsetHeight;
+        var mc = document.getElementById('menu-container');
+        mc.style.top = topbarH + 'px';
+        var open = mc.classList.toggle('open');
         document.getElementById('menu-backdrop').classList.toggle('open');
         document.getElementById('hamburger').textContent = open ? '✕' : '☰';
     }
+    function shareGrimoire() {
+        var state = {
+            v: 1,
+            lang: currentLang,
+            book: currentBook,
+            known: Object.keys(knownSpells).filter(function(k) { return knownSpells[k]; }),
+            onlyKnown: onlyKnown,
+            classes: Array.from(selectedClasses),
+            filters: {
+                text:       filters.text,
+                levels:     Array.from(filters.levels),
+                schools:    Array.from(filters.schools),
+                castTimes:  Array.from(filters.castTimes),
+                ranges:     Array.from(filters.ranges),
+                components: Array.from(filters.components),
+                durations:  Array.from(filters.durations)
+            }
+        };
+        var encoded = btoa(unescape(encodeURIComponent(JSON.stringify(state))));
+        var url = window.location.href.split('#')[0] + '#g=' + encoded;
+        var t = i18n[currentLang];
+        navigator.clipboard.writeText(url).then(function() {
+            var span = document.querySelector('#share-btn [data-i18n]');
+            if (span) { span.textContent = t.share_copied; setTimeout(function() { span.textContent = t.share_btn; }, 2000); }
+        }).catch(function() {
+            window.prompt('Copie o link:', url);
+        });
+    }
+    document.getElementById('share-btn').addEventListener('click', shareGrimoire);
+    document.getElementById('share-btn-mobile').addEventListener('click', shareGrimoire);
+
     document.getElementById('hamburger').addEventListener('click', toggleMenu);
     document.getElementById('menu-backdrop').addEventListener('click', toggleMenu);
+
+    // ── Theme toggle ──
+    var currentTheme = (function() {
+        try { return localStorage.getItem('theme') || 'dark'; } catch(e) { return 'dark'; }
+    })();
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        var icon = theme === 'dark' ? '☀️' : '🌙';
+        document.getElementById('theme-toggle').textContent = icon;
+        document.getElementById('theme-toggle-mobile').textContent = icon;
+    }
+    function toggleTheme() {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(currentTheme);
+        try { localStorage.setItem('theme', currentTheme); } catch(e) {}
+    }
+    applyTheme(currentTheme);
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
 
     initVersions();
     window.addEventListener('resize', alignMenu);
