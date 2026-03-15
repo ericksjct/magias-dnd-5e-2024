@@ -72,16 +72,16 @@
     }
     #menu {
         flex-direction: column;
-        width: auto;
-        min-width: 9em;
+        width: 369px;
+        min-width: 369px;
         margin: 0;
         gap: 8px;
         padding: 15px 15px 15px;
         font-size: 14px;
     }
     #menu .menu-space { display: none; }
-    #show-known { align-items: center; }
-    #show-known p { margin: 0; }
+    #show-known { align-items: center; cursor: pointer; }
+    #show-known img { height: 27px; width: auto; }
     .spell-grid {
         margin: 0;
         max-width: none;
@@ -202,6 +202,29 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+    .share-label {
+        font-size: 10px;
+        font-variant: small-caps;
+        color: #888;
+        margin-bottom: 3px;
+    }
+    #print-btn, #print-btn-m {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        font-family: 'Roboto', sans-serif;
+        font-variant: small-caps;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #e8e8e8;
+        cursor: pointer;
+        color: #444;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #print-btn:hover, #print-btn-m:hover { background: #d8d8d8; }
     #theme-toggle-mobile { display: none; }
     .legend-separator {
         text-align: center;
@@ -211,18 +234,7 @@
         margin: 10px 0 4px;
         user-select: none;
     }
-    #legenda {
-        position: static;
-        bottom: auto;
-        right: auto;
-        background: none;
-        border: none;
-        border-radius: 0;
-        padding: 0;
-        font-size: inherit;
-        z-index: auto;
-        box-shadow: none;
-    }
+
     @media (min-width: 1600px) {
         .spell-grid {
             columns: 3;
@@ -264,6 +276,7 @@
         #known-mobile img {
             height: 1.5em;
         }
+        .sort-control-mobile { flex-shrink: 0; }
         #hamburger {
             display: flex;
             align-items: center;
@@ -463,7 +476,7 @@
     [data-theme="light"] .spell-item[data-level] .spell-body { background: var(--base); border-color: var(--surface1); }
     .name p:not(.school) { color: var(--text); font-size: 15pt; font-weight: bold; }
     .school { color: var(--subtext1); font-size: 8pt; font-weight: normal; }
-    .name { border-bottom-color: var(--surface2); margin: 0 0 4px 0; }
+    .name { border-bottom-color: var(--surface2); margin: 0; }
     /* Meta line */
     .meta-line {
         display: flex;
@@ -505,8 +518,8 @@
     .level-separator { color: var(--subtext1); }
     .level-separator::before, .level-separator::after { border-top-color: var(--surface2); }
     /* Menu sidebar */
-    #menu { background: var(--surface0); border-color: var(--surface1); color: var(--text); }
-    [data-theme="light"] #menu { background: var(--base); border-color: var(--surface1); }
+    #menu { background: var(--surface0); border-color: var(--surface1); color: var(--text); box-shadow: 2px 3px 8px rgba(0,0,0,0.25); }
+    [data-theme="light"] #menu { background: var(--base); border-color: var(--surface1); box-shadow: 2px 3px 6px rgba(0,0,0,0.08); }
     [data-theme="light"] #menu-container.open { background: var(--mantle); }
     /* Flags */
     .flag-btn { color: var(--text); }
@@ -533,6 +546,16 @@
     #share-copy-m:hover { background: var(--surface2); color: var(--text); }
     #share-copy-m.copied { background: var(--surface0); color: var(--green); }
     #share-url-m { color: var(--overlay1); }
+    /* Sort control */
+    .sort-control { border-color: var(--surface2); }
+    .sort-btn { color: var(--overlay1); }
+    .sort-btn + .sort-btn { border-left-color: var(--surface2); }
+    .sort-btn:hover { color: var(--subtext1); }
+    .sort-btn.active { background: var(--surface1); color: var(--text); }
+    /* Print */
+    #print-btn, #print-btn-m { background: var(--surface1); border-color: var(--surface2); color: var(--subtext1); }
+    #print-btn:hover, #print-btn-m:hover { background: var(--surface2); color: var(--text); }
+    .share-label { color: var(--overlay1); }
     /* Hamburger */
     #hamburger { color: var(--text); }
     /* Theme toggle */
@@ -616,16 +639,26 @@
         <input type="text" id="search-mobile" placeholder="Pesquisar magias...">
         <button id="theme-toggle-mobile" title="Alternar tema">☀️</button>
         <div id="known-mobile"><img class="unknown-icon" src="img/unknown-dark.svg"></div>
+        <div id="sort-control-mobile" class="sort-control sort-control-mobile">
+            <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
+            <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
+        </div>
     </div>
     <div id="menu-backdrop"></div>
 
     <div id="layout">
     <div id="menu-container">
         <div id="menu">
-            <div style="display:flex; align-items:center; justify-content:space-between;">
-                    <div id="show-known" class="menu-item">
-                    <p data-i18n="conhecidas">Conhecidas</p>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                <div id="show-known" class="menu-item" title="Conhecidas">
                     <img class="unknown-icon" src="img/unknown-dark.svg">
+                </div>
+                <div style="display:flex; align-items:center; gap:5px; flex:1; justify-content:center;">
+                    <span style="font-size:11px; font-variant:small-caps; color:var(--subtext1, #888); white-space:nowrap;" data-i18n="ordem_label">Ordem:</span>
+                    <div id="sort-control" class="sort-control">
+                        <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
+                        <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
+                    </div>
                 </div>
                 <div style="display:flex; align-items:center; gap:4px;">
                     <div id="lang-flags">
@@ -639,6 +672,7 @@
 
             <div class="legend-separator">···</div>
 
+            <div class="share-label">Copie seu Grimório:</div>
             <div id="share-btn">
                 <button id="share-copy">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -646,6 +680,14 @@
                 </button>
                 <span id="share-url"></span>
             </div>
+
+            <div class="legend-separator">···</div>
+
+            <div class="share-label">Imprimir:</div>
+            <button id="print-btn">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Imprimir Cards
+            </button>
 
             <div class="legend-separator">···</div>
 
@@ -704,6 +746,7 @@
             </div>
         </div>
         <div id="mobile-menu">
+            <div class="share-label">Copie seu Grimório:</div>
             <div id="share-btn-m">
                 <button id="share-copy-m">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -711,6 +754,12 @@
                 </button>
                 <span id="share-url-m"></span>
             </div>
+            <div class="legend-separator">···</div>
+            <div class="share-label">Imprimir:</div>
+            <button id="print-btn-m">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Imprimir Cards
+            </button>
             <div class="legend-separator">···</div>
             <div class="filter-section">
                 <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
@@ -793,6 +842,7 @@
     var FADE = 200;
     var selectedClasses = new Set();
     var onlyKnown = false;
+    var sortAlpha = false;
     var knownSpells = (function() {
         try { return JSON.parse(localStorage.getItem('knownSpells') || '{}'); } catch(e) { return {}; }
     })();
@@ -1008,6 +1058,7 @@
             book: currentBook,
             known: Object.keys(knownSpells).filter(function(k) { return knownSpells[k]; }),
             onlyKnown: onlyKnown,
+            sortAlpha: sortAlpha,
             classes: Array.from(selectedClasses),
             filters: {
                 text:       filters.text,
@@ -1030,14 +1081,26 @@
         var grid = document.getElementById('spell-grid');
         grid.innerHTML = '';
 
-        var lastLevel = -1;
-        spells2.forEach(function(spell) {
-            if (spell.level !== lastLevel) {
-                lastLevel = spell.level;
+        var displaySpells = spells2.slice().sort(function(a, b) {
+            return sortAlpha
+                ? a.name.localeCompare(b.name)
+                : a.level - b.level || a.name.localeCompare(b.name);
+        });
+
+        var lastKey = null;
+        displaySpells.forEach(function(spell) {
+            var key = sortAlpha ? spell.name.charAt(0).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') : spell.level;
+            if (key !== lastKey) {
+                lastKey = key;
                 var sep = document.createElement('div');
                 sep.className = 'level-separator';
-                sep.dataset.sepLevel = spell.level;
-                sep.textContent = levelLabel(spell.level);
+                if (sortAlpha) {
+                    sep.dataset.sepLetter = key;
+                    sep.textContent = key;
+                } else {
+                    sep.dataset.sepLevel = spell.level;
+                    sep.textContent = levelLabel(spell.level);
+                }
                 grid.appendChild(sep);
             }
             grid.appendChild(buildCard(spell));
@@ -1096,10 +1159,18 @@
         });
 
         document.querySelectorAll('.level-separator').forEach(function(sep) {
-            var level = parseInt(sep.dataset.sepLevel);
-            var hasVisible = spells2.some(function(s) {
-                return s.level === level && shouldShow(s);
-            });
+            var hasVisible;
+            if (sep.dataset.sepLetter !== undefined) {
+                var letter = sep.dataset.sepLetter;
+                hasVisible = spells2.some(function(s) {
+                    return s.name.charAt(0).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') === letter && shouldShow(s);
+                });
+            } else {
+                var level = parseInt(sep.dataset.sepLevel);
+                hasVisible = spells2.some(function(s) {
+                    return s.level === level && shouldShow(s);
+                });
+            }
             (hasVisible ? toShow : toHide).push(sep);
         });
 
@@ -1142,6 +1213,19 @@
         applyFilter();
     });
 
+    function syncSortToggle() {
+        document.querySelectorAll('.sort-btn').forEach(function(btn) {
+            btn.classList.toggle('active', (btn.dataset.sort === 'alpha') === sortAlpha);
+        });
+    }
+    document.querySelectorAll('.sort-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            sortAlpha = (this.dataset.sort === 'alpha');
+            syncSortToggle();
+            render();
+        });
+    });
+
 
     // Versões disponíveis — adicione aqui novos arquivos no futuro
     var VERSIONS = [];
@@ -1163,6 +1247,9 @@
             classe:            'Classe',
             versao:            'Versão',
             conhecidas:        'Conhecidas',
+            sort_level:        'Nível',
+            sort_alpha:        'A-Z',
+            ordem_label:       'Ordem:',
             legenda:           'Legenda',
             leg_known:         'Magia conhecida',
             leg_outside:       'Conhecida, fora da classe',
@@ -1195,6 +1282,9 @@
             classe:            'Class',
             versao:            'Version',
             conhecidas:        'Known',
+            sort_level:        'Level',
+            sort_alpha:        'A-Z',
+            ordem_label:       'Order:',
             legenda:           'Legend',
             leg_known:         'Known spell',
             leg_outside:       'Known, outside class',
@@ -1270,6 +1360,8 @@
         }
         onlyKnown = !!state.onlyKnown;
         syncKnownIcons();
+        sortAlpha = !!state.sortAlpha;
+        syncSortToggle();
         selectedClasses.clear();
         (state.classes || []).forEach(function(c) { selectedClasses.add(c); });
         var f = state.filters || {};
@@ -1406,6 +1498,8 @@
     }
     document.getElementById('share-copy').addEventListener('click', function() { shareGrimoire('share-copy', 'share-copy-label'); });
     document.getElementById('share-copy-m').addEventListener('click', function() { shareGrimoire('share-copy-m', 'share-copy-label-m'); });
+    document.getElementById('print-btn').addEventListener('click', function() { window.print(); });
+    document.getElementById('print-btn-m').addEventListener('click', function() { window.print(); });
     document.getElementById('share-btn-mobile').addEventListener('click', function() { shareGrimoire('share-copy', 'share-copy-label'); });
 
     document.getElementById('hamburger').addEventListener('click', toggleMenu);
