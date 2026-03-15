@@ -1,5 +1,6 @@
 {
   "version": "Player's Handbook 5E 2024 (Official)",
+  "credits": "Wizards of the Coast",
   "classes": [
     {"key": "Bardo",       "ptbr": "Bardo",       "en": "Bard"},
     {"key": "Bruxo",       "ptbr": "Bruxo",       "en": "Warlock"},

@@ -107,22 +107,46 @@
 
     #share-btn {
         width: 100%;
-        padding: 6px 14px;
-        font-size: 12px;
-        font-family: 'Roboto', sans-serif;
-        font-variant: small-caps;
-        font-weight: bold;
-        background: #e0e0e0;
+        display: flex;
+        align-items: center;
         border: 1px solid #ccc;
         border-radius: 999px;
-        cursor: pointer;
-        color: #444;
+        overflow: hidden;
+        background: #e0e0e0;
+    }
+    #share-copy {
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 5px;
+        width: 70px;
+        padding: 5px 0;
+        font-size: 11px;
+        font-family: 'Roboto', sans-serif;
+        font-variant: small-caps;
+        font-weight: bold;
+        background: #d0d0d0;
+        border: none;
+        border-right: 1px solid #ccc;
+        cursor: pointer;
+        color: #444;
+        transition: background 0.2s, color 0.2s;
+        white-space: nowrap;
     }
-    #share-btn:hover { background: #d4d4d4; }
+    #share-copy:hover { background: #bbb; color: #111; }
+    #share-copy.copied { background: #c8ecd2; color: #2a7a3b; }
+    #share-url {
+        flex-grow: 1;
+        width: 0;
+        padding: 0 8px;
+        font-size: 10px;
+        font-family: monospace;
+        color: #888;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
     #share-btn-mobile {
         display: none;
         padding: 0.1em 0.4em;
@@ -136,6 +160,48 @@
         transition: opacity 0.15s;
     }
     #share-btn-mobile:hover { opacity: 1; }
+    #share-btn-m {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 999px;
+        overflow: hidden;
+        background: #e0e0e0;
+        margin-bottom: 4px;
+    }
+    #share-copy-m {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 70px;
+        padding: 5px 0;
+        font-size: 11px;
+        font-family: 'Roboto', sans-serif;
+        font-variant: small-caps;
+        font-weight: bold;
+        background: #d0d0d0;
+        border: none;
+        border-right: 1px solid #ccc;
+        cursor: pointer;
+        color: #444;
+        transition: background 0.2s, color 0.2s;
+        white-space: nowrap;
+    }
+    #share-copy-m:hover { background: #bbb; color: #111; }
+    #share-copy-m.copied { background: #c8ecd2; color: #2a7a3b; }
+    #share-url-m {
+        flex-grow: 1;
+        width: 0;
+        padding: 0 8px;
+        font-size: 10px;
+        font-family: monospace;
+        color: #888;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
     #theme-toggle-mobile { display: none; }
     .legend-separator {
         text-align: center;
@@ -206,9 +272,10 @@
             border: none;
             font-size: 1.5em;
             cursor: pointer;
-            padding: 0 4px;
+            padding: 0;
             line-height: 1;
             flex-shrink: 0;
+            width: 1.5em;
         }
         #layout {
             display: block;
@@ -443,9 +510,17 @@
     /* Título */
     #site-title { color: var(--text); }
     /* Share */
-    #share-btn { background: var(--surface1); border-color: var(--surface2); color: var(--subtext1); }
-    #share-btn:hover { background: var(--surface2); color: var(--text); }
+    #share-btn { background: var(--mantle); border-color: var(--surface2); }
+    #share-copy { background: var(--surface1); border-right-color: var(--surface2); color: var(--subtext1); }
+    #share-copy:hover { background: var(--surface2); color: var(--text); }
+    #share-copy.copied { background: var(--surface0); color: var(--green); }
+    #share-url { color: var(--overlay1); }
     #share-btn-mobile { color: var(--subtext1); }
+    #share-btn-m { background: var(--mantle); border-color: var(--surface2); }
+    #share-copy-m { background: var(--surface1); border-right-color: var(--surface2); color: var(--subtext1); }
+    #share-copy-m:hover { background: var(--surface2); color: var(--text); }
+    #share-copy-m.copied { background: var(--surface0); color: var(--green); }
+    #share-url-m { color: var(--overlay1); }
     /* Hamburger */
     #hamburger { color: var(--text); }
     /* Theme toggle */
@@ -462,19 +537,71 @@
     }
     #theme-toggle:hover, #theme-toggle-mobile:hover { opacity: 1; }
     /* Mobile */
+    #mobile-menu { display: none; }
     @media (max-width: 600px) {
+        #menu { display: none; }
+        #mobile-menu { display: block; }
         #topbar { background: var(--mantle); box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
         #menu-container.open { background: var(--base); }
         #topbar #search-mobile { background: var(--surface0); border-color: var(--surface1); color: var(--text); }
         #topbar #search-mobile::placeholder { color: var(--overlay1); }
+        #site-footer { flex-direction: column; gap: 16px; }
+        .footer-col-right { text-align: left; }
+        #footer-credits { align-items: flex-start; text-align: left; }
+    }
+    #site-footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin-top: 40px;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 20px 40px;
+        border-top: 1px solid var(--surface1);
+        background: var(--mantle);
+        font-family: 'Roboto', sans-serif;
+        font-size: 11px;
+        color: var(--overlay0);
+        box-sizing: border-box;
+    }
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .footer-col strong {
+        color: var(--subtext0);
+        font-size: 12px;
+    }
+    .footer-col a {
+        color: var(--overlay1);
+        text-decoration: none;
+    }
+    .footer-col a:hover {
+        color: var(--text);
+        text-decoration: underline;
+    }
+    .footer-credit-item {
+        margin-bottom: 6px;
+    }
+    .footer-credit-item .footer-credit-version {
+        color: var(--subtext0);
+        font-weight: bold;
+    }
+    #footer-credits {
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col-right {
+        text-align: right;
     }
 </style>
 </head>
-<body style="padding: 20px;">
+<body style="padding: 20px; padding-bottom: 0;">
 
     <div id="topbar">
         <button id="hamburger">☰</button>
-        <input type="text" id="search-mobile" placeholder="Pesquisar...">
+        <input type="text" id="search-mobile" placeholder="Pesquisar magias...">
         <button id="theme-toggle-mobile" title="Alternar tema">☀️</button>
         <div id="known-mobile"><img class="unknown-icon" src="img/unknown-dark.svg"></div>
     </div>
@@ -498,15 +625,27 @@
                 </div>
             </div>
 
-            <div id="desktop-search">
-                <input type="text" id="search-input" placeholder="Pesquisar...">
+            <div class="legend-separator">···</div>
+
+            <div id="share-btn">
+                <button id="share-copy">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    <span id="share-copy-label" data-i18n="share_copy">Copiar</span>
+                </button>
+                <span id="share-url"></span>
             </div>
 
-            <button id="share-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span data-i18n="share_btn">Compartilhar Grimório</span></button>
+            <div class="legend-separator">···</div>
 
             <div class="filter-section">
                 <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
                 <div class="filter-body" id="filter-versions"></div>
+            </div>
+
+            <div class="legend-separator">···</div>
+
+            <div id="desktop-search">
+                <input type="text" id="search-input" placeholder="Pesquisar magias...">
             </div>
             <div class="filter-section collapsed">
                 <div class="filter-title"><span data-i18n="filter_class">Classe</span><span class="filter-arrow">▾</span></div>
@@ -552,6 +691,63 @@
                 </div>
             </div>
         </div>
+        <div id="mobile-menu">
+            <div id="share-btn-m">
+                <button id="share-copy-m">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    <span id="share-copy-label-m" data-i18n="share_copy">Copiar</span>
+                </button>
+                <span id="share-url-m"></span>
+            </div>
+            <div class="legend-separator">···</div>
+            <div class="filter-section">
+                <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-versions-m"></div>
+            </div>
+            <div class="legend-separator">···</div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_class">Classe</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-classes-m"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_level">Nível</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-levels-m"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_school">Escola</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-schools-m"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_casttime">Conjuração</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-casttimes-m"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_range">Alcance</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-ranges-m"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_components">Componentes</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-components-m"></div>
+            </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_duration">Duração</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-durations-m"></div>
+            </div>
+            <div class="legend-separator">···</div>
+            <div class="filter-section" id="legenda-m">
+                <div class="filter-title">
+                    <span data-i18n="legenda">Legenda</span>
+                    <span class="filter-arrow">▾</span>
+                </div>
+                <div class="filter-body">
+                    <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
+                    <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
+                    <div class="legenda-item"><img class="unknown-icon" src="img/unknown-dark.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
+                    <div class="legenda-item"><span class="ritual-pill">📖</span> <span data-i18n="leg_ritual">Ritual</span></div>
+                    <div class="legenda-item"><span class="conc-badge">🧠</span> <span data-i18n="leg_concentration">Concentração</span></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="fetch-error" style="display:none; max-width:20cm; margin: 20px auto; padding: 1em; background:#f8d7da; border:1px solid #f5c2c7; border-radius:8px; font-family:helvetica,sans-serif; color:#842029;">
@@ -563,6 +759,22 @@
         <div class="spell-grid" id="spell-grid"></div>
     </div>
     </div>
+    <footer id="site-footer">
+        <div class="footer-col">
+            <strong><span data-i18n="footer_made">Feito com ♥ por</span> Erick Teixeira</strong>
+            <a href="mailto:erick.sjct@gmail.com">erick.sjct@gmail.com</a>
+            <a href="https://github.com/ericksjct/magias-dnd-5e-2024" target="_blank">github.com/ericksjct/magias-dnd-5e-2024</a>
+            <div class="legend-separator">···</div>
+            <strong>Feedback e correção: Renata Moura</strong>
+        </div>
+        <div class="footer-col" id="footer-credits"></div>
+        <div class="footer-col footer-col-right">
+            <strong data-i18n="footer_license">Licença</strong>
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+            <span data-i18n="footer_copyright">© 2026 Erick Teixeira</span>
+            <span style="margin-top:6px; font-style:italic;" data-i18n="footer_disclaimer">Não afiliado à Wizards of the Coast. Dungeons &amp; Dragons é marca registrada da WotC.</span>
+        </div>
+    </footer>
 
     <script>
     var spells2 = [];
@@ -719,22 +931,25 @@
     }
 
     function buildCheckboxGroup(containerId, values, filterSet, labelFn) {
-        var container = document.getElementById(containerId);
-        container.innerHTML = '';
-        values.forEach(function(val) {
-            var label = document.createElement('label');
-            var cb = document.createElement('input');
-            cb.type = 'checkbox';
-            cb.checked = filterSet.has(val);
-            cb.addEventListener('change', function() {
-                if (this.checked) filterSet.add(val);
-                else filterSet.delete(val);
-                applyFilter();
-                alignMenu();
+        [containerId, containerId + '-m'].forEach(function(id) {
+            var container = document.getElementById(id);
+            if (!container) return;
+            container.innerHTML = '';
+            values.forEach(function(val) {
+                var label = document.createElement('label');
+                var cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.checked = filterSet.has(val);
+                cb.addEventListener('change', function() {
+                    if (this.checked) filterSet.add(val);
+                    else filterSet.delete(val);
+                    applyFilter();
+                    alignMenu();
+                });
+                label.appendChild(cb);
+                label.appendChild(document.createTextNode('\u00a0' + labelFn(val)));
+                container.appendChild(label);
             });
-            label.appendChild(cb);
-            label.appendChild(document.createTextNode('\u00a0' + labelFn(val)));
-            container.appendChild(label);
         });
     }
 
@@ -774,7 +989,32 @@
         );
     }
 
+    function buildShareUrl() {
+        var state = {
+            v: 1,
+            lang: currentLang,
+            book: currentBook,
+            known: Object.keys(knownSpells).filter(function(k) { return knownSpells[k]; }),
+            onlyKnown: onlyKnown,
+            classes: Array.from(selectedClasses),
+            filters: {
+                text:       filters.text,
+                levels:     Array.from(filters.levels),
+                schools:    Array.from(filters.schools),
+                castTimes:  Array.from(filters.castTimes),
+                ranges:     Array.from(filters.ranges),
+                components: Array.from(filters.components),
+                durations:  Array.from(filters.durations)
+            }
+        };
+        var encoded = btoa(unescape(encodeURIComponent(JSON.stringify(state))));
+        return window.location.href.split('#')[0] + '#g=' + encoded;
+    }
+
     function render() {
+        var shareUrl = buildShareUrl();
+        document.getElementById('share-url').textContent = shareUrl;
+        document.getElementById('share-url-m').textContent = shareUrl;
         var grid = document.getElementById('spell-grid');
         grid.innerHTML = '';
 
@@ -798,6 +1038,7 @@
     var menuPaddingTop = null;
 
     function alignMenu() {
+        if (window.innerWidth <= 600) return;
         var menuContainer = document.getElementById('menu-container');
         var firstCard = document.querySelector('.spell-item:not([style*="display: none"])');
         if (!firstCard) {
@@ -891,13 +1132,10 @@
 
 
     // Versões disponíveis — adicione aqui novos arquivos no futuro
-    var VERSIONS = [
-        { file: 'spells-ptbr', label: null },
-        { file: 'spells-en',   label: null }
-    ];
+    var VERSIONS = [];
 
     var currentLang = 'ptbr';
-    var currentBook  = VERSIONS[0].file;
+    var currentBook  = 'spells-ptbr';
 
     var pendingShareState = (function() {
         try {
@@ -930,7 +1168,16 @@
             filter_components: 'Componentes',
             filter_duration:   'Duração',
             share_btn:         'Compartilhar Grimório',
-            share_copied:      'Link copiado!'
+            share_copy:        'Copiar',
+            share_copied:      'Link copiado!',
+            share_copy_done:   'Copiado',
+            footer_made:       'Feito com ♥ por',
+            footer_icon_by:    'Ícone por',
+            footer_noun:       'Noun Project',
+            footer_credits:    'Créditos',
+            footer_license:    'Licença',
+            footer_copyright:  '© 2026 Erick Teixeira',
+            footer_disclaimer: 'Não afiliado à Wizards of the Coast. Dungeons & Dragons é marca registrada da WotC.'
         },
         en: {
             classe:            'Class',
@@ -953,7 +1200,16 @@
             filter_components: 'Components',
             filter_duration:   'Duration',
             share_btn:         'Share Grimoire',
-            share_copied:      'Link copied!'
+            share_copy:        'Copy',
+            share_copied:      'Link copied!',
+            share_copy_done:   'Copied',
+            footer_made:       'Made with ♥ by',
+            footer_icon_by:    'Icon by',
+            footer_noun:       'Noun Project',
+            footer_credits:    'Credits',
+            footer_license:    'License',
+            footer_copyright:  '© 2026 Erick Teixeira',
+            footer_disclaimer: 'Not affiliated with Wizards of the Coast. Dungeons & Dragons is a trademark of WotC.'
         }
     };
 
@@ -966,22 +1222,25 @@
 
     function buildClassFilter(resetState) {
         if (resetState !== false) selectedClasses.clear();
-        var container = document.getElementById('filter-classes');
-        container.innerHTML = '';
-        currentClasses.forEach(function(cls) {
-            var label = document.createElement('label');
-            var cb = document.createElement('input');
-            cb.type = 'checkbox';
-            cb.checked = selectedClasses.has(cls.key);
-            cb.addEventListener('change', function() {
-                if (this.checked) selectedClasses.add(cls.key);
-                else selectedClasses.delete(cls.key);
-                applyFilter();
-                alignMenu();
+        ['filter-classes', 'filter-classes-m'].forEach(function(id) {
+            var container = document.getElementById(id);
+            if (!container) return;
+            container.innerHTML = '';
+            currentClasses.forEach(function(cls) {
+                var label = document.createElement('label');
+                var cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.checked = selectedClasses.has(cls.key);
+                cb.addEventListener('change', function() {
+                    if (this.checked) selectedClasses.add(cls.key);
+                    else selectedClasses.delete(cls.key);
+                    applyFilter();
+                    alignMenu();
+                });
+                label.appendChild(cb);
+                label.appendChild(document.createTextNode('\u00a0' + (cls[currentLang] || cls.key)));
+                container.appendChild(label);
             });
-            label.appendChild(cb);
-            label.appendChild(document.createTextNode('\u00a0' + (cls[currentLang] || cls.key)));
-            container.appendChild(label);
         });
     }
 
@@ -1042,26 +1301,47 @@
                 .then(function(r) { return r.json(); })
                 .then(function(data) {
                     v.label = data.version;
+                    v.credits = data.credits || '';
                     loaded++;
                     if (loaded === VERSIONS.length) {
-                        var container = document.getElementById('filter-versions');
-                        container.innerHTML = '';
+                        var footerCredits = document.getElementById('footer-credits');
+                        if (footerCredits) {
+                            footerCredits.innerHTML = VERSIONS.map(function(ver) {
+                                return '<div class="footer-credit-item">'
+                                    + '<div class="footer-credit-version">' + ver.label + '</div>'
+                                    + '<div>' + ver.credits + '</div>'
+                                    + '</div>';
+                            }).join('')
+                            + '<div class="footer-credit-item">'
+                            + '<div class="footer-credit-version">Noun Project</div>'
+                            + '<div>Ícone <a href="https://thenounproject.com/icon/quill-7852906/" target="_blank" style="color:inherit;">Quill</a> por Akhmad Sobahus Surur</div>'
+                            + '</div>'
+                            + '<div class="footer-credit-item">'
+                            + '<div class="footer-credit-version">Catppuccin</div>'
+                            + '<div>Paleta de cores por <a href="https://catppuccin.com/palette/" target="_blank" style="color:inherit;">catppuccin.com</a></div>'
+                            + '</div>';
+                        }
                         var targetBook = pendingShareState && pendingShareState.book;
                         var initialFile = (targetBook && VERSIONS.find(function(v) { return v.file === targetBook; }))
                             ? targetBook : VERSIONS[0].file;
-                        VERSIONS.forEach(function(ver) {
-                            var label = document.createElement('label');
-                            var rb = document.createElement('input');
-                            rb.type = 'radio';
-                            rb.name = 'version-radio';
-                            rb.value = ver.file;
-                            rb.checked = (ver.file === initialFile);
-                            rb.addEventListener('change', function() {
-                                loadSpells(this.value);
+                        ['filter-versions', 'filter-versions-m'].forEach(function(containerId, idx) {
+                            var container = document.getElementById(containerId);
+                            if (!container) return;
+                            container.innerHTML = '';
+                            VERSIONS.forEach(function(ver) {
+                                var label = document.createElement('label');
+                                var rb = document.createElement('input');
+                                rb.type = 'radio';
+                                rb.name = 'version-radio-' + idx;
+                                rb.value = ver.file;
+                                rb.checked = (ver.file === initialFile);
+                                rb.addEventListener('change', function() {
+                                    loadSpells(this.value);
+                                });
+                                label.appendChild(rb);
+                                label.appendChild(document.createTextNode('\u00a0' + ver.label));
+                                container.appendChild(label);
                             });
-                            label.appendChild(rb);
-                            label.appendChild(document.createTextNode('\u00a0' + ver.label));
-                            container.appendChild(label);
                         });
                         loadSpells(initialFile);
                     }
@@ -1096,36 +1376,25 @@
         document.getElementById('menu-backdrop').classList.toggle('open');
         document.getElementById('hamburger').textContent = open ? '✕' : '☰';
     }
-    function shareGrimoire() {
-        var state = {
-            v: 1,
-            lang: currentLang,
-            book: currentBook,
-            known: Object.keys(knownSpells).filter(function(k) { return knownSpells[k]; }),
-            onlyKnown: onlyKnown,
-            classes: Array.from(selectedClasses),
-            filters: {
-                text:       filters.text,
-                levels:     Array.from(filters.levels),
-                schools:    Array.from(filters.schools),
-                castTimes:  Array.from(filters.castTimes),
-                ranges:     Array.from(filters.ranges),
-                components: Array.from(filters.components),
-                durations:  Array.from(filters.durations)
-            }
-        };
-        var encoded = btoa(unescape(encodeURIComponent(JSON.stringify(state))));
-        var url = window.location.href.split('#')[0] + '#g=' + encoded;
+    function shareGrimoire(btnId, labelId) {
+        var url = buildShareUrl();
         var t = i18n[currentLang];
         navigator.clipboard.writeText(url).then(function() {
-            var span = document.querySelector('#share-btn [data-i18n]');
-            if (span) { span.textContent = t.share_copied; setTimeout(function() { span.textContent = t.share_btn; }, 2000); }
+            var btn = document.getElementById(btnId);
+            var label = document.getElementById(labelId);
+            btn.classList.add('copied');
+            label.textContent = t.share_copy_done;
+            setTimeout(function() {
+                btn.classList.remove('copied');
+                label.textContent = t.share_copy;
+            }, 2000);
         }).catch(function() {
             window.prompt('Copie o link:', url);
         });
     }
-    document.getElementById('share-btn').addEventListener('click', shareGrimoire);
-    document.getElementById('share-btn-mobile').addEventListener('click', shareGrimoire);
+    document.getElementById('share-copy').addEventListener('click', function() { shareGrimoire('share-copy', 'share-copy-label'); });
+    document.getElementById('share-copy-m').addEventListener('click', function() { shareGrimoire('share-copy-m', 'share-copy-label-m'); });
+    document.getElementById('share-btn-mobile').addEventListener('click', function() { shareGrimoire('share-copy', 'share-copy-label'); });
 
     document.getElementById('hamburger').addEventListener('click', toggleMenu);
     document.getElementById('menu-backdrop').addEventListener('click', toggleMenu);
@@ -1154,7 +1423,15 @@
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
     document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
 
-    initVersions();
+    fetch('js/versions.json')
+        .then(function(r) { return r.json(); })
+        .then(function(files) {
+            VERSIONS = files.map(function(f) { return { file: f, label: null }; });
+            initVersions();
+        })
+        .catch(function() {
+            document.getElementById('fetch-error').style.display = 'block';
+        });
     window.addEventListener('resize', alignMenu);
     </script>
 
