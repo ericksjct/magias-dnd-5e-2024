@@ -661,10 +661,6 @@
         <input type="text" id="search-mobile" placeholder="Pesquisar magias...">
         <button id="theme-toggle-mobile" title="Alternar tema">☀️</button>
         <div id="known-mobile"><img class="unknown-icon" src="img/unknown-dark.svg"></div>
-        <div id="sort-control-mobile" class="sort-control sort-control-mobile">
-            <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
-            <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
-        </div>
     </div>
     <div id="menu-backdrop"></div>
 
@@ -764,6 +760,14 @@
             </div>
         </div>
         <div id="mobile-menu">
+            <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+                <span class="share-label" style="margin-bottom:0;" data-i18n="ordem_label">Ordem:</span>
+                <div id="sort-control-mobile" class="sort-control sort-control-mobile">
+                    <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
+                    <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
+                </div>
+            </div>
+            <div class="legend-separator">···</div>
             <div class="share-label">Salvar Grimório:</div>
             <div style="display:flex; align-items:center; gap:6px;">
                 <div id="share-btn-m" style="flex:1; min-width:0;">
@@ -1528,7 +1532,7 @@
     })();
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        var icon = theme === 'dark' ? '☀️' : '🌙';
+        var icon = theme === 'dark' ? '☀️' : '🌑';
         document.getElementById('theme-toggle').textContent = icon;
         document.getElementById('theme-toggle-mobile').textContent = icon;
         var src = theme === 'light' ? 'img/unknown-light.svg' : 'img/unknown-dark.svg';
