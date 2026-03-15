@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Card Test</title>
+<title>Grimório do Jogador</title>
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="stylesheet" href="css/style.css">
 <style>
@@ -445,8 +445,20 @@
     }
     body { background: var(--base); }
     [data-theme="light"] body { background: var(--mantle); }
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0.07;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 200px 200px;
+    }
     /* Cards */
-    .spell-body { color: var(--subtext1); padding: 10px 10px 20px 10px; }
+    .spell-body { color: var(--subtext1); padding: 10px 10px 20px 10px; box-shadow: 2px 3px 6px rgba(0,0,0,0.08); }
+    [data-theme="dark"] .spell-body { box-shadow: 2px 3px 8px rgba(0,0,0,0.25); }
     .spell-item[data-level] .spell-body { background: var(--surface0); border-color: var(--surface1); }
     [data-theme="light"] .spell-item[data-level] .spell-body { background: var(--base); border-color: var(--surface1); }
     .name p:not(.school) { color: var(--text); font-size: 15pt; font-weight: bold; }
