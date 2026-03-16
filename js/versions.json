@@ -1,4 +1,20 @@
 [
-  "spells-ptbr",
-  "spells-en"
+  {
+    "file": "spells-ptbr",
+    "lang": "ptbr",
+    "version": "Livro do Jogador 5E 2024 (Heróis Anônimos)",
+    "credits": "Livro do Jogador 5E 2024 (Heróis Anônimos) traduzidas para o Português Brasileiro por Heróis Anônimos."
+  },
+  {
+    "file": "spells-en",
+    "lang": "en",
+    "version": "Player's Handbook 5E 2024 (Official)",
+    "credits": "Wizards of the Coast"
+  },
+  {
+    "file": "spells-EN-5.2",
+    "lang": "en",
+    "version": "Player's Handbook 5.2 SRD",
+    "credits": "Player's Handbook 5.2 SRD - https://gist.github.com/dmcb"
+  }
 ]

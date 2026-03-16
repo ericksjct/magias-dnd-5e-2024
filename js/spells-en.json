@@ -1,16 +1,4 @@
 {
-  "version": "Player's Handbook 5E 2024 (Official)",
-  "credits": "Wizards of the Coast",
-  "classes": [
-    {"key": "Bardo",       "ptbr": "Bardo",       "en": "Bard"},
-    {"key": "Bruxo",       "ptbr": "Bruxo",       "en": "Warlock"},
-    {"key": "Clérigo",     "ptbr": "Clérigo",     "en": "Cleric"},
-    {"key": "Druida",      "ptbr": "Druida",      "en": "Druid"},
-    {"key": "Feiticeiro",  "ptbr": "Feiticeiro",  "en": "Sorcerer"},
-    {"key": "Mago",        "ptbr": "Mago",        "en": "Wizard"},
-    {"key": "Paladino",    "ptbr": "Paladino",    "en": "Paladin"},
-    {"key": "Patrulheiro", "ptbr": "Patrulheiro", "en": "Ranger"}
-  ],
   "spells": [
   {
     "name": "acudir os moribundos",

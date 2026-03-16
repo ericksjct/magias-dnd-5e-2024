@@ -1,48 +1,4 @@
 {
-  "version": "Livro do Jogador 5E 2024 (Heróis Anônimos)",
-  "credits": "Livro do Jogador 5E 2024 (Heróis Anônimos) traduzidas para o Português Brasileiro por Heróis Anônimos.",
-  "classes": [
-    {
-      "key": "Bardo",
-      "ptbr": "Bardo",
-      "en": "Bard"
-    },
-    {
-      "key": "Bruxo",
-      "ptbr": "Bruxo",
-      "en": "Warlock"
-    },
-    {
-      "key": "Clérigo",
-      "ptbr": "Clérigo",
-      "en": "Cleric"
-    },
-    {
-      "key": "Druida",
-      "ptbr": "Druida",
-      "en": "Druid"
-    },
-    {
-      "key": "Feiticeiro",
-      "ptbr": "Feiticeiro",
-      "en": "Sorcerer"
-    },
-    {
-      "key": "Mago",
-      "ptbr": "Mago",
-      "en": "Wizard"
-    },
-    {
-      "key": "Paladino",
-      "ptbr": "Paladino",
-      "en": "Paladin"
-    },
-    {
-      "key": "Patrulheiro",
-      "ptbr": "Patrulheiro",
-      "en": "Ranger"
-    }
-  ],
   "spells": [
     {
       "name": "acalmar emoções",
@@ -584,7 +540,7 @@
       "components": "V, S, M",
       "concentration": false,
       "duration": "8 horas",
-      "description": "<p><strong>Material</strong>: uma tira de pano branco.</p>\n<p>Escolha até três criaturas no alcance da magia. Os Pontos de Vida máximos e os Pontos de Vida atuais de cada alvo aumentam em 5 pela duração da magia.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> Os Pontos de Vida de cada alvo aumentam em 5 para cada círculo de espaço de magia acima de 2.</p>\n<p>B</p>\n<p>***</p>"
+      "description": "<p><strong>Material</strong>: uma tira de pano branco.</p>\n<p>Escolha até três criaturas no alcance da magia. Os Pontos de Vida máximos e os Pontos de Vida atuais de cada alvo aumentam em 5 pela duração da magia.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> Os Pontos de Vida de cada alvo aumentam em 5 para cada círculo de espaço de magia acima de 2.</p>"
     },
     {
       "name": "badalar fúnebre",
@@ -790,7 +746,7 @@
       "components": "V, S",
       "concentration": false,
       "duration": "Instantânea",
-      "description": "<p>Clamando por Hadar, você faz com que tentáculos irrompam em você. Cada criatura em uma Emanação de 3 metros originada em você realiza uma salvaguarda de Força. Se falhar, um alvo sofre 2d6 pontos de dano Necrótico e não pode executar Reações até o início do próximo turno dele. Em caso de sucesso, um alvo sofre apenas metade do dano.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> O dano aumenta em 1d6 pontos para cada círculo de espaço de magia acima de 1.</p>\n<p>C</p>\n<p>***</p>"
+      "description": "<p>Clamando por Hadar, você faz com que tentáculos irrompam em você. Cada criatura em uma Emanação de 3 metros originada em você realiza uma salvaguarda de Força. Se falhar, um alvo sofre 2d6 pontos de dano Necrótico e não pode executar Reações até o início do próximo turno dele. Em caso de sucesso, um alvo sofre apenas metade do dano.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> O dano aumenta em 1d6 pontos para cada círculo de espaço de magia acima de 1.</p>"
     },
     {
       "name": "caldeirão borbulhante de tasha",
@@ -1774,7 +1730,7 @@
       "components": "V, S",
       "concentration": false,
       "duration": "Instantânea",
-      "description": "<p>Uma onda de energia curativa sai de um ponto à sua vista e no alcance da magia. Escolha até seis criaturas em uma Esfera de 9 metros de raio centrada nesse ponto. Cada alvo recupera Pontos de Vida iguais a 5d8 mais o seu modificador de atributo de conjuração.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> A cura aumenta em 1d8 para cada círculo de espaço de magia acima de 5.</p>\n<p>D</p>\n<p>***</p>"
+      "description": "<p>Uma onda de energia curativa sai de um ponto à sua vista e no alcance da magia. Escolha até seis criaturas em uma Esfera de 9 metros de raio centrada nesse ponto. Cada alvo recupera Pontos de Vida iguais a 5d8 mais o seu modificador de atributo de conjuração.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> A cura aumenta em 1d8 para cada círculo de espaço de magia acima de 5.</p>"
     },
     {
       "name": "danação",
@@ -2296,7 +2252,7 @@
       "components": "V",
       "concentration": true,
       "duration": "até 1 minuto",
-      "description": "<p>Você tenta obrigar uma criatura a um duelo. Uma criatura à sua vista e no alcance da magia realiza uma salvaguarda de Sabedoria. Se falhar, o alvo tem Desvantagem nas jogadas de ataque contra criaturas que não sejam você, e não pode se mover voluntariamente para um espaço a mais de 9 metros de você.</p>\n<p>A magia encerra se você realizar uma jogada de ataque contra uma criatura que não seja o alvo, se você conjurar uma magia em um inimigo que não seja o alvo, se um aliado seu causar dano ao alvo ou se você terminar seu turno a mais de 9 metros de distância do alvo.</p>\n<p>E</p>\n<p>***</p>"
+      "description": "<p>Você tenta obrigar uma criatura a um duelo. Uma criatura à sua vista e no alcance da magia realiza uma salvaguarda de Sabedoria. Se falhar, o alvo tem Desvantagem nas jogadas de ataque contra criaturas que não sejam você, e não pode se mover voluntariamente para um espaço a mais de 9 metros de você.</p>\n<p>A magia encerra se você realizar uma jogada de ataque contra uma criatura que não seja o alvo, se você conjurar uma magia em um inimigo que não seja o alvo, se um aliado seu causar dano ao alvo ou se você terminar seu turno a mais de 9 metros de distância do alvo.</p>"
     },
     {
       "name": "elementalismo",
@@ -2704,7 +2660,7 @@
       "components": "V, S, M",
       "concentration": false,
       "duration": "Instantânea",
-      "description": "<p><strong>Material</strong>: um pedaço de pedra solar.</p>\n<p>Luz solar brilhante lampeja em uma Esfera de 18 metros de raio centrada em um ponto à sua escolha no alcance da magia. Cada criatura na Esfera realiza uma salvaguarda de Constituição. Se falhar, uma criatura sofre 12d6 pontos de dano Radiante e tem a condição Cego por 1 minuto. Em caso de sucesso, ela sofre apenas metade do dano.</p>\n<p>Uma criatura Cega por esta magia realiza outra salvaguarda de Constituição no final de cada um dos turnos dela, encerrando o efeito em caso de sucesso.</p>\n<p>Esta magia dissipa Escuridão criada por qualquer magia em sua área.</p>\n<p>F</p>\n<p>***</p>"
+      "description": "<p><strong>Material</strong>: um pedaço de pedra solar.</p>\n<p>Luz solar brilhante lampeja em uma Esfera de 18 metros de raio centrada em um ponto à sua escolha no alcance da magia. Cada criatura na Esfera realiza uma salvaguarda de Constituição. Se falhar, uma criatura sofre 12d6 pontos de dano Radiante e tem a condição Cego por 1 minuto. Em caso de sucesso, ela sofre apenas metade do dano.</p>\n<p>Uma criatura Cega por esta magia realiza outra salvaguarda de Constituição no final de cada um dos turnos dela, encerrando o efeito em caso de sucesso.</p>\n<p>Esta magia dissipa Escuridão criada por qualquer magia em sua área.</p>"
     },
     {
       "name": "fabricar",
@@ -2980,7 +2936,7 @@
       "components": "V, S",
       "concentration": false,
       "duration": "24 horas",
-      "description": "<p>Escolha qualquer número de criaturas voluntárias à vista e no alcance da magia. Cada alvo se multimorfa em uma Fera Grande ou menor à sua escolha e que tenha um Nível de Desafio igual ou inferior a 4. Você pode escolher uma forma diferente para cada alvo. Em turnos posteriores, você pode executar uma ação Usar Magia para transformar os alvos novamente.</p>\n<p>As estatísticas de jogo de um alvo são substituídas pelas estatísticas da Fera escolhida, mas o alvo mantém seu tipo de criatura, Pontos de Vida, Dados de Pontos de Vida, alinhamento, capacidade de comunicação, e valores de atributo de Inteligência, Sabedoria e Carisma. As ações do alvo são limitadas pela anatomia da forma da Fera e ele não pode conjurar magias. O equipamento do alvo se funde com a nova forma e o alvo não pode usar nenhum desses equipamentos enquanto estiver nesta forma.</p>\n<p>O alvo adquire um número de Pontos de Vida Temporários igual aos Pontos de Vida da forma da Fera. A transformação permanece pela duração da magia para cada alvo, até que o alvo não tenha mais Pontos de Vida Temporários ou até que o alvo saia da forma como uma Ação Bônus.</p>\n<p>G</p>\n<p>***</p>"
+      "description": "<p>Escolha qualquer número de criaturas voluntárias à vista e no alcance da magia. Cada alvo se multimorfa em uma Fera Grande ou menor à sua escolha e que tenha um Nível de Desafio igual ou inferior a 4. Você pode escolher uma forma diferente para cada alvo. Em turnos posteriores, você pode executar uma ação Usar Magia para transformar os alvos novamente.</p>\n<p>As estatísticas de jogo de um alvo são substituídas pelas estatísticas da Fera escolhida, mas o alvo mantém seu tipo de criatura, Pontos de Vida, Dados de Pontos de Vida, alinhamento, capacidade de comunicação, e valores de atributo de Inteligência, Sabedoria e Carisma. As ações do alvo são limitadas pela anatomia da forma da Fera e ele não pode conjurar magias. O equipamento do alvo se funde com a nova forma e o alvo não pode usar nenhum desses equipamentos enquanto estiver nesta forma.</p>\n<p>O alvo adquire um número de Pontos de Vida Temporários igual aos Pontos de Vida da forma da Fera. A transformação permanece pela duração da magia para cada alvo, até que o alvo não tenha mais Pontos de Vida Temporários ou até que o alvo saia da forma como uma Ação Bônus.</p>"
     },
     {
       "name": "gargalhada nefasta de tasha",
@@ -3118,7 +3074,7 @@
       "components": "V, S, M",
       "concentration": true,
       "duration": "até 10 minutos",
-      "description": "<p><strong>Material</strong>: um pergaminho de oração.</p>\n<p>Espíritos protetores voam ao seu redor em uma Emanação de 4,5 metros pela duração da magia. Se você for bom ou neutro, a forma espectral deles parece angelical ou feérica (à sua escolha). Se você é mau, eles parecem ínferos.</p>\n<p>Ao conjurar esta magia, você pode escolher criaturas que não serão afetadas. O Deslocamento de quaisquer outras criaturas é reduzido pela metade na Emanação. Sempre que a Emanação entrar no espaço de uma criatura ou uma criatura entrar na Emanação, ou terminar seu turno nela, ela deve realizar uma salvaguarda de Sabedoria. Se falhar, a criatura sofre 3d8 pontos de dano Radiante (se você for bom ou neutro) ou 3d8 pontos de dano Necrótico (se for mau). Em caso de sucesso, a criatura sofre metade do dano. Cada criatura realiza essa salvaguarda apenas uma vez por turno.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> O dano aumenta em 1d8 para cada círculo de espaço de magia acima de 3.</p>\n<p>H</p>\n<p>***</p>"
+      "description": "<p><strong>Material</strong>: um pergaminho de oração.</p>\n<p>Espíritos protetores voam ao seu redor em uma Emanação de 4,5 metros pela duração da magia. Se você for bom ou neutro, a forma espectral deles parece angelical ou feérica (à sua escolha). Se você é mau, eles parecem ínferos.</p>\n<p>Ao conjurar esta magia, você pode escolher criaturas que não serão afetadas. O Deslocamento de quaisquer outras criaturas é reduzido pela metade na Emanação. Sempre que a Emanação entrar no espaço de uma criatura ou uma criatura entrar na Emanação, ou terminar seu turno nela, ela deve realizar uma salvaguarda de Sabedoria. Se falhar, a criatura sofre 3d8 pontos de dano Radiante (se você for bom ou neutro) ou 3d8 pontos de dano Necrótico (se for mau). Em caso de sucesso, a criatura sofre metade do dano. Cada criatura realiza essa salvaguarda apenas uma vez por turno.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> O dano aumenta em 1d8 para cada círculo de espaço de magia acima de 3.</p>"
     },
     {
       "name": "heroísmo",
@@ -3135,7 +3091,7 @@
       "components": "V, S",
       "concentration": true,
       "duration": "até 1 minuto",
-      "description": "<p>Você toca uma criatura voluntária que se torna imbuída de bravura. Até que a magia termine, a criatura é imune à condição Amedrontado e recebe Pontos de Vida Temporários igual ao seu modificador de atributo de conjuração no início de cada um dos turnos dela.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> Você pode escolher uma criatura adicional para cada círculo de espaço de magia acima de 1.</p>\n<p>I</p>\n<p>***</p>"
+      "description": "<p>Você toca uma criatura voluntária que se torna imbuída de bravura. Até que a magia termine, a criatura é imune à condição Amedrontado e recebe Pontos de Vida Temporários igual ao seu modificador de atributo de conjuração no início de cada um dos turnos dela.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> Você pode escolher uma criatura adicional para cada círculo de espaço de magia acima de 1.</p>"
     },
     {
       "name": "identificar",
@@ -3578,7 +3534,7 @@
       "components": "V, S",
       "concentration": true,
       "duration": "até 10 minutos",
-      "description": "<p>Você conjura espíritos da natureza que voam ao seu redor em uma Emanação de 3 metros pela duração da magia. Quando a Emanação invade o espaço de uma criatura à sua vista, ou quando uma criatura à sua vista entra ou termina o turno na Emanação, você pode forçá-la a realizar uma salvaguarda de Sabedoria. Se falhar, a criatura sofre 5d8 pontos de dano Energético ou metade desse dano se tiver sucesso. A criatura realiza essa salvaguarda apenas uma vez por turno.</p>\n<p>Além disso, você pode executar a ação Desengajar como uma Ação Bônus pela duração da magia.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> O dano aumenta em 1d8 para cada círculo de espaço de magia acima de 4.</p>\n<p>L</p>\n<p>***</p>"
+      "description": "<p>Você conjura espíritos da natureza que voam ao seu redor em uma Emanação de 3 metros pela duração da magia. Quando a Emanação invade o espaço de uma criatura à sua vista, ou quando uma criatura à sua vista entra ou termina o turno na Emanação, você pode forçá-la a realizar uma salvaguarda de Sabedoria. Se falhar, a criatura sofre 5d8 pontos de dano Energético ou metade desse dano se tiver sucesso. A criatura realiza essa salvaguarda apenas uma vez por turno.</p>\n<p>Além disso, você pode executar a ação Desengajar como uma Ação Bônus pela duração da magia.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> O dano aumenta em 1d8 para cada círculo de espaço de magia acima de 4.</p>"
     },
     {
       "name": "labirinto",
@@ -3889,7 +3845,7 @@
       "components": "V, S, M",
       "concentration": true,
       "duration": "até 1 minuto",
-      "description": "<p><strong>Material</strong>: um pouco de fósforo.</p>\n<p>Você cria até quatro luzes do tamanho de tochas no alcance da magia, fazendo com que elas pareçam tochas, lanternas ou esferas brilhantes que pairam pela duração da magia. Como alternativa, você combina as quatro luzes em uma forma Média, brilhante, a qual é vagamente humanoide. Seja qual for a forma que você escolher, cada luz emite Meia-luz em um raio de 3 metros.</p>\n<p>Como uma Ação Bônus, você pode mover as luzes até 18 metros para um espaço no alcance da magia. Uma luz deve estar a até 6 metros de outra luz criada por esta magia, e uma luz desaparece se ultrapassar o alcance da magia.</p>\n<p>M</p>\n<p>***</p>"
+      "description": "<p><strong>Material</strong>: um pouco de fósforo.</p>\n<p>Você cria até quatro luzes do tamanho de tochas no alcance da magia, fazendo com que elas pareçam tochas, lanternas ou esferas brilhantes que pairam pela duração da magia. Como alternativa, você combina as quatro luzes em uma forma Média, brilhante, a qual é vagamente humanoide. Seja qual for a forma que você escolher, cada luz emite Meia-luz em um raio de 3 metros.</p>\n<p>Como uma Ação Bônus, você pode mover as luzes até 18 metros para um espaço no alcance da magia. Uma luz deve estar a até 6 metros de outra luz criada por esta magia, e uma luz desaparece se ultrapassar o alcance da magia.</p>"
     },
     {
       "name": "malogro",
@@ -4397,7 +4353,7 @@
       "components": "V, S",
       "concentration": false,
       "duration": "10 minutos",
-      "description": "<p>Uma superfície cintilante e multicolorida forma uma parede vertical opaca de até 27 metros de comprimento, 9 metros de altura e 2,5 centímetros de espessura centrada em um ponto no alcance da magia. Como alternativa, você molda a parede em um globo de até 9 metros de diâmetro centrado em um ponto no alcance da magia. A parede permanece pela duração. Se você posicionar a parede em um espaço ocupado por uma criatura, a magia encerra instantaneamente sem efeito.</p>\n<p>A parede emite Luz Plena por 30 metros e Meia-luz por mais 30 metros. Você e as criaturas que você escolher ao conjurar a magia podem passar e ficar perto da muralha sem sofrer dano. Se outra criatura que possa ver a parede se mover a até 6 metros dela ou começar o turno nela, a criatura deve ser bem-sucedida em uma salvaguarda de Constituição ou tem a condição Cego por 1 minuto.</p>\n<p>A parede possui sete camadas, cada uma de uma cor diferente. Uma criatura que atravessa ou entra na parede passa uma camada por vez e deve realizar uma salvaguarda de Destreza ou é afetada pelas propriedades da camada, conforme descrito na tabela Camadas Prismáticas.</p>\n<p>A parede tem CA 10 e pode ser destruída uma camada por vez, em ordem do vermelho ao violeta, por meios específicos para cada camada. Se uma camada for destruída, ela desaparece pela duração da magia. <em>Campo Antimagia</em> não tem efeito na parede, e <em>Dissipar Magia</em> pode afetar apenas a camada violeta.</p>\n<p>##</p>\n<p>N</p>\n<p>***</p>"
+      "description": "<p>Uma superfície cintilante e multicolorida forma uma parede vertical opaca de até 27 metros de comprimento, 9 metros de altura e 2,5 centímetros de espessura centrada em um ponto no alcance da magia. Como alternativa, você molda a parede em um globo de até 9 metros de diâmetro centrado em um ponto no alcance da magia. A parede permanece pela duração. Se você posicionar a parede em um espaço ocupado por uma criatura, a magia encerra instantaneamente sem efeito.</p>\n<p>A parede emite Luz Plena por 30 metros e Meia-luz por mais 30 metros. Você e as criaturas que você escolher ao conjurar a magia podem passar e ficar perto da muralha sem sofrer dano. Se outra criatura que possa ver a parede se mover a até 6 metros dela ou começar o turno nela, a criatura deve ser bem-sucedida em uma salvaguarda de Constituição ou tem a condição Cego por 1 minuto.</p>\n<p>A parede possui sete camadas, cada uma de uma cor diferente. Uma criatura que atravessa ou entra na parede passa uma camada por vez e deve realizar uma salvaguarda de Destreza ou é afetada pelas propriedades da camada, conforme descrito na tabela Camadas Prismáticas.</p>\n<p>A parede tem CA 10 e pode ser destruída uma camada por vez, em ordem do vermelho ao violeta, por meios específicos para cada camada. Se uma camada for destruída, ela desaparece pela duração da magia. <em>Campo Antimagia</em> não tem efeito na parede, e <em>Dissipar Magia</em> pode afetar apenas a camada violeta.</p>\n<p>##</p>"
     },
     {
       "name": "nevasca",
@@ -4506,7 +4462,7 @@
       "components": "V, S",
       "concentration": true,
       "duration": "até 1 minuto",
-      "description": "<p>Uma nuvem rodopiante de brasas e fumaça preenche uma Esfera de 6 metros de raio centrada em um ponto no alcance da magia. A área da nuvem é Totalmente Obscurecida. Ela permanece pela duração ou até que um vento forte (como o criado pela <em>Lufada de Vento</em>) a disperse.</p>\n<p>Quando a nuvem aparece, cada criatura dentro dela realiza uma salvaguarda de Destreza e, se falhar, sofre 10d8 pontos de dano Ígneo, ou metade desse dano em caso de sucesso. Uma criatura também deve realizar essa salvaguarda quando a Esfera se mover para seu espaço e quando terminar seu turno nela. Uma criatura realiza essa salvaguarda apenas uma vez por turno.</p>\n<p>A nuvem se afasta 3 metros de você na direção que você escolher no início de cada um dos seus turnos.</p>\n<p>O</p>\n<p>***</p>"
+      "description": "<p>Uma nuvem rodopiante de brasas e fumaça preenche uma Esfera de 6 metros de raio centrada em um ponto no alcance da magia. A área da nuvem é Totalmente Obscurecida. Ela permanece pela duração ou até que um vento forte (como o criado pela <em>Lufada de Vento</em>) a disperse.</p>\n<p>Quando a nuvem aparece, cada criatura dentro dela realiza uma salvaguarda de Destreza e, se falhar, sofre 10d8 pontos de dano Ígneo, ou metade desse dano em caso de sucesso. Uma criatura também deve realizar essa salvaguarda quando a Esfera se mover para seu espaço e quando terminar seu turno nela. Uma criatura realiza essa salvaguarda apenas uma vez por turno.</p>\n<p>A nuvem se afasta 3 metros de você na direção que você escolher no início de cada um dos seus turnos.</p>"
     },
     {
       "name": "olho arcano",
@@ -4608,7 +4564,7 @@
       "components": "V, S",
       "concentration": true,
       "duration": "até 1 minuto",
-      "description": "<p>Você toca uma criatura voluntária e escolhe uma perícia. Até que a magia termine, a criatura adiciona 1d4 a qualquer teste de atributo usando a perícia escolhida.</p>\n<p>P</p>\n<p>***</p>"
+      "description": "<p>Você toca uma criatura voluntária e escolhe uma perícia. Até que a magia termine, a criatura adiciona 1d4 a qualquer teste de atributo usando a perícia escolhida.</p>"
     },
     {
       "name": "padrão hipnótico",
@@ -5344,7 +5300,7 @@
       "components": "V, S",
       "concentration": false,
       "duration": "Instantânea",
-      "description": "<p>Você remove veneno e podridão de alimentos e bebidas não mágicos em uma Esfera de 1,5 metro de raio centrada em um ponto no alcance da magia.</p>\n<p>Q</p>\n<p>***</p>"
+      "description": "<p>Você remove veneno e podridão de alimentos e bebidas não mágicos em uma Esfera de 1,5 metro de raio centrada em um ponto no alcance da magia.</p>"
     },
     {
       "name": "queda suave",
@@ -5362,7 +5318,7 @@
       "components": "V, M",
       "concentration": false,
       "duration": "1 minuto",
-      "description": "<p><strong>Material</strong>: uma pequena pena ou pedaço de penugem.</p>\n<p>Escolha até cinco criaturas em queda no alcance da magia. A taxa de queda de cada uma diminui para 18 metros por rodada até que a magia termine. Se uma criatura pousar antes do fim da magia, não sofre dano da queda e a magia se encerra para ela.</p>\n<p>R</p>\n<p>***</p>"
+      "description": "<p><strong>Material</strong>: uma pequena pena ou pedaço de penugem.</p>\n<p>Escolha até cinco criaturas em queda no alcance da magia. A taxa de queda de cada uma diminui para 18 metros por rodada até que a magia termine. Se uma criatura pousar antes do fim da magia, não sofre dano da queda e a magia se encerra para ela.</p>"
     },
     {
       "name": "raio ardente",
@@ -5945,7 +5901,7 @@
       "components": "V, S",
       "concentration": true,
       "duration": "até 1 minuto",
-      "description": "<p>Você toca uma criatura, que deve ser bem-sucedida em uma salvaguarda de Sabedoria ou fica amaldiçoada pela duração da magia. Até que a maldição termine, o alvo sofre um dos seguintes efeitos à sua escolha:</p>\n<p>Escolha um atributo. O alvo tem Desvantagem em testes de atributo e salvaguardas realizadas com esse atributo.</p>\n<p>O alvo tem Desvantagem em jogadas de ataque contra você.</p>\n<p>Em combate, o alvo deve ser bem-sucedido em uma salvaguarda de Sabedoria no início de cada um dos turnos dele ou ele é forçado a executar a ação Esquivar neste turno.</p>\n<p>Se você causar dano ao alvo com uma jogada de ataque ou uma magia, o alvo sofre 1d8 pontos de dano Necrótico adicionais.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> Se você conjurar esta magia usando um espaço de magia de 4º círculo, você pode manter a Concentração nela por até 10 minutos. Se você usar um espaço de magia de 5º círculo ou superior, a magia não requer Concentração, e a duração se torna 8 horas (espaço de 5º e 6º círculo) ou 24 horas (espaço de 7º ou 8º círculo). Se você usar um espaço de magia de 9º círculo, a magia permanece até ser dissipada.</p>\n<p>S</p>\n<p>***</p>"
+      "description": "<p>Você toca uma criatura, que deve ser bem-sucedida em uma salvaguarda de Sabedoria ou fica amaldiçoada pela duração da magia. Até que a maldição termine, o alvo sofre um dos seguintes efeitos à sua escolha:</p>\n<p>Escolha um atributo. O alvo tem Desvantagem em testes de atributo e salvaguardas realizadas com esse atributo.</p>\n<p>O alvo tem Desvantagem em jogadas de ataque contra você.</p>\n<p>Em combate, o alvo deve ser bem-sucedido em uma salvaguarda de Sabedoria no início de cada um dos turnos dele ou ele é forçado a executar a ação Esquivar neste turno.</p>\n<p>Se você causar dano ao alvo com uma jogada de ataque ou uma magia, o alvo sofre 1d8 pontos de dano Necrótico adicionais.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> Se você conjurar esta magia usando um espaço de magia de 4º círculo, você pode manter a Concentração nela por até 10 minutos. Se você usar um espaço de magia de 5º círculo ou superior, a magia não requer Concentração, e a duração se torna 8 horas (espaço de 5º e 6º círculo) ou 24 horas (espaço de 7º ou 8º círculo). Se você usar um espaço de magia de 9º círculo, a magia permanece até ser dissipada.</p>"
     },
     {
       "name": "salto",
@@ -6315,7 +6271,7 @@
       "components": "V",
       "concentration": false,
       "duration": "Instantânea",
-      "description": "<p>Uma criatura à sua escolha à sua vista no alcance da magia escuta uma melodia dissonante na mente. O alvo deve realizar uma salvaguarda de Sabedoria. Se falhar, sofre 3d6 pontos de dano Psíquico e deve usar imediatamente a Reação, se disponível, para se mover o mais longe possível de você, usando a rota mais segura. Em caso de sucesso, o alvo sofre apenas metade do dano.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> O dano aumenta em 1d6 pontos para cada círculo de espaço de magia acima de 1.</p>\n<p>T</p>\n<p>***</p>"
+      "description": "<p>Uma criatura à sua escolha à sua vista no alcance da magia escuta uma melodia dissonante na mente. O alvo deve realizar uma salvaguarda de Sabedoria. Se falhar, sofre 3d6 pontos de dano Psíquico e deve usar imediatamente a Reação, se disponível, para se mover o mais longe possível de você, usando a rota mais segura. Em caso de sucesso, o alvo sofre apenas metade do dano.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> O dano aumenta em 1d6 pontos para cada círculo de espaço de magia acima de 1.</p>"
     },
     {
       "name": "talho mental",
@@ -6697,7 +6653,7 @@
       "components": "V",
       "concentration": true,
       "duration": "até 1 minuto",
-      "description": "<p>Seu corpo fica desfocado. Pela duração da magia, qualquer criatura tem Desvantagem em jogadas de ataque contra você. Um atacante é imune a esse efeito se perceber você com Visão às Cegas ou Visão Verdadeira.</p>\n<p>V</p>\n<p>***</p>"
+      "description": "<p>Seu corpo fica desfocado. Pela duração da magia, qualquer criatura tem Desvantagem em jogadas de ataque contra você. Um atacante é imune a esse efeito se perceber você com Visão às Cegas ou Visão Verdadeira.</p>"
     },
     {
       "name": "ver o invisível",
@@ -6860,7 +6816,7 @@
       "components": "V, S, M",
       "concentration": true,
       "duration": "até 10 minutos",
-      "description": "<p><strong>Material</strong>: uma pena.</p>\n<p>Você toca uma criatura voluntária. Pela duração da magia, o alvo ganha um Deslocamento de Voo de 18 metros e pode pairar. Quando a magia termina, o alvo entra em queda se ainda estiver no alto, a menos que possa impedir a queda.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> Você pode escolher uma criatura adicional para cada círculo de espaço de magia acima de 3.</p>\n<p>Z</p>\n<p>***</p>"
+      "description": "<p><strong>Material</strong>: uma pena.</p>\n<p>Você toca uma criatura voluntária. Pela duração da magia, o alvo ganha um Deslocamento de Voo de 18 metros e pode pairar. Quando a magia termina, o alvo entra em queda se ainda estiver no alto, a menos que possa impedir a queda.</p>\n<p><strong>Usando um Espaço de Magia de Círculo Superior.</strong> Você pode escolher uma criatura adicional para cada círculo de espaço de magia acima de 3.</p>"
     },
     {
       "name": "zombaria perversa",

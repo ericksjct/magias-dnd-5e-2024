@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grimório do Jogador</title>
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
     .spell-grid {
@@ -430,17 +433,16 @@
         flex: none;
     }
     #site-title {
-        font-family: 'Roboto', sans-serif;
-        font-size: 2em;
+        font-family: 'Texturina', serif;
+        font-size: 3em;
         font-weight: 700;
-        font-variant: small-caps;
         text-align: center;
         color: #444;
         margin: 0 0 16px 0;
         letter-spacing: 0.5px;
     }
     @media (max-width: 600px) {
-        #site-title { font-size: 26px; }
+        #site-title { font-size: 2em; }
     }
 
     /* ── Catppuccin Mocha (dark) ── */
@@ -489,7 +491,7 @@
     [data-theme="dark"] .spell-body { box-shadow: 2px 3px 8px rgba(0,0,0,0.25); }
     .spell-item[data-level] .spell-body { background: var(--surface0); border-color: var(--surface1); }
     [data-theme="light"] .spell-item[data-level] .spell-body { background: var(--base); border-color: var(--surface1); }
-    .name p:not(.school) { color: var(--text); font-size: 15pt; font-weight: bold; }
+    .name p:not(.school) { color: var(--text); font-size: 15pt; font-weight: bold; font-family: 'Texturina', serif; }
     .school { color: var(--subtext1); font-size: 8pt; font-weight: normal; }
     .name { border-bottom-color: var(--surface2); margin: 0; }
     /* Meta line */
@@ -599,7 +601,7 @@
         #topbar #search-mobile::placeholder { color: var(--overlay1); }
         #site-footer { flex-direction: column; gap: 16px; }
         .footer-col-right { text-align: left; }
-        #footer-credits { align-items: flex-start; text-align: left; }
+        #footer-credits, #footer-credits-assets { text-align: left; }
     }
     #site-footer {
         display: flex;
@@ -640,9 +642,8 @@
         color: var(--subtext0);
         font-weight: bold;
     }
-    #footer-credits {
-        align-items: center;
-        text-align: center;
+    #footer-credits, #footer-credits-assets {
+        align-items: flex-start;
     }
     .footer-col-right {
         text-align: right;
@@ -850,6 +851,7 @@
             <strong>Feedback e correção: Renata Moura</strong>
         </div>
         <div class="footer-col" id="footer-credits"></div>
+        <div class="footer-col" id="footer-credits-assets"></div>
         <div class="footer-col footer-col-right">
             <strong data-i18n="footer_license">Licença</strong>
             <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
@@ -1261,7 +1263,6 @@
             return JSON.parse(decodeURIComponent(escape(atob(hash.slice(3)))));
         } catch(e) { return null; }
     })();
-    var currentClasses = [];
 
     var i18n = {
         ptbr: {
@@ -1345,23 +1346,26 @@
 
     function buildClassFilter(resetState) {
         if (resetState !== false) selectedClasses.clear();
+        var allClasses = Array.from(new Set(
+            spells2.reduce(function(acc, s) { return acc.concat(s.classe); }, [])
+        )).sort();
         ['filter-classes', 'filter-classes-m'].forEach(function(id) {
             var container = document.getElementById(id);
             if (!container) return;
             container.innerHTML = '';
-            currentClasses.forEach(function(cls) {
+            allClasses.forEach(function(cls) {
                 var label = document.createElement('label');
                 var cb = document.createElement('input');
                 cb.type = 'checkbox';
-                cb.checked = selectedClasses.has(cls.key);
+                cb.checked = selectedClasses.has(cls);
                 cb.addEventListener('change', function() {
-                    if (this.checked) selectedClasses.add(cls.key);
-                    else selectedClasses.delete(cls.key);
+                    if (this.checked) selectedClasses.add(cls);
+                    else selectedClasses.delete(cls);
                     applyFilter();
                     alignMenu();
                 });
                 label.appendChild(cb);
-                label.appendChild(document.createTextNode('\u00a0' + (cls[currentLang] || cls.key)));
+                label.appendChild(document.createTextNode('\u00a0' + cls));
                 container.appendChild(label);
             });
         });
@@ -1403,7 +1407,6 @@
             .then(function(data) {
                 document.getElementById('fetch-error').style.display = 'none';
                 spells2 = data.spells;
-                currentClasses = data.classes;
                 if (pendingShareState) {
                     applyShareState(pendingShareState);
                     pendingShareState = null;
@@ -1419,62 +1422,65 @@
             });
     }
 
-    function initVersions() {
-        var loaded = 0;
-        VERSIONS.forEach(function(v) {
-            fetch('js/' + v.file + '.json')
-                .then(function(r) { return r.json(); })
-                .then(function(data) {
-                    v.label = data.version;
-                    v.credits = data.credits || '';
-                    loaded++;
-                    if (loaded === VERSIONS.length) {
-                        var footerCredits = document.getElementById('footer-credits');
-                        if (footerCredits) {
-                            footerCredits.innerHTML = VERSIONS.map(function(ver) {
-                                return '<div class="footer-credit-item">'
-                                    + '<div class="footer-credit-version">' + ver.label + '</div>'
-                                    + '<div>' + ver.credits + '</div>'
-                                    + '</div>';
-                            }).join('')
-                            + '<div class="footer-credit-item">'
-                            + '<div class="footer-credit-version">Noun Project</div>'
-                            + '<div>Ícone <a href="https://thenounproject.com/icon/quill-7852906/" target="_blank" style="color:inherit;">Quill</a> por Akhmad Sobahus Surur</div>'
-                            + '</div>'
-                            + '<div class="footer-credit-item">'
-                            + '<div class="footer-credit-version">Catppuccin</div>'
-                            + '<div>Paleta de cores por <a href="https://catppuccin.com/palette/" target="_blank" style="color:inherit;">catppuccin.com</a></div>'
-                            + '</div>';
-                        }
-                        var targetBook = pendingShareState && pendingShareState.book;
-                        var initialFile = (targetBook && VERSIONS.find(function(v) { return v.file === targetBook; }))
-                            ? targetBook : VERSIONS[0].file;
-                        ['filter-versions', 'filter-versions-m'].forEach(function(containerId, idx) {
-                            var container = document.getElementById(containerId);
-                            if (!container) return;
-                            container.innerHTML = '';
-                            VERSIONS.forEach(function(ver) {
-                                var label = document.createElement('label');
-                                var rb = document.createElement('input');
-                                rb.type = 'radio';
-                                rb.name = 'version-radio-' + idx;
-                                rb.value = ver.file;
-                                rb.checked = (ver.file === initialFile);
-                                rb.addEventListener('change', function() {
-                                    loadSpells(this.value);
-                                });
-                                label.appendChild(rb);
-                                label.appendChild(document.createTextNode('\u00a0' + ver.label));
-                                container.appendChild(label);
-                            });
-                        });
-                        loadSpells(initialFile);
-                    }
-                })
-                .catch(function() {
-                    document.getElementById('fetch-error').style.display = 'block';
+    function buildVersionFilter(forceFile) {
+        var langVersions = VERSIONS.filter(function(v) { return v.lang === currentLang; });
+        var selected = forceFile || currentBook;
+        var match = langVersions.find(function(v) { return v.file === selected; });
+        if (!match) {
+            selected = langVersions.length ? langVersions[0].file : (VERSIONS[0] && VERSIONS[0].file);
+        }
+        currentBook = selected;
+        ['filter-versions', 'filter-versions-m'].forEach(function(containerId, idx) {
+            var container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = '';
+            langVersions.forEach(function(ver) {
+                var label = document.createElement('label');
+                var rb = document.createElement('input');
+                rb.type = 'radio';
+                rb.name = 'version-radio-' + idx;
+                rb.value = ver.file;
+                rb.checked = (ver.file === selected);
+                rb.addEventListener('change', function() {
+                    loadSpells(this.value);
                 });
+                label.appendChild(rb);
+                label.appendChild(document.createTextNode('\u00a0' + ver.label));
+                container.appendChild(label);
+            });
         });
+    }
+
+    function initVersions() {
+        var footerCredits = document.getElementById('footer-credits');
+        if (footerCredits) {
+            footerCredits.innerHTML = VERSIONS.map(function(ver) {
+                return '<div class="footer-credit-item">'
+                    + '<div class="footer-credit-version">' + ver.label + '</div>'
+                    + '<div>' + ver.credits + '</div>'
+                    + '</div>';
+            }).join('');
+        }
+        var footerAssets = document.getElementById('footer-credits-assets');
+        if (footerAssets) {
+            footerAssets.innerHTML = '<div class="footer-credit-item">'
+            + '<div class="footer-credit-version">Noun Project</div>'
+            + '<div>Ícone <a href="https://thenounproject.com/icon/quill-7852906/" target="_blank" style="color:inherit;">Quill</a> por Akhmad Sobahus Surur</div>'
+            + '</div>'
+            + '<div class="footer-credit-item">'
+            + '<div class="footer-credit-version">Catppuccin</div>'
+            + '<div>Paleta de cores por <a href="https://catppuccin.com/palette/" target="_blank" style="color:inherit;">catppuccin.com</a></div>'
+            + '</div>'
+            + '<div class="footer-credit-item">'
+            + '<div class="footer-credit-version">Texturina</div>'
+            + '<div>Fonte por <a href="https://www.omnibus-type.com/" target="_blank" style="color:inherit;">Omnibus-Type</a> (Guillermo Torres), via <a href="https://fonts.google.com/specimen/Texturina" target="_blank" style="color:inherit;">Google Fonts</a> — SIL OFL 1.1</div>'
+            + '</div>';
+        }
+        var targetBook = pendingShareState && pendingShareState.book;
+        var initialFile = (targetBook && VERSIONS.find(function(v) { return v.file === targetBook; }))
+            ? targetBook : null;
+        buildVersionFilter(initialFile);
+        loadSpells(currentBook);
     }
 
     document.querySelectorAll('.flag-btn').forEach(function(btn) {
@@ -1484,12 +1490,8 @@
                 b.classList.toggle('active', b.dataset.lang === currentLang);
             });
             applyI18n();
-            buildFilterUI(false);
-            // Atualiza textos dos separadores de nível
-            document.querySelectorAll('.level-separator').forEach(function(sep) {
-                sep.textContent = levelLabel(parseInt(sep.dataset.sepLevel));
-            });
-            applyFilter(true);
+            buildVersionFilter();
+            loadSpells(currentBook);
         });
     });
 
@@ -1553,7 +1555,7 @@
     fetch('js/versions.json')
         .then(function(r) { return r.json(); })
         .then(function(files) {
-            VERSIONS = files.map(function(f) { return { file: f, label: null }; });
+            VERSIONS = files.map(function(f) { return { file: f.file, lang: f.lang, label: f.version, credits: f.credits || '' }; });
             initVersions();
         })
         .catch(function() {
