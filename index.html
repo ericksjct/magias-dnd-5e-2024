@@ -873,15 +873,21 @@
     </footer>
 
 <script>
-    // --- NOVO BLOCO PARA URL E IDIOMA ---
+    // --- BLOCO DE INICIALIZAÇÃO DE IDIOMA ---
     var urlParams = new URLSearchParams(window.location.search);
     var langParam = urlParams.get('lang');
 
+    // Prioridade: URL > LocalStorage > Padrão 'ptbr'
     var currentLang = langParam || (function() {
         try { return localStorage.getItem('lang') || 'ptbr'; } catch(e) { return 'ptbr'; }
     })();
 
+    // Sincroniza o LocalStorage com a escolha atual
+    try { localStorage.setItem('lang', currentLang); } catch(e) {}
+    
+    // Define o prefixo do arquivo, mas deixaremos o initVersions escolher o livro final
     var currentBook = 'spells-' + currentLang;
+    // ----------------------------------------
 
     if (langParam) {
         try { localStorage.setItem('lang', langParam); } catch(e) {}
@@ -1280,9 +1286,6 @@
     // Versões disponíveis — adicione aqui novos arquivos no futuro
     var VERSIONS = [];
 
-    var currentLang = 'ptbr';
-    var currentBook  = 'spells-ptbr';
-
     var pendingShareState = (function() {
         try {
             var hash = window.location.hash;
@@ -1479,6 +1482,24 @@
     }
 
     function initVersions() {
+        // 1. Aplica as traduções da interface (botões e filtros)
+        applyI18n();
+
+        // 2. Filtra as versões disponíveis para o idioma detectado
+        var langVersions = VERSIONS.filter(function(v) { return v.lang === currentLang; });
+        
+        // 3. Escolhe qual livro carregar (prioriza o que veio na URL)
+        var targetBook = (langParam && VERSIONS.find(v => v.file === 'spells-' + langParam)) 
+                         ? 'spells-' + langParam : (langVersions.length ? langVersions[0].file : VERSIONS[0].file);
+        
+        currentBook = targetBook;
+
+        // 4. Sincroniza visualmente as bandeirinhas
+        document.querySelectorAll('.flag-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.dataset.lang === currentLang);
+        });
+
+        // 5. Preenche os créditos no footer
         var footerCredits = document.getElementById('footer-credits');
         if (footerCredits) {
             footerCredits.innerHTML = VERSIONS.map(function(ver) {
@@ -1488,6 +1509,8 @@
                     + '</div>';
             }).join('');
         }
+
+        // 6. Preenche os créditos de assets (mantendo seu código original)
         var footerAssets = document.getElementById('footer-credits-assets');
         if (footerAssets) {
             footerAssets.innerHTML = '<div class="footer-credit-item">'
@@ -1503,22 +1526,34 @@
             + '<div>Fonte por <a href="https://www.omnibus-type.com/" target="_blank" style="color:inherit;">Omnibus-Type</a> (Guillermo Torres), via <a href="https://fonts.google.com/specimen/Texturina" target="_blank" style="color:inherit;">Google Fonts</a> — SIL OFL 1.1</div>'
             + '</div>';
         }
-        var targetBook = pendingShareState && pendingShareState.book;
-        var initialFile = (targetBook && VERSIONS.find(function(v) { return v.file === targetBook; }))
-            ? targetBook : null;
-        buildVersionFilter(initialFile);
+
+        // 7. Inicializa os filtros e carrega as magias
+        buildVersionFilter(currentBook);
         loadSpells(currentBook);
     }
 
     document.querySelectorAll('.flag-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
-            currentLang = this.dataset.lang;
+            var newLang = this.dataset.lang;
+            currentLang = newLang;
+            
+            // Atualiza a URL no navegador sem recarregar a página
+            var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?lang=' + newLang;
+            window.history.pushState({path:newUrl}, '', newUrl);
+
             document.querySelectorAll('.flag-btn').forEach(function(b) {
                 b.classList.toggle('active', b.dataset.lang === currentLang);
             });
             applyI18n();
-            buildVersionFilter();
+            
+            // Corrige a busca do livro para bater com a nova linguagem
+            var langVersions = VERSIONS.filter(function(v) { return v.lang === currentLang; });
+            currentBook = langVersions.length ? langVersions[0].file : VERSIONS[0].file;
+            
+            buildVersionFilter(currentBook);
             loadSpells(currentBook);
+            
+            try { localStorage.setItem('lang', currentLang); } catch(e) {}
         });
     });
 
