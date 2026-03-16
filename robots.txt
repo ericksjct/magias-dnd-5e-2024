@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloqueia pastas de scripts e estilos de aparecerem sozinhas na busca
+Disallow: /js/
+Disallow: /css/
+
+# Indica o caminho do sitemap para os robôs
+Sitemap: https://players-grimoire.netlify.app/sitemap.xml

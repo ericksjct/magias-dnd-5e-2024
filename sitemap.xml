@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://players-grimoire.netlify.app/</loc>
-<priority>1.0</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://players-grimoire.netlify.app/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://players-grimoire.netlify.app/?lang=ptbr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://players-grimoire.netlify.app/?lang=en"/>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://players-grimoire.netlify.app/?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://players-grimoire.netlify.app/?lang=ptbr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://players-grimoire.netlify.app/?lang=en"/>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

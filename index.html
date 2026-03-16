@@ -3,7 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grimório do Jogador</title>
+
+<title>Player's Grimoire | Grimório do Jogador - D&D 5e & 2024 Spells</title>
+
+<meta name="description" content="Organize seu grimório de D&D / Organize your D&D grimoire. Filter spells by level, class, and school. 2014 & 2024 versions. Multi-language (PT-BR/EN).">
+
+<meta name="keywords" content="D&D spells, magias D&D, spellbook, grimório, 5e, 2024, tabletop RPG, SRD, player's grimoire">
+
+<link rel="canonical" href="https://players-grimoire.netlify.app/" />
+
+<link rel="alternate" hreflang="pt-br" href="https://players-grimoire.netlify.app/" />
+<link rel="alternate" hreflang="en" href="https://players-grimoire.netlify.app/" />
+<link rel="alternate" hreflang="x-default" href="https://players-grimoire.netlify.app/" />
+
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -860,7 +872,22 @@
         </div>
     </footer>
 
-    <script>
+<script>
+    // --- NOVO BLOCO PARA URL E IDIOMA ---
+    var urlParams = new URLSearchParams(window.location.search);
+    var langParam = urlParams.get('lang');
+
+    var currentLang = langParam || (function() {
+        try { return localStorage.getItem('lang') || 'ptbr'; } catch(e) { return 'ptbr'; }
+    })();
+
+    var currentBook = 'spells-' + currentLang;
+
+    if (langParam) {
+        try { localStorage.setItem('lang', langParam); } catch(e) {}
+    }
+    // ------------------------------------
+
     var spells2 = [];
     var FADE = 200;
     var selectedClasses = new Set();
