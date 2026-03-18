@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
-
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11pt;
     margin: 0;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
 }
 
 #menu-container {
@@ -23,8 +27,6 @@ body {
     box-sizing: border-box;
     border-radius: 8px;
     border: 1px solid #ccc;
-    font-family: 'Roboto', sans-serif;
-    font-size: 13pt;
     user-select: none;
     display: flex;
     padding: 5px;
@@ -40,19 +42,15 @@ body {
     display: flex;
 }
 .menu-item p {
-    font-variant: small-caps;
     margin: auto;
     margin-right: 5px;
     margin-left: 0;
 }
 .menu-item select {
-    font-size: 13pt;
     width: 8em;
     margin: 0.1em;
 }
 .menu-item button {
-    font-size: 11pt;
-    font-family: 'Roboto', sans-serif;
     padding: 0 0.6em;
     height: 100%;
     border: 1px solid #ccc;
@@ -69,28 +67,26 @@ body {
 
 .sort-control {
     display: flex;
+    background: #e0e0e0;
     border: 1px solid #ccc;
     border-radius: 999px;
-    overflow: hidden;
-    height: 23px;
+    padding: 2px;
+    height: 30px;
     box-sizing: border-box;
 }
 .sort-btn {
-    width: 50px;
-    padding: 0;
-    font-size: 11px;
-    font-family: 'Roboto', sans-serif;
-    font-variant: small-caps;
+    min-width: 60px;
+    padding: 0 10px;
     border: none;
+    border-radius: 999px;
     background: transparent;
     cursor: pointer;
-    color: #999;
-    transition: background 0.15s, color 0.15s;
+    color: #777;
+    transition: all 0.2s ease;
     white-space: nowrap;
 }
-.sort-btn + .sort-btn { border-left: 1px solid #ccc; }
-.sort-btn:hover { color: #555; }
-.sort-btn.active { background: #e0e0e0; color: #333; font-weight: bold; }
+.sort-btn:hover { color: #444; }
+.sort-btn.active { background: white; color: #111; font-weight: bold; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
 #spell-list {
     margin: auto;
     margin-top: 65px;
@@ -98,7 +94,6 @@ body {
     box-sizing: border-box;
     padding: 0 10px;
     font-size: 0;
-    font-family: 'Roboto', sans-serif;
 }
 .grid-size, .spell-item {
     width: calc(50% - 3px);
@@ -118,8 +113,6 @@ body {
 }
 #empty-message {
     padding: 1em;
-    font-size: 20pt;
-    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     background: gray;
     color: white;
@@ -129,7 +122,7 @@ body {
     display: none;
 }
 .spell-item {
-    font-size: 10pt;
+    font-size: 11pt;
     box-sizing: border-box;
     vertical-align: top;
     page-break-inside: avoid;
@@ -144,7 +137,7 @@ body {
     background: gray;
     color: white;
     border-color: gray;
-    font-size: 15pt;
+    font-weight: bold;
     border-radius: 8px;
     margin-bottom: 5px;
 }
@@ -166,10 +159,8 @@ body {
 .title {
     display: flex;
     align-items: center;
-    font-size: 13.5pt;
 }
 .name {
-    font-variant: small-caps;
     border-bottom: 1px solid;
     display: flex;
     align-items: baseline;
@@ -191,7 +182,6 @@ body {
 }
 .school {
     font-variant: normal;
-    font-size: 8pt;
     font-style: italic;
     text-align: right;
     white-space: nowrap;
@@ -219,7 +209,6 @@ body {
 .meta-item {
     flex-grow: 1;
     display: flex;
-    font-size: 9.5pt;
     height: 1.2em;
     margin: 1%;
 }
@@ -261,8 +250,6 @@ footer {
     padding: 15px;
 }
 footer p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 12pt;
     margin: 0;
     margin-top: 0.1em;
     margin-bottom: 0.1em;
@@ -319,7 +306,6 @@ footer p {
     position: absolute;
     bottom: 6px;
     right: 8px;
-    font-size: 9pt;
     color: var(--accent, #888);
     opacity: 0.9;
     white-space: nowrap;
@@ -327,5 +313,3 @@ footer p {
     user-select: none;
     line-height: 1;
 }
-
-

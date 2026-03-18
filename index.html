@@ -62,8 +62,6 @@
         align-items: center;
         gap: 10px;
         margin: 12px 0 12px 0;
-        font-family: 'Roboto', sans-serif;
-        font-size: 11pt;
         color: #666;
         user-select: none;
     }
@@ -92,43 +90,13 @@
         margin: 0;
         gap: 8px;
         padding: 15px 15px 15px;
-        font-size: 14px;
     }
     #menu .menu-space { display: none; }
-    #show-known { align-items: center; cursor: pointer; }
-    #show-known img { height: 27px; width: auto; }
     .spell-grid {
         margin: 0;
         max-width: none;
         width: 20cm;
     }
-    #lang-flags {
-        display: flex;
-        gap: 0.2em;
-    }
-    #lang-flags {
-        display: flex;
-        border: 1px solid #ccc;
-        border-radius: 999px;
-        overflow: hidden;
-        height: 23px;
-        box-sizing: border-box;
-    }
-    .flag-btn {
-        width: 50px;
-        font-size: 1.1em;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        cursor: pointer;
-        padding: 0;
-        line-height: 1;
-        opacity: 0.5;
-        transition: opacity 0.15s, background 0.15s;
-    }
-    .flag-btn + .flag-btn { border-left: 1px solid #ccc; }
-    .flag-btn:hover { opacity: 0.8; }
-    .flag-btn.active { opacity: 1; background: #d0d0d0; }
 
     #share-btn {
         width: 100%;
@@ -136,132 +104,109 @@
         align-items: center;
         border: 1px solid #ccc;
         border-radius: 999px;
-        overflow: hidden;
+        padding: 2px;
         background: #e0e0e0;
-        height: 23px;
+        height: 30px;
         box-sizing: border-box;
     }
     #share-copy {
+        position: relative;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        width: 70px;
+        width: 40px;
         height: 100%;
         padding: 0;
-        font-size: 11px;
-        font-family: 'Roboto', sans-serif;
-        font-variant: small-caps;
+        border-radius: 999px;
         font-weight: bold;
-        background: #d0d0d0;
+        background: white;
         border: none;
-        border-right: 1px solid #ccc;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         cursor: pointer;
         color: #444;
         transition: background 0.2s, color 0.2s;
-        white-space: nowrap;
     }
-    #share-copy:hover { background: #bbb; color: #111; }
+    #share-copy:hover { color: #111; }
     #share-copy.copied { background: #c8ecd2; color: #2a7a3b; }
     #share-url {
         flex-grow: 1;
         width: 0;
         padding: 0 8px;
-        font-size: 10px;
-        font-family: monospace;
         color: #888;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-    #share-btn-mobile {
-        display: none;
-        padding: 0.1em 0.4em;
-        background: none;
-        border: 2px solid transparent;
-        border-radius: 6px;
-        cursor: pointer;
-        color: #555;
-        align-items: center;
-        opacity: 0.6;
-        transition: opacity 0.15s;
-    }
-    #share-btn-mobile:hover { opacity: 1; }
     #share-btn-m {
         display: flex;
         align-items: center;
         border: 1px solid #ccc;
         border-radius: 999px;
-        overflow: hidden;
+        padding: 2px;
         background: #e0e0e0;
         margin-bottom: 4px;
-        height: 23px;
+        height: 30px;
         box-sizing: border-box;
     }
     #share-copy-m {
+        position: relative;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        width: 70px;
+        width: 40px;
         height: 100%;
         padding: 0;
-        font-size: 11px;
-        font-family: 'Roboto', sans-serif;
-        font-variant: small-caps;
+        border-radius: 999px;
         font-weight: bold;
-        background: #d0d0d0;
+        background: white;
         border: none;
-        border-right: 1px solid #ccc;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         cursor: pointer;
         color: #444;
         transition: background 0.2s, color 0.2s;
-        white-space: nowrap;
     }
-    #share-copy-m:hover { background: #bbb; color: #111; }
+    #share-copy-m:hover { color: #111; }
     #share-copy-m.copied { background: #c8ecd2; color: #2a7a3b; }
     #share-url-m {
         flex-grow: 1;
         width: 0;
         padding: 0 8px;
-        font-size: 10px;
-        font-family: monospace;
         color: #888;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
     .share-label {
-        font-size: 10px;
-        font-variant: small-caps;
-        color: #888;
+        font-weight: bold;
+        color: #555;
         margin-bottom: 3px;
     }
-    #print-btn, #print-btn-m {
+    #print-btn, #print-btn-m, #show-known, #show-known-m {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 10px;
-        height: 23px;
+        width: 30px;
+        height: 30px;
+        padding: 0;
         box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 999px;
-        background: #d0d0d0;
+        border: none;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: white;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         cursor: pointer;
         color: #444;
         transition: background 0.2s, color 0.2s;
     }
-    #print-btn:hover, #print-btn-m:hover { background: #bbb; color: #111; }
+    #print-btn:hover, #print-btn-m:hover, #show-known:hover, #show-known-m:hover { color: #111; }
+    #show-known img, #show-known-m img { height: 16px; width: auto; opacity: 0.8; }
     #theme-toggle-mobile { display: none; }
     .legend-separator {
-        text-align: center;
-        color: var(--surface2, #aaa);
-        letter-spacing: 4px;
-        font-size: 10px;
-        margin: 10px 0 4px;
-        user-select: none;
+        height: 1px;
+        background-color: var(--surface2, #ccc);
+        margin: 12px 0 8px 0;
     }
 
     @media (min-width: 1600px) {
@@ -290,8 +235,6 @@
         #topbar #search-mobile {
             flex: 1;
             padding: 5px 12px;
-            font-size: 13px;
-            font-family: 'Roboto', sans-serif;
             border: 1px solid #bbb;
             border-radius: 999px;
             background: #f8f8f8;
@@ -326,8 +269,6 @@
         }
         #show-known { display: none; }
         #share-btn { display: none; }
-        #share-btn-mobile { display: flex; }
-        #theme-toggle { display: none; }
         #theme-toggle-mobile { display: flex; align-items: center; }
         #menu-container {
             display: none;
@@ -369,7 +310,6 @@
         display: flex;
         align-items: center;
         gap: 0.5em;
-        font-size: 12px;
         color: var(--subtext1, #555);
         padding: 1px 2px;
     }
@@ -379,15 +319,16 @@
 
     /* ── filtros ── */
     #desktop-search {
+        display: flex;
+        gap: 8px;
         margin-bottom: 10px;
     }
     #search-input {
-        width: 100%;
+        flex: 1;
+        min-width: 0;
         box-sizing: border-box;
-        height: 23px;
+        height: 30px;
         padding: 0 12px;
-        font-size: 13px;
-        font-family: 'Roboto', sans-serif;
         border: 1px solid #ccc;
         border-radius: 999px;
         background: #f8f8f8;
@@ -399,29 +340,37 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 12px;
-        font-variant: small-caps;
         font-weight: bold;
         color: #555;
         cursor: pointer;
         padding: 3px 0;
         user-select: none;
-        border-bottom: 1px solid #ccc;
     }
     .filter-arrow {
-        transition: transform 0.2s;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: normal;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        font-size: 0; /* Oculta o antigo caractere '▾' */
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .filter-arrow::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: translateY(-2px) rotate(45deg);
     }
     .filter-section.collapsed .filter-arrow {
         transform: rotate(-90deg);
     }
     .filter-body {
-        max-height: 160px;
-        overflow-y: auto;
+        max-height: 2500px;
+        overflow: hidden;
         opacity: 1;
-        transition: max-height 0.2s ease, opacity 0.2s ease;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
         padding: 3px 0 2px;
     }
     .filter-section.collapsed .filter-body {
@@ -434,7 +383,6 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        font-size: 12px;
         cursor: pointer;
         padding: 1px 2px;
         color: #333;
@@ -503,7 +451,7 @@
     [data-theme="dark"] .spell-body { box-shadow: 2px 3px 8px rgba(0,0,0,0.25); }
     .spell-item[data-level] .spell-body { background: var(--surface0); border-color: var(--surface1); }
     [data-theme="light"] .spell-item[data-level] .spell-body { background: var(--base); border-color: var(--surface1); }
-    .name p:not(.school) { color: var(--text); font-size: 15pt; font-weight: bold; font-family: 'Texturina', serif; }
+    .name p:not(.school) { color: var(--text); font-size: 15pt; font-weight: bold; font-family: 'Texturina', serif; font-variant: small-caps; }
     .school { color: var(--subtext1); font-size: 8pt; font-weight: normal; }
     .name { border-bottom-color: var(--surface2); margin: 0; }
     /* Meta line */
@@ -550,17 +498,25 @@
     #menu { background: var(--surface0); border-color: var(--surface1); color: var(--text); box-shadow: 2px 3px 8px rgba(0,0,0,0.25); }
     [data-theme="light"] #menu { background: var(--base); border-color: var(--surface1); box-shadow: 2px 3px 6px rgba(0,0,0,0.08); }
     [data-theme="light"] #menu-container.open { background: var(--mantle); }
-    /* Flags */
-    #lang-flags { border-color: var(--surface2); }
-    .flag-btn + .flag-btn { border-left-color: var(--surface2); }
-    .flag-btn.active { background: var(--surface1); }
     /* Inputs */
     #search-input { background: var(--mantle); border-color: var(--surface1); color: var(--text); }
     #search-input::placeholder { color: var(--overlay1); }
     /* Filtros */
-    .filter-title { color: var(--text); border-bottom-color: var(--surface1); }
+    .filter-title { color: var(--text); }
     .filter-body label { color: var(--subtext1); }
     .filter-body label:hover { color: var(--text); }
+    .see-more-btn {
+        font-size: 11px;
+        color: var(--overlay1);
+        cursor: pointer;
+        padding: 4px 2px;
+        margin-top: 2px;
+        user-select: none;
+    }
+    .see-more-btn:hover {
+        color: var(--text);
+        text-decoration: underline;
+    }
     .filter-body input[type="checkbox"] { accent-color: var(--text); }
     /* Título */
     #site-title { color: var(--text); }
@@ -570,23 +526,44 @@
     #share-copy:hover { background: var(--surface2); color: var(--text); }
     #share-copy.copied { background: var(--surface0); color: var(--green); }
     #share-url { color: var(--overlay1); }
-    #share-btn-mobile { color: var(--subtext1); }
     #share-btn-m { background: var(--mantle); border-color: var(--surface2); }
     #share-copy-m { background: var(--surface1); border-right-color: var(--surface2); color: var(--subtext1); }
     #share-copy-m:hover { background: var(--surface2); color: var(--text); }
     #share-copy-m.copied { background: var(--surface0); color: var(--green); }
     #share-url-m { color: var(--overlay1); }
-    /* Sort control */
-    .sort-control { border-color: var(--surface2); }
-    .sort-btn { color: var(--overlay1); }
-    .sort-btn + .sort-btn { border-left-color: var(--surface2); }
-    .sort-btn:hover { color: var(--subtext1); }
-    .sort-btn.active { background: var(--surface1); color: var(--text); }
-    /* Print */
-    #print-btn, #print-btn-m { background: var(--surface1); border-color: var(--surface2); color: var(--subtext1); }
-    #print-btn:hover, #print-btn-m:hover { background: var(--surface2); color: var(--text); }
+    
+    /* Toast Efêmero */
+    .ephemeral-toast {
+        position: fixed;
+        transform: translate(-50%, calc(-100% + 10px)); /* Nasce um pouco abaixo do ponto final */
+        background: var(--text);
+        color: var(--base);
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        z-index: 9999;
+    }
+    .ephemeral-toast.show { opacity: 1; transform: translate(-50%, -100%); }
+    .ephemeral-toast.hide { opacity: 0; transform: translate(-50%, calc(-100% - 15px)); }
 
-    .share-label { color: var(--overlay1); }
+    /* Sort control */
+    .sort-control { background: var(--mantle); border-color: var(--surface1); }
+    .sort-btn { color: var(--overlay1); }
+    .sort-btn:hover { color: var(--subtext1); }
+    .sort-btn.active { background: var(--surface1); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+    [data-theme="light"] .sort-btn.active { background: var(--base); }
+    /* Print */
+    #print-btn, #print-btn-m, #show-known, #show-known-m { background: var(--surface1); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+    #print-btn:hover, #print-btn-m:hover, #show-known:hover, #show-known-m:hover { background: var(--surface2); color: var(--text); }
+    [data-theme="light"] #print-btn, [data-theme="light"] #print-btn-m, [data-theme="light"] #show-known, [data-theme="light"] #show-known-m { background: var(--base); }
+
+    .share-label { color: var(--text); }
     /* Hamburger */
     #hamburger { color: var(--text); }
     /* Theme toggle */
@@ -625,10 +602,9 @@
         padding: 20px 40px;
         border-top: 1px solid var(--surface1);
         background: var(--mantle);
-        font-family: 'Roboto', sans-serif;
-        font-size: 11px;
         color: var(--overlay0);
         box-sizing: border-box;
+        font-size: 9pt;
     }
     .footer-col {
         display: flex;
@@ -637,7 +613,6 @@
     }
     .footer-col strong {
         color: var(--subtext0);
-        font-size: 12px;
     }
     .footer-col a {
         color: var(--overlay1);
@@ -646,6 +621,11 @@
     .footer-col a:hover {
         color: var(--text);
         text-decoration: underline;
+    }
+    .footer-col a.active {
+        color: var(--text);
+        font-weight: bold;
+        text-decoration: none;
     }
     .footer-credit-item {
         margin-bottom: 6px;
@@ -671,7 +651,7 @@
 
     <div id="topbar">
         <button id="hamburger">☰</button>
-        <input type="text" id="search-mobile" placeholder="Pesquisar magias...">
+        <input type="text" id="search-mobile" placeholder="🔍︎  Pesquisar">
         <button id="theme-toggle-mobile" title="Alternar tema">☀️</button>
         <div id="known-mobile"><img class="unknown-icon" src="img/unknown-dark.svg"></div>
     </div>
@@ -680,53 +660,39 @@
     <div id="layout">
     <div id="menu-container">
         <div id="menu">
-            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
-                <div id="show-known" class="menu-item" title="Conhecidas">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;">
+                <div class="share-label" style="margin-bottom:0; flex:1;" data-i18n="save_grimoire">Salvar Grimório</div>
+                <div id="show-known" title="Filtrar Conhecidas">
                     <img class="unknown-icon" src="img/unknown-dark.svg">
-                </div>
-                <div style="display:flex; align-items:center; gap:5px; flex:1; justify-content:center;">
-                    <div id="sort-control" class="sort-control">
-                        <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
-                        <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
-                    </div>
-                </div>
-                <div style="display:flex; align-items:center; gap:4px;">
-                    <div id="lang-flags">
-                        <button class="flag-btn active" data-lang="ptbr" title="PT-BR">🇧🇷</button>
-                        <button class="flag-btn" data-lang="en" title="EN">🇬🇧</button>
-                    </div>
-                    <button id="theme-toggle" title="Alternar tema">☀️</button>
-                    <button id="share-btn-mobile" title="Compartilhar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
-                </div>
-            </div>
-
-            <div class="legend-separator">···</div>
-
-            <div class="share-label">Salvar Grimório:</div>
-            <div style="display:flex; align-items:center; gap:6px;">
-                <div id="share-btn" style="flex:1; min-width:0;">
-                    <button id="share-copy">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                        <span id="share-copy-label" data-i18n="share_copy">Copiar</span>
-                    </button>
-                    <span id="share-url"></span>
                 </div>
                 <button id="print-btn" title="Imprimir Cards">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
                 </button>
             </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+                <div id="share-btn" style="flex:1; min-width:0;">
+                    <button id="share-copy" title="Copiar Link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </button>
+                    <span id="share-url"></span>
+                </div>
+            </div>
 
-            <div class="legend-separator">···</div>
+            <div class="legend-separator"></div>
 
             <div class="filter-section">
                 <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
                 <div class="filter-body" id="filter-versions"></div>
             </div>
 
-            <div class="legend-separator">···</div>
+            <div class="legend-separator"></div>
 
             <div id="desktop-search">
-                <input type="text" id="search-input" placeholder="Pesquisar magias...">
+                <input type="text" id="search-input" placeholder="🔍︎  Pesquisar">
+                <div id="sort-control" class="sort-control">
+                    <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
+                    <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
+                </div>
             </div>
             <div class="filter-section collapsed">
                 <div class="filter-title"><span data-i18n="filter_class">Classe</span><span class="filter-arrow">▾</span></div>
@@ -757,7 +723,7 @@
                 <div class="filter-body" id="filter-durations"></div>
             </div>
 
-            <div class="legend-separator">···</div>
+            <div class="legend-separator"></div>
             <div class="filter-section" id="legenda">
                 <div class="filter-title" id="legenda-toggle">
                     <span data-i18n="legenda">Legenda</span>
@@ -780,26 +746,30 @@
                     <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
                 </div>
             </div>
-            <div class="legend-separator">···</div>
-            <div class="share-label">Salvar Grimório:</div>
-            <div style="display:flex; align-items:center; gap:6px;">
-                <div id="share-btn-m" style="flex:1; min-width:0;">
-                    <button id="share-copy-m">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                        <span id="share-copy-label-m" data-i18n="share_copy">Copiar</span>
-                    </button>
-                    <span id="share-url-m"></span>
+            <div class="legend-separator"></div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;">
+                <div class="share-label" style="margin-bottom:0; flex:1;" data-i18n="save_grimoire">Salvar Grimório</div>
+                <div id="show-known-m" title="Filtrar Conhecidas">
+                    <img class="unknown-icon" src="img/unknown-dark.svg">
                 </div>
                 <button id="print-btn-m" title="Imprimir Cards">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
                 </button>
             </div>
-            <div class="legend-separator">···</div>
+            <div style="display:flex; align-items:center; gap:6px;">
+                <div id="share-btn-m" style="flex:1; min-width:0;">
+                    <button id="share-copy-m" title="Copiar Link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </button>
+                    <span id="share-url-m"></span>
+                </div>
+            </div>
+            <div class="legend-separator"></div>
             <div class="filter-section">
                 <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
                 <div class="filter-body" id="filter-versions-m"></div>
             </div>
-            <div class="legend-separator">···</div>
+            <div class="legend-separator"></div>
             <div class="filter-section collapsed">
                 <div class="filter-title"><span data-i18n="filter_class">Classe</span><span class="filter-arrow">▾</span></div>
                 <div class="filter-body" id="filter-classes-m"></div>
@@ -828,7 +798,7 @@
                 <div class="filter-title"><span data-i18n="filter_duration">Duração</span><span class="filter-arrow">▾</span></div>
                 <div class="filter-body" id="filter-durations-m"></div>
             </div>
-            <div class="legend-separator">···</div>
+            <div class="legend-separator"></div>
             <div class="filter-section" id="legenda-m">
                 <div class="filter-title">
                     <span data-i18n="legenda">Legenda</span>
@@ -845,12 +815,12 @@
         </div>
     </div>
 
-    <div id="fetch-error" style="display:none; max-width:20cm; margin: 20px auto; padding: 1em; background:#f8d7da; border:1px solid #f5c2c7; border-radius:8px; font-family:helvetica,sans-serif; color:#842029;">
+    <div id="fetch-error" style="display:none; max-width:20cm; margin: 20px auto; padding: 1em; background:#f8d7da; border:1px solid #f5c2c7; border-radius:8px; color:#842029;">
         ⚠️ Não foi possível carregar as magias. Abra a página pelo <strong>Live Server</strong> (botão "Go Live" no VS Code) em vez de abrir o arquivo diretamente.
     </div>
 
     <div id="grid-area">
-        <h1 id="site-title">Grimório do Jogador</h1>
+        <h1 id="site-title" data-i18n="site_title">Grimório do Jogador</h1>
         <div class="spell-grid" id="spell-grid"></div>
     </div>
     </div>
@@ -859,8 +829,18 @@
             <strong><span data-i18n="footer_made">Feito com ♥ por</span> Erick Teixeira</strong>
             <a href="mailto:erick.sjct@gmail.com">erick.sjct@gmail.com</a>
             <a href="https://github.com/ericksjct/magias-dnd-5e-2024" target="_blank">github.com/ericksjct/magias-dnd-5e-2024</a>
-            <div class="legend-separator">···</div>
+            <div class="legend-separator"></div>
             <strong>Feedback e correção: Renata Moura</strong>
+        </div>
+        <div class="footer-col" id="footer-lang">
+            <strong data-i18n="language">Idioma / Language</strong>
+            <a href="javascript:void(0)" class="flag-btn active" data-lang="ptbr">🇧🇷 Português (BR)</a>
+            <a href="javascript:void(0)" class="flag-btn" data-lang="en">🇬🇧 English</a>
+            <div style="margin-top: 6px;">
+                <a href="javascript:void(0)" id="theme-toggle" title="Alternar tema" style="display:flex; align-items:center; gap:6px;">
+                    <span id="theme-icon">☀️</span> <span data-i18n="theme_toggle">Alternar Tema</span>
+                </a>
+            </div>
         </div>
         <div class="footer-col" id="footer-credits"></div>
         <div class="footer-col" id="footer-credits-assets"></div>
@@ -877,9 +857,14 @@
     var urlParams = new URLSearchParams(window.location.search);
     var langParam = urlParams.get('lang');
 
-    // Prioridade: URL > LocalStorage > Padrão 'ptbr'
+    // Prioridade: URL > LocalStorage > Idioma do Navegador > Padrão 'ptbr'
     var currentLang = langParam || (function() {
-        try { return localStorage.getItem('lang') || 'ptbr'; } catch(e) { return 'ptbr'; }
+        try { 
+            var saved = localStorage.getItem('lang');
+            if (saved) return saved;
+            var browserLang = navigator.language || navigator.userLanguage || '';
+            return browserLang.toLowerCase().startsWith('pt') ? 'ptbr' : 'en';
+        } catch(e) { return 'ptbr'; }
     })();
 
     // Sincroniza o LocalStorage com a escolha atual
@@ -1048,26 +1033,60 @@
         return card;
     }
 
+    function renderCheckboxes(container, values, isCheckedFn, onChangeFn, labelFn) {
+        container.innerHTML = '';
+        values.forEach(function(val, idx) {
+            var label = document.createElement('label');
+            if (idx >= 5) {
+                label.style.display = 'none';
+                label.classList.add('hidden-item');
+            }
+            var cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.checked = isCheckedFn(val);
+            cb.addEventListener('change', function() {
+                onChangeFn(val, this.checked);
+                applyFilter();
+                alignMenu();
+            });
+            label.appendChild(cb);
+            label.appendChild(document.createTextNode('\u00a0' + labelFn(val)));
+            container.appendChild(label);
+        });
+
+        if (values.length > 5) {
+            var moreBtn = document.createElement('div');
+            moreBtn.className = 'see-more-btn';
+            moreBtn.setAttribute('data-i18n', 'see_more');
+            moreBtn.textContent = i18n[currentLang].see_more;
+            moreBtn.addEventListener('click', function() {
+                var isExpanded = container.classList.toggle('expanded');
+                var hiddens = container.querySelectorAll('.hidden-item');
+                hiddens.forEach(function(el) {
+                    el.style.display = isExpanded ? 'flex' : 'none';
+                });
+                moreBtn.textContent = isExpanded ? i18n[currentLang].see_less : i18n[currentLang].see_more;
+                moreBtn.setAttribute('data-i18n', isExpanded ? 'see_less' : 'see_more');
+                alignMenu();
+            });
+            container.appendChild(moreBtn);
+        }
+    }
+
     function buildCheckboxGroup(containerId, values, filterSet, labelFn) {
         [containerId, containerId + '-m'].forEach(function(id) {
             var container = document.getElementById(id);
             if (!container) return;
-            container.innerHTML = '';
-            values.forEach(function(val) {
-                var label = document.createElement('label');
-                var cb = document.createElement('input');
-                cb.type = 'checkbox';
-                cb.checked = filterSet.has(val);
-                cb.addEventListener('change', function() {
-                    if (this.checked) filterSet.add(val);
+            renderCheckboxes(
+                container,
+                values,
+                function(val) { return filterSet.has(val); },
+                function(val, checked) {
+                    if (checked) filterSet.add(val);
                     else filterSet.delete(val);
-                    applyFilter();
-                    alignMenu();
-                });
-                label.appendChild(cb);
-                label.appendChild(document.createTextNode('\u00a0' + labelFn(val)));
-                container.appendChild(label);
-            });
+                },
+                labelFn
+            );
         });
     }
 
@@ -1256,9 +1275,15 @@
     function syncKnownIcons() {
         var src = onlyKnown ? 'img/known.svg' : unknownIcon();
         document.querySelector('#show-known img').src = src;
+        document.querySelector('#show-known-m img').src = src;
         document.querySelector('#known-mobile img').src = src;
     }
     document.getElementById('show-known').addEventListener('click', function() {
+        onlyKnown = !onlyKnown;
+        syncKnownIcons();
+        applyFilter();
+    });
+    document.getElementById('show-known-m').addEventListener('click', function() {
         onlyKnown = !onlyKnown;
         syncKnownIcons();
         applyFilter();
@@ -1296,6 +1321,9 @@
 
     var i18n = {
         ptbr: {
+            theme_toggle:      'Alternar Tema',
+            site_title:        'Grimório do Jogador',
+            language:          'Idioma',
             classe:            'Classe',
             versao:            'Versão',
             conhecidas:        'Conhecidas',
@@ -1318,9 +1346,12 @@
             filter_range:      'Alcance',
             filter_components: 'Componentes',
             filter_duration:   'Duração',
+            see_more:          'Ver mais',
+            see_less:          'Ver menos',
+            save_grimoire:     'Salvar Grimório',
             share_btn:         'Compartilhar Grimório',
             share_copy:        'Copiar',
-            share_copied:      'Link copiado!',
+            share_copied:      'Grimório copiado!',
             share_copy_done:   'Copiado',
             footer_made:       'Feito com ♥ por',
             footer_icon_by:    'Ícone por',
@@ -1331,6 +1362,9 @@
             footer_disclaimer: 'Não afiliado à Wizards of the Coast. Dungeons & Dragons é marca registrada da WotC.'
         },
         en: {
+            theme_toggle:      'Toggle Theme',
+            site_title:        "Player's Grimoire",
+            language:          'Language',
             classe:            'Class',
             versao:            'Version',
             conhecidas:        'Known',
@@ -1353,9 +1387,12 @@
             filter_range:      'Range',
             filter_components: 'Components',
             filter_duration:   'Duration',
+            see_more:          'See more',
+            see_less:          'See less',
+            save_grimoire:     'Save Grimoire',
             share_btn:         'Share Grimoire',
             share_copy:        'Copy',
-            share_copied:      'Link copied!',
+            share_copied:      'Grimoire copied!',
             share_copy_done:   'Copied',
             footer_made:       'Made with ♥ by',
             footer_icon_by:    'Icon by',
@@ -1382,22 +1419,16 @@
         ['filter-classes', 'filter-classes-m'].forEach(function(id) {
             var container = document.getElementById(id);
             if (!container) return;
-            container.innerHTML = '';
-            allClasses.forEach(function(cls) {
-                var label = document.createElement('label');
-                var cb = document.createElement('input');
-                cb.type = 'checkbox';
-                cb.checked = selectedClasses.has(cls);
-                cb.addEventListener('change', function() {
-                    if (this.checked) selectedClasses.add(cls);
-                    else selectedClasses.delete(cls);
-                    applyFilter();
-                    alignMenu();
-                });
-                label.appendChild(cb);
-                label.appendChild(document.createTextNode('\u00a0' + cls));
-                container.appendChild(label);
-            });
+            renderCheckboxes(
+                container, 
+                allClasses, 
+                function(val) { return selectedClasses.has(val); }, 
+                function(val, checked) { 
+                    if (checked) selectedClasses.add(val); 
+                    else selectedClasses.delete(val); 
+                }, 
+                function(val) { return val; }
+            );
         });
     }
 
@@ -1533,7 +1564,8 @@
     }
 
     document.querySelectorAll('.flag-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
             var newLang = this.dataset.lang;
             currentLang = newLang;
             
@@ -1565,39 +1597,73 @@
         document.getElementById('menu-backdrop').classList.toggle('open');
         document.getElementById('hamburger').textContent = open ? '✕' : '☰';
     }
-    function shareGrimoire(btnId, labelId) {
+
+    var shareTimeout = null;
+    function shareGrimoire(btnId) {
         var url = buildShareUrl();
-        var t = i18n[currentLang];
         navigator.clipboard.writeText(url).then(function() {
             var btn = document.getElementById(btnId);
-            var label = document.getElementById(labelId);
+            
+            // 1. Remove qualquer toast anterior para não empilhar
+            var existing = document.getElementById('ephemeral-toast');
+            if (existing) existing.remove();
+
+            // 2. Cria dinamicamente o novo Toast
+            var toast = document.createElement('div');
+            toast.id = 'ephemeral-toast';
+            toast.className = 'ephemeral-toast';
+            toast.innerHTML = '✓&nbsp;&nbsp;' + i18n[currentLang].share_copied;
+            document.body.appendChild(toast); // Anexa no DOM raiz
+
+            // 2.5 Calcula a posição absoluta baseada no botão clicado
+            var rect = btn.getBoundingClientRect();
+            toast.style.left = (rect.left + (rect.width / 2)) + 'px';
+            toast.style.top = (rect.top - 6) + 'px'; // 6px acima do topo do botão
+
+            // 3. Aciona a animação de entrada (reflow forçado)
+            void toast.offsetWidth; 
+            toast.classList.add('show');
+
+            document.getElementById('share-copy').classList.remove('copied');
+            document.getElementById('share-copy-m').classList.remove('copied');
             btn.classList.add('copied');
-            label.textContent = t.share_copy_done;
-            setTimeout(function() {
+
+            // 4. Limpa tudo sozinho após 1.5s com segurança
+            if (shareTimeout) clearTimeout(shareTimeout);
+            shareTimeout = setTimeout(function() {
                 btn.classList.remove('copied');
-                label.textContent = t.share_copy;
-            }, 2000);
+                toast.classList.remove('show');
+                toast.classList.add('hide');
+                setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300);
+            }, 1500);
         }).catch(function() {
             window.prompt('Copie o link:', url);
         });
     }
-    document.getElementById('share-copy').addEventListener('click', function() { shareGrimoire('share-copy', 'share-copy-label'); });
-    document.getElementById('share-copy-m').addEventListener('click', function() { shareGrimoire('share-copy-m', 'share-copy-label-m'); });
+    document.getElementById('share-copy').addEventListener('click', function() { shareGrimoire('share-copy'); });
+    document.getElementById('share-copy-m').addEventListener('click', function() { shareGrimoire('share-copy-m'); });
     document.getElementById('print-btn').addEventListener('click', function() { window.print(); });
     document.getElementById('print-btn-m').addEventListener('click', function() { window.print(); });
-    document.getElementById('share-btn-mobile').addEventListener('click', function() { shareGrimoire('share-copy', 'share-copy-label'); });
 
     document.getElementById('hamburger').addEventListener('click', toggleMenu);
     document.getElementById('menu-backdrop').addEventListener('click', toggleMenu);
 
     // ── Theme toggle ──
     var currentTheme = (function() {
-        try { return localStorage.getItem('theme') || 'dark'; } catch(e) { return 'dark'; }
+        try { 
+            var saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                return 'light';
+            }
+            return 'dark'; 
+        } catch(e) { return 'dark'; }
     })();
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         var icon = theme === 'dark' ? '☀️' : '🌑';
-        document.getElementById('theme-toggle').textContent = icon;
+        var tIcon = document.getElementById('theme-icon');
+        if (tIcon) tIcon.textContent = icon;
         document.getElementById('theme-toggle-mobile').textContent = icon;
         var src = theme === 'light' ? 'img/unknown-light.svg' : 'img/unknown-dark.svg';
         document.querySelectorAll('img.unknown-icon').forEach(function(el) { el.src = src; });

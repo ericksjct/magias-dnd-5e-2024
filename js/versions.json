@@ -10,5 +10,11 @@
     "lang": "en",
     "version": "Player's Handbook 5.2 SRD",
     "credits": "Player's Handbook 5.2 SRD - https://gist.github.com/dmcb"
+  },
+    {
+    "file": "spells-EN-2014",
+    "lang": "en",
+    "version": "Player's Handbook 5.1 SRD",
+    "credits": "Player's Handbook 5.1 SRD - https://gist.github.com/dmcb"
   }
 ]
