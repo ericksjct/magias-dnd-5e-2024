@@ -1,0 +1,4 @@
+# Magias sem dados de classe (preenchimento manual necessário)
+
+- infligir ferimentos
+- truque de corda

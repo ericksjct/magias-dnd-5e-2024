@@ -313,3 +313,99 @@ footer p {
     user-select: none;
     line-height: 1;
 }
+
+.description table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border: none;
+    border-top: 1px dotted var(--surface2, #ccc);
+    border-bottom: 1px dotted var(--surface2, #ccc);
+}
+
+.description th,
+.description td {
+    border: none !important;
+    padding: 4px 8px;
+    text-align: left;
+}
+
+.description th {
+    font-weight: bold;
+    background: var(--surface0, #eee);
+    color: var(--subtext1, #555);
+}
+
+.description tbody tr:nth-child(even) {
+    background: var(--mantle, #f5f5f5);
+}
+
+/* ── Modal de magia (apenas desktop) ─────────────────────────── */
+@media (pointer: fine) and (min-width: 700px) {
+    .spell-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        background: rgba(0, 0, 0, 0.55);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .spell-modal-overlay.open {
+        display: flex;
+    }
+    .spell-modal-card {
+        width: min(680px, 90vw);
+        max-height: 88vh;
+        overflow-y: auto;
+        border-radius: 12px;
+        position: relative;
+        cursor: default;
+        background: var(--base, white);
+        animation: modal-in 0.15s ease-out;
+    }
+    .spell-modal-overlay.closing .spell-modal-card {
+        animation: modal-out 0.12s ease-in forwards;
+    }
+    @keyframes modal-in {
+        from { transform: scale(0.88); opacity: 0; }
+        to   { transform: scale(1);    opacity: 1; }
+    }
+    @keyframes modal-out {
+        from { transform: scale(1);    opacity: 1; }
+        to   { transform: scale(0.88); opacity: 0; }
+    }
+    .spell-modal-close {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        background: none;
+        border: none;
+        font-size: 1em;
+        cursor: pointer;
+        color: var(--subtext1, #777);
+        z-index: 1;
+        padding: 0;
+        line-height: 1;
+    }
+    .spell-modal-close:hover {
+        color: var(--text, #333);
+    }
+    .spell-modal-body .spell-body {
+        border-radius: 12px;
+        font-size: 13pt;
+        padding: 1em 1.2em 2em 1.2em;
+    }
+    .spell-modal-body .description {
+        font-size: 10pt;
+    }
+    .spell-modal-body .name p:not(.school) {
+        font-size: 18pt;
+    }
+    .spell-modal-body .known {
+        margin-right: 1.8em;
+    }
+}

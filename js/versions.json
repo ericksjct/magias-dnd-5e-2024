@@ -1,9 +1,15 @@
 [
   {
-    "file": "spells-ptbr",
+    "file": "spells-5E-2024-PTBR",
     "lang": "ptbr",
-    "version": "Livro do Jogador 5E 2024 (Heróis Anônimos)",
+    "version": "D&D 5.5E (Heróis Anônimos, 2024)",
     "credits": "Livro do Jogador 5E 2024 (Heróis Anônimos) traduzidas para o Português Brasileiro por Heróis Anônimos."
+  },
+  {
+    "file": "output",
+    "lang": "ptbr",
+    "version": "D&D 5E (Versão Oficial, 2014)",
+    "credits": "App de grimório de magias do didiraja https://github.com/didiraja/dnd-5e-magias."
   },
   {
     "file": "spells-EN-5.2",

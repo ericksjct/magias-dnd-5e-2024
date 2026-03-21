@@ -98,6 +98,11 @@
         width: 20cm;
     }
 
+    @keyframes share-rainbow {
+        0%   { background-position: 0% 50%; }
+        50%  { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
     #share-btn {
         width: 100%;
         display: flex;
@@ -120,15 +125,15 @@
         padding: 0;
         border-radius: 999px;
         font-weight: bold;
-        background: white;
+        background: linear-gradient(135deg, #cba6f7, #f38ba8, #fab387);
         border: none;
         box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         cursor: pointer;
-        color: #444;
-        transition: background 0.2s, color 0.2s;
+        color: white;
+        transition: color 0.2s, opacity 0.2s;
     }
-    #share-copy:hover { color: #111; }
-    #share-copy.copied { background: #c8ecd2; color: #2a7a3b; }
+    #share-copy:hover { opacity: 0.85; }
+    #share-copy.copied { background: #40a02b; color: #ffffff; }
     #share-url {
         flex-grow: 1;
         width: 0;
@@ -160,15 +165,15 @@
         padding: 0;
         border-radius: 999px;
         font-weight: bold;
-        background: white;
+        background: linear-gradient(135deg, #cba6f7, #f38ba8, #fab387);
         border: none;
         box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         cursor: pointer;
-        color: #444;
-        transition: background 0.2s, color 0.2s;
+        color: white;
+        transition: color 0.2s, opacity 0.2s;
     }
-    #share-copy-m:hover { color: #111; }
-    #share-copy-m.copied { background: #c8ecd2; color: #2a7a3b; }
+    #share-copy-m:hover { opacity: 0.85; }
+    #share-copy-m.copied { background: #a6e3a1; color: #1e1e2e; }
     #share-url-m {
         flex-grow: 1;
         width: 0;
@@ -209,6 +214,12 @@
         margin: 12px 0 8px 0;
     }
 
+    @media (max-width: 1200px) and (min-width: 601px) {
+        .spell-grid {
+            columns: 1;
+            max-width: 10cm;
+        }
+    }
     @media (min-width: 1600px) {
         .spell-grid {
             columns: 3;
@@ -397,7 +408,10 @@
         font-size: 3em;
         font-weight: 700;
         text-align: center;
-        color: #444;
+        background: linear-gradient(to right, #444, #888, #444);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         margin: 0 0 16px 0;
         letter-spacing: 0.5px;
     }
@@ -520,19 +534,54 @@
     }
     .filter-body input[type="checkbox"] { accent-color: var(--text); }
     /* Título */
-    #site-title { color: var(--text); }
+    #site-title { background: linear-gradient(0deg, var(--text), var(--overlay2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     /* Share */
     #share-btn { background: var(--mantle); border-color: var(--surface2); }
-    #share-copy { background: var(--surface1); border-right-color: var(--surface2); color: var(--subtext1); }
-    #share-copy:hover { background: var(--surface2); color: var(--text); }
-    #share-copy.copied { background: var(--surface0); color: var(--green); }
+    #share-copy { background: linear-gradient(135deg, var(--mauve), var(--red), var(--peach)); color: white; }
+    #share-copy:hover { opacity: 0.85; }
+    #share-copy.copied { background: var(--green); color: var(--base); }
     #share-url { color: var(--overlay1); }
     #share-btn-m { background: var(--mantle); border-color: var(--surface2); }
-    #share-copy-m { background: var(--surface1); border-right-color: var(--surface2); color: var(--subtext1); }
-    #share-copy-m:hover { background: var(--surface2); color: var(--text); }
-    #share-copy-m.copied { background: var(--surface0); color: var(--green); }
+    #share-copy-m { background: linear-gradient(135deg, var(--mauve), var(--red), var(--peach)); color: white; }
+    #share-copy-m:hover { opacity: 0.85; }
+    #share-copy-m.copied { background: var(--green); color: var(--base); }
     #share-url-m { color: var(--overlay1); }
     
+    /* Sparkles do botão de copiar */
+    .copy-sparkle {
+        position: fixed;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        animation: sparkle-burst 0.55s ease-out forwards;
+    }
+    @keyframes share-pop {
+        0%   { transform: scale(1); }
+        40%  { transform: scale(1.22); }
+        100% { transform: scale(1); }
+    }
+    @keyframes known-pop {
+        0%   { transform: scale(1); }
+        40%  { transform: scale(1.4); }
+        100% { transform: scale(1); }
+    }
+    .known-popping { animation: known-pop 0.22s ease-out; }
+    .known { transform-origin: center; }
+    @keyframes share-copied-in {
+        0%   { background: #ffffff; }
+        100% { background: #40a02b; }
+    }
+    #share-copy.copied, #share-copy-m.copied {
+        animation: share-pop 0.22s ease-out, share-copied-in 0.35s ease-out forwards;
+    }
+
+    @keyframes sparkle-burst {
+        0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+        100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+    }
+
     /* Toast Efêmero */
     .ephemeral-toast {
         position: fixed;
@@ -853,6 +902,14 @@
         </div>
     </footer>
 
+
+<!-- Modal de magia (desktop) -->
+<div id="spell-modal" class="spell-modal-overlay" aria-hidden="true">
+    <div class="spell-modal-card">
+        <button class="spell-modal-close" id="spell-modal-close" aria-label="Fechar">✕</button>
+        <div class="spell-modal-body"></div>
+    </div>
+</div>
 <script>
     // --- BLOCO DE INICIALIZAÇÃO DE IDIOMA ---
     var urlParams = new URLSearchParams(window.location.search);
@@ -1012,10 +1069,31 @@
             knownSpells[spell.name] = !knownSpells[spell.name];
             try { localStorage.setItem('knownSpells', JSON.stringify(knownSpells)); } catch(e) {}
             card.querySelector('.known img').src = knownIcon(spell);
+            popEl(card.querySelector('.known'));
             if (onlyKnown) render();
         }
 
         card.querySelector('.known').addEventListener('click', toggleKnown);
+
+        // Abre modal no desktop ao clicar na magia
+        card.addEventListener('click', function(e) {
+            if (!window.matchMedia('(pointer: fine) and (min-width: 700px)').matches) return;
+            if (e.target.closest('.known')) return;
+            var modal = document.getElementById('spell-modal');
+            var body = modal.querySelector('.spell-modal-body');
+            body.innerHTML = card.querySelector('.spell-body').outerHTML;
+            // Conecta o botão known do modal ao botão original do card
+            var modalKnown = body.querySelector('.known');
+            if (modalKnown) {
+                modalKnown.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    card.querySelector('.known').click();
+                    modalKnown.querySelector('img').src = card.querySelector('.known img').src;
+                });
+            }
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+        });
 
         // Double-tap para bookmark (mobile)
         var lastTap = 0;
@@ -1283,16 +1361,19 @@
         onlyKnown = !onlyKnown;
         syncKnownIcons();
         applyFilter();
+        popEl(this);
     });
     document.getElementById('show-known-m').addEventListener('click', function() {
         onlyKnown = !onlyKnown;
         syncKnownIcons();
         applyFilter();
+        popEl(this);
     });
     document.getElementById('known-mobile').addEventListener('click', function() {
         onlyKnown = !onlyKnown;
         syncKnownIcons();
         applyFilter();
+        popEl(this);
     });
 
     function syncSortToggle() {
@@ -1600,6 +1681,35 @@
     }
 
     var shareTimeout = null;
+    function popEl(el) {
+        el.classList.remove('known-popping');
+        void el.offsetWidth;
+        el.classList.add('known-popping');
+        el.addEventListener('animationend', function() { el.classList.remove('known-popping'); }, { once: true });
+    }
+
+    function spawnSparkles(btn) {
+        var rect = btn.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        var colors = ['#a6e3a1','#f9e2af','#94e2d5','#cba6f7','#fab387','#ffffff'];
+        var count = 10;
+        for (var i = 0; i < count; i++) {
+            var angle = (i / count) * Math.PI * 2 + Math.random() * 0.4;
+            var dist  = 18 + Math.random() * 16;
+            var el = document.createElement('div');
+            el.className = 'copy-sparkle';
+            el.style.left = cx + 'px';
+            el.style.top  = cy + 'px';
+            el.style.background = colors[i % colors.length];
+            el.style.setProperty('--dx', (Math.cos(angle) * dist) + 'px');
+            el.style.setProperty('--dy', (Math.sin(angle) * dist) + 'px');
+            el.style.animationDelay = (i * 25) + 'ms';
+            document.body.appendChild(el);
+            setTimeout(function(node) { node.remove(); }, 700, el);
+        }
+    }
+
     function shareGrimoire(btnId) {
         var url = buildShareUrl();
         navigator.clipboard.writeText(url).then(function() {
@@ -1628,6 +1738,7 @@
             document.getElementById('share-copy').classList.remove('copied');
             document.getElementById('share-copy-m').classList.remove('copied');
             btn.classList.add('copied');
+            spawnSparkles(btn);
 
             // 4. Limpa tudo sozinho após 1.5s com segurança
             if (shareTimeout) clearTimeout(shareTimeout);
@@ -1648,6 +1759,26 @@
 
     document.getElementById('hamburger').addEventListener('click', toggleMenu);
     document.getElementById('menu-backdrop').addEventListener('click', toggleMenu);
+
+    // ── Modal de magia ──
+    (function() {
+        var modal = document.getElementById('spell-modal');
+        function closeModal() {
+            modal.classList.add('closing');
+            setTimeout(function() {
+                modal.classList.remove('open', 'closing');
+                modal.setAttribute('aria-hidden', 'true');
+            }, 120);
+        }
+        // Fechar ao clicar no backdrop (fora do card)
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeModal();
+        });
+        document.getElementById('spell-modal-close').addEventListener('click', closeModal);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    })();
 
     // ── Theme toggle ──
     var currentTheme = (function() {
@@ -1717,6 +1848,14 @@
         });
     });
     </script>
+
+<!-- Modal de magia (desktop) -->
+<div id="spell-modal" class="spell-modal-overlay" aria-hidden="true">
+    <div class="spell-modal-card">
+        <button class="spell-modal-close" id="spell-modal-close" aria-label="Fechar">✕</button>
+        <div class="spell-modal-body"></div>
+    </div>
+</div>
 
 </body>
 </html>
