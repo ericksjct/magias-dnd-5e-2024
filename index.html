@@ -23,16 +23,40 @@
 <link rel="stylesheet" href="css/style.css">
 <style>
     .spell-grid {
-        columns: 2;
+        columns: 3;
         column-gap: 10px;
-        max-width: 20cm;
-        margin: auto;
-        margin-top: 20px;
+        width: 1130px; /* 3×370 + 2×10 */
+        margin: 20px auto 0;
+    }
+    @media (max-width: 1430px) {
+        .spell-grid { columns: 2; width: 750px; } /* 2×370 + 1×10 */
+    }
+    @media (max-width: 1050px) {
+        .spell-grid { columns: 1; width: 370px; }
+    }
+    #grid-wrapper {
+        width: fit-content;
+        margin: 0 auto;
+    }
+    #sort-control-row {
+        width: 100%;
+        margin: 40px 0 8px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .sort-row-side {
+        flex: 1;
+        display: flex;
+    }
+    .sort-row-right {
+        justify-content: flex-end;
     }
     .spell-item {
         break-inside: avoid;
         display: inline-block;
         width: 100%;
+        box-sizing: border-box;
         background: transparent;
         margin-bottom: 10px;
         border-radius: 8px;
@@ -71,32 +95,117 @@
         flex: 1;
         border-top: 1px dotted #aaa;
     }
+    html, body { height: 100%; }
+    body { overflow: hidden; padding: 0; }
     #layout {
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 20px;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        height: 100vh;
+        overflow: hidden;
     }
     #menu-container {
-        position: static;
-        background: none;
+        position: relative;
         flex-shrink: 0;
-        width: auto;
+        width: 370px;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transition: width 0.3s ease, opacity 0.25s ease;
+        box-sizing: border-box;
     }
     #menu {
         flex-direction: column;
-        width: 369px;
-        min-width: 369px;
+        width: 370px;
+        min-width: 370px;
         margin: 0;
         gap: 8px;
-        padding: 15px 15px 15px;
+        padding: 15px;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
     }
     #menu .menu-space { display: none; }
-    .spell-grid {
-        margin: 0;
-        max-width: none;
-        width: 20cm;
+    #content-area {
+        flex: 1;
+        height: 100%;
+        overflow-y: auto;
+        min-width: 0;
+        padding: 20px;
+        box-sizing: border-box;
     }
+
+    /* ── Sidebar toggle (desktop) ── */
+    body.sidebar-closed #menu-container {
+        width: 56px;
+    }
+    body.sidebar-closed #menu {
+        display: none;
+    }
+    #sidebar-icons-strip {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 0;
+        width: 56px;
+    }
+    body.sidebar-closed #sidebar-icons-strip {
+        display: flex;
+    }
+    .strip-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--overlay1, #888);
+        transition: background 0.15s, color 0.15s;
+        padding: 0;
+        flex-shrink: 0;
+    }
+    .strip-btn:hover { background: var(--surface1, #e0e0e0); color: var(--text, #111); }
+    .strip-btn img { height: 16px; width: auto; opacity: 0.8; }
+    #strip-share-copy.copied { background: #40a02b; color: white; }
+    #sidebar-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--overlay1);
+        padding: 4px 5px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 0.15s, background 0.15s;
+        flex-shrink: 0;
+    }
+    #sidebar-toggle:hover { color: var(--text); background: var(--surface1); }
+    #sidebar-open {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 10px;
+        z-index: 50;
+        background: var(--surface0);
+        border: 1px solid var(--surface2);
+        border-radius: 8px;
+        cursor: pointer;
+        color: var(--overlay1);
+        padding: 7px;
+        box-shadow: 2px 3px 10px rgba(0,0,0,0.3);
+        transition: color 0.15s, background 0.15s;
+        align-items: center;
+        justify-content: center;
+    }
+    #sidebar-open:hover { color: var(--text); background: var(--surface1); }
+    body.sidebar-closed #sidebar-open { display: none; }
+
 
     @keyframes share-rainbow {
         0%   { background-position: 0% 50%; }
@@ -129,8 +238,8 @@
         border: none;
         box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         cursor: pointer;
-        color: white;
-        transition: color 0.2s, opacity 0.2s;
+        color: #ffffff;
+        transition: color 0.2s, opacity 0.2s, background 0.2s;
     }
     #share-copy:hover { opacity: 0.85; }
     #share-copy.copied { background: #40a02b; color: #ffffff; }
@@ -169,11 +278,11 @@
         border: none;
         box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         cursor: pointer;
-        color: white;
-        transition: color 0.2s, opacity 0.2s;
+        color: #ffffff;
+        transition: color 0.2s, opacity 0.2s, background 0.2s;
     }
     #share-copy-m:hover { opacity: 0.85; }
-    #share-copy-m.copied { background: #a6e3a1; color: #1e1e2e; }
+    #share-copy-m.copied { background: #40a02b; color: #ffffff; }
     #share-url-m {
         flex-grow: 1;
         width: 0;
@@ -214,23 +323,16 @@
         margin: 12px 0 8px 0;
     }
 
-    @media (max-width: 1200px) and (min-width: 601px) {
-        .spell-grid {
-            columns: 1;
-            max-width: 10cm;
-        }
-    }
-    @media (min-width: 1600px) {
-        .spell-grid {
-            columns: 3;
-            width: 30cm;
-        }
-    }
     /* ── topbar mobile ── */
     #topbar {
         display: none;
     }
     @media (max-width: 600px) {
+        html, body { height: auto; overflow: visible; }
+        #layout { height: auto; overflow: visible; }
+        #content-area { height: auto; overflow-y: visible; padding: 10px 15px; }
+        #sidebar-toggle, #sidebar-open { display: none !important; }
+        #menu-container { height: auto; overflow-y: visible; max-width: none; border-right: none; }
         body { padding: 0; }
         #topbar {
             display: flex;
@@ -301,13 +403,18 @@
             width: 100%;
             min-width: unset;
         }
+        #mobile-menu .legend-separator { margin: 2px 0; }
+        #mobile-menu .filter-section { margin-top: 0; }
+        #grid-wrapper { width: 100%; }
+        #sort-control-row { display: none; }
+        #site-title { display: none; }
         .spell-grid {
-            columns: 1;
-            width: 100%;
+            columns: 1 !important;
+            width: 100% !important;
+            margin: 0 !important;
+            box-sizing: border-box;
         }
-        .spell-item {
-            width: 100%;
-        }
+        .spell-item { width: 100% !important; }
         #menu-backdrop {
             display: none;
             position: fixed;
@@ -329,23 +436,41 @@
     }
 
     /* ── filtros ── */
-    #desktop-search {
-        display: flex;
-        gap: 8px;
-        margin-bottom: 10px;
-    }
     #search-input {
-        flex: 1;
-        min-width: 0;
         box-sizing: border-box;
         height: 30px;
+        width: 100%;
+        max-width: 300px;
         padding: 0 12px;
         border: 1px solid #ccc;
         border-radius: 999px;
         background: #f8f8f8;
+        text-align: center;
     }
     .filter-section {
         margin-top: 6px;
+    }
+    .version-select-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 4px 0;
+    }
+    .version-select-label {
+        font-weight: bold;
+        color: #555;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    .version-select-row select {
+        flex: 1;
+        min-width: 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        padding: 3px 6px;
+        background: white;
+        color: inherit;
+        cursor: pointer;
     }
     .filter-title {
         display: flex;
@@ -401,7 +526,7 @@
     }
     .filter-body label:hover { color: #000; }
     #grid-area {
-        flex: none;
+        width: 100%;
     }
     #site-title {
         font-family: 'Texturina', serif;
@@ -412,7 +537,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        margin: 0 0 16px 0;
+        margin: 0;
         letter-spacing: 0.5px;
     }
     @media (max-width: 600px) {
@@ -510,16 +635,20 @@
     .level-separator { color: var(--subtext1); }
     .level-separator::before, .level-separator::after { border-top-color: var(--surface2); }
     /* Menu sidebar */
-    #menu { background: var(--surface0); border-color: var(--surface1); color: var(--text); box-shadow: 2px 3px 8px rgba(0,0,0,0.25); }
-    [data-theme="light"] #menu { background: var(--base); border-color: var(--surface1); box-shadow: 2px 3px 6px rgba(0,0,0,0.08); }
+    #menu-container { background: var(--surface0); border-right: 1px solid var(--surface1); color: var(--text); }
+    #menu { background: transparent; border: none; box-shadow: none; color: var(--text); }
+    [data-theme="light"] #menu-container { background: var(--base); }
     [data-theme="light"] #menu-container.open { background: var(--mantle); }
     /* Inputs */
     #search-input { background: var(--mantle); border-color: var(--surface1); color: var(--text); }
-    #search-input::placeholder { color: var(--overlay1); }
+    #search-input::placeholder { color: var(--overlay1); transition: opacity 0.15s; }
+    #search-input:focus::placeholder { opacity: 0; }
     /* Filtros */
     .filter-title { color: var(--text); }
     .filter-body label { color: var(--subtext1); }
     .filter-body label:hover { color: var(--text); }
+    .version-select-label { color: var(--text); }
+    .version-select-row select { background: var(--surface0); border-color: var(--surface2); color: var(--text); }
     .see-more-btn {
         font-size: 11px;
         color: var(--overlay1);
@@ -537,14 +666,14 @@
     #site-title { background: linear-gradient(0deg, var(--text), var(--overlay2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     /* Share */
     #share-btn { background: var(--mantle); border-color: var(--surface2); }
-    #share-copy { background: linear-gradient(135deg, var(--mauve), var(--red), var(--peach)); color: white; }
+    #share-copy { background: linear-gradient(135deg, #cba6f7, #f38ba8, #fab387); color: #ffffff; }
     #share-copy:hover { opacity: 0.85; }
-    #share-copy.copied { background: var(--green); color: var(--base); }
+    #share-copy.copied { background: #40a02b; color: #ffffff; }
     #share-url { color: var(--overlay1); }
     #share-btn-m { background: var(--mantle); border-color: var(--surface2); }
-    #share-copy-m { background: linear-gradient(135deg, var(--mauve), var(--red), var(--peach)); color: white; }
+    #share-copy-m { background: linear-gradient(135deg, #cba6f7, #f38ba8, #fab387); color: #ffffff; }
     #share-copy-m:hover { opacity: 0.85; }
-    #share-copy-m.copied { background: var(--green); color: var(--base); }
+    #share-copy-m.copied { background: #40a02b; color: #ffffff; }
     #share-url-m { color: var(--overlay1); }
     
     /* Sparkles do botão de copiar */
@@ -603,11 +732,23 @@
     .ephemeral-toast.hide { opacity: 0; transform: translate(-50%, calc(-100% - 15px)); }
 
     /* Sort control */
-    .sort-control { background: var(--mantle); border-color: var(--surface1); }
-    .sort-btn { color: var(--overlay1); }
+    .sort-control { background: var(--mantle); border-color: var(--surface1); position: relative; }
+    .sort-btn { color: var(--overlay1); position: relative; z-index: 1; }
     .sort-btn:hover { color: var(--subtext1); }
-    .sort-btn.active { background: var(--surface1); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
-    [data-theme="light"] .sort-btn.active { background: var(--base); }
+    .sort-btn.active { background: transparent !important; color: var(--text); box-shadow: none !important; font-weight: bold; }
+    .sort-slider {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        height: calc(100% - 4px);
+        border-radius: 999px;
+        pointer-events: none;
+        z-index: 0;
+        transition: left 0.22s cubic-bezier(0.4, 0, 0.2, 1), width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+        background: var(--surface1);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    [data-theme="light"] .sort-slider { background: var(--base); box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
     /* Print */
     #print-btn, #print-btn-m, #show-known, #show-known-m { background: var(--surface1); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
     #print-btn:hover, #print-btn-m:hover, #show-known:hover, #show-known-m:hover { background: var(--surface2); color: var(--text); }
@@ -633,7 +774,7 @@
     #mobile-menu { display: none; }
     @media (max-width: 600px) {
         #menu { display: none; }
-        #mobile-menu { display: block; }
+        #mobile-menu { display: flex; flex-direction: column; gap: 14px; }
         #topbar { background: var(--mantle); box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
         #menu-container.open { background: var(--base); }
         #topbar #search-mobile { background: var(--surface0); border-color: var(--surface1); color: var(--text); }
@@ -690,14 +831,108 @@
     .footer-col-right {
         text-align: right;
     }
+    #spell-tracker { display: none; }
+
     @media print {
-        .spell-grid {
-            max-width: calc(20cm - 6mm);
+        #spell-tracker {
+            display: block;
+            width: 100%;
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+            border-bottom: 1.5px solid #555;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 9pt;
+            page-break-inside: avoid;
         }
+        #spell-tracker-body {
+            display: flex;
+            gap: 0;
+        }
+        #tracker-fields {
+            flex: 1;
+            padding: 10px 12px;
+            border-right: 1.5px solid #555;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 12px;
+        }
+        .tracker-field {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .tracker-label {
+            font-weight: bold;
+            white-space: nowrap;
+            font-size: 8pt;
+        }
+        .tracker-label::after { content: ":"; }
+        .tracker-box {
+            width: 52px;
+            height: 18px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        #tracker-slots {
+            flex: 1;
+            padding: 10px 12px;
+        }
+        .tracker-slots-title {
+            font-weight: bold;
+            font-size: 8pt;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        #tracker-slots-grid {
+            display: flex;
+            gap: 14px;
+        }
+        .tracker-slot-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .tracker-slot-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            line-height: 1.7;
+        }
+        .tracker-slot-label {
+            width: 42px;
+            font-size: 8pt;
+            flex-shrink: 0;
+        }
+        .tracker-boxes {
+            letter-spacing: 1px;
+            white-space: nowrap;
+            font-size: 11pt;
+        }
+
+        /* Reset layout */
+        html, body { height: auto !important; overflow: visible !important; }
+        #layout { display: block !important; height: auto !important; overflow: visible !important; }
+        #menu-container, #sidebar-icons-strip, #sidebar-open { display: none !important; }
+        #content-area { height: auto !important; overflow: visible !important; padding: 0 !important; }
+        #site-title, #sort-control-row { display: none !important; }
+
+        /* Grid: sempre 3 colunas, largura total */
+        #grid-wrapper { width: 100% !important; margin: 0 !important; }
+        .spell-grid {
+            columns: 2 !important;
+            column-gap: 10px !important;
+            width: 100% !important;
+            margin: 0 !important;
+        }
+        .spell-item { width: 100% !important; }
     }
 </style>
 </head>
-<body style="padding: 20px; padding-bottom: 0;">
+<body>
 
     <div id="topbar">
         <button id="hamburger">☰</button>
@@ -707,8 +942,24 @@
     </div>
     <div id="menu-backdrop"></div>
 
+    <button id="sidebar-open" title="Mostrar menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><polyline points="12 9 15 12 12 15"/></svg>
+    </button>
+
     <div id="layout">
     <div id="menu-container">
+        <div id="sidebar-icons-strip">
+            <button class="strip-btn" id="strip-sidebar-open" title="Abrir menu">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/><polyline points="9 9 12 12 9 15"/></svg>
+            </button>
+            <button class="strip-btn" id="strip-show-known" title="Filtrar Conhecidas">
+                <img class="unknown-icon" src="img/unknown-dark.svg">
+            </button>
+            <button class="strip-btn" id="strip-share-copy" title="Copiar Link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+        </div>
+
         <div id="menu">
             <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;">
                 <div class="share-label" style="margin-bottom:0; flex:1;" data-i18n="save_grimoire">Salvar Grimório</div>
@@ -717,6 +968,9 @@
                 </div>
                 <button id="print-btn" title="Imprimir Cards">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                </button>
+                <button id="sidebar-toggle" title="Ocultar menu">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><polyline points="15 9 12 12 15 15"/></svg>
                 </button>
             </div>
             <div style="display:flex; align-items:center; gap:6px;">
@@ -730,20 +984,13 @@
 
             <div class="legend-separator"></div>
 
-            <div class="filter-section">
-                <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
-                <div class="filter-body" id="filter-versions"></div>
+            <div class="version-select-row">
+                <label class="version-select-label" data-i18n="filter_version">Versão</label>
+                <select id="version-select"></select>
             </div>
 
             <div class="legend-separator"></div>
 
-            <div id="desktop-search">
-                <input type="text" id="search-input" placeholder="🔍︎  Pesquisar">
-                <div id="sort-control" class="sort-control">
-                    <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
-                    <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
-                </div>
-            </div>
             <div class="filter-section collapsed">
                 <div class="filter-title"><span data-i18n="filter_class">Classe</span><span class="filter-arrow">▾</span></div>
                 <div class="filter-body" id="filter-classes"></div>
@@ -774,7 +1021,7 @@
             </div>
 
             <div class="legend-separator"></div>
-            <div class="filter-section" id="legenda">
+            <div class="filter-section collapsed" id="legenda">
                 <div class="filter-title" id="legenda-toggle">
                     <span data-i18n="legenda">Legenda</span>
                     <span class="filter-arrow">▾</span>
@@ -789,15 +1036,15 @@
             </div>
         </div>
         <div id="mobile-menu">
-            <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
-                <span class="share-label" style="margin-bottom:0;" data-i18n="ordem_label">Ordem:</span>
+            <div style="display:flex; justify-content:center;">
                 <div id="sort-control-mobile" class="sort-control sort-control-mobile">
+                    <div class="sort-slider"></div>
                     <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
                     <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
                 </div>
             </div>
             <div class="legend-separator"></div>
-            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;">
+            <div style="display:flex; align-items:center; gap:8px;">
                 <div class="share-label" style="margin-bottom:0; flex:1;" data-i18n="save_grimoire">Salvar Grimório</div>
                 <div id="show-known-m" title="Filtrar Conhecidas">
                     <img class="unknown-icon" src="img/unknown-dark.svg">
@@ -815,9 +1062,9 @@
                 </div>
             </div>
             <div class="legend-separator"></div>
-            <div class="filter-section">
-                <div class="filter-title"><span data-i18n="filter_version">Versão</span><span class="filter-arrow">▾</span></div>
-                <div class="filter-body" id="filter-versions-m"></div>
+            <div class="version-select-row">
+                <label class="version-select-label" data-i18n="filter_version">Versão</label>
+                <select id="version-select-m"></select>
             </div>
             <div class="legend-separator"></div>
             <div class="filter-section collapsed">
@@ -849,7 +1096,7 @@
                 <div class="filter-body" id="filter-durations-m"></div>
             </div>
             <div class="legend-separator"></div>
-            <div class="filter-section" id="legenda-m">
+            <div class="filter-section collapsed" id="legenda-m">
                 <div class="filter-title">
                     <span data-i18n="legenda">Legenda</span>
                     <span class="filter-arrow">▾</span>
@@ -864,15 +1111,58 @@
             </div>
         </div>
     </div>
-
+    <div id="content-area">
     <div id="fetch-error" style="display:none; max-width:20cm; margin: 20px auto; padding: 1em; background:#f8d7da; border:1px solid #f5c2c7; border-radius:8px; color:#842029;">
         ⚠️ Não foi possível carregar as magias. Abra a página pelo <strong>Live Server</strong> (botão "Go Live" no VS Code) em vez de abrir o arquivo diretamente.
     </div>
 
+    <div id="spell-tracker">
+        <div id="spell-tracker-body">
+            <div id="tracker-fields">
+                <div class="tracker-field"><span class="tracker-label">Atributo de conjuração</span><span class="tracker-box"></span></div>
+                <div class="tracker-field"><span class="tracker-label">Mod. de atributo de conjuração</span><span class="tracker-box"></span></div>
+                <div class="tracker-field"><span class="tracker-label">CD para evitar magia</span><span class="tracker-box"></span></div>
+                <div class="tracker-field"><span class="tracker-label">Bônus de ataque mágico</span><span class="tracker-box"></span></div>
+            </div>
+            <div id="tracker-slots">
+                <div class="tracker-slots-title">ESPAÇOS DE MAGIA</div>
+                <div id="tracker-slots-grid">
+                    <div class="tracker-slot-col">
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 1</span><span class="tracker-boxes">○ ○ ○ ○</span></div>
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 2</span><span class="tracker-boxes">○ ○ ○</span></div>
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 3</span><span class="tracker-boxes">○ ○ ○</span></div>
+                    </div>
+                    <div class="tracker-slot-col">
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 4</span><span class="tracker-boxes">○ ○</span></div>
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 5</span><span class="tracker-boxes">○ ○</span></div>
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 6</span><span class="tracker-boxes">○</span></div>
+                    </div>
+                    <div class="tracker-slot-col">
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 7</span><span class="tracker-boxes">○</span></div>
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 8</span><span class="tracker-boxes">○</span></div>
+                        <div class="tracker-slot-row"><span class="tracker-slot-label">Nível 9</span><span class="tracker-boxes">○</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="grid-area">
         <h1 id="site-title" data-i18n="site_title">Grimório do Jogador</h1>
-        <div class="spell-grid" id="spell-grid"></div>
-    </div>
+        <div id="grid-wrapper">
+            <div id="sort-control-row">
+                <div class="sort-row-side"></div>
+                <input type="text" id="search-input" placeholder="🔍︎  Pesquisar">
+                <div class="sort-row-side sort-row-right">
+                    <div id="sort-control" class="sort-control">
+                        <div class="sort-slider"></div>
+                        <button class="sort-btn active" data-sort="level" data-i18n="sort_level">Nível</button>
+                        <button class="sort-btn" data-sort="alpha" data-i18n="sort_alpha">A-Z</button>
+                    </div>
+                </div>
+            </div>
+            <div class="spell-grid" id="spell-grid"></div>
+        </div>
     </div>
     <footer id="site-footer">
         <div class="footer-col">
@@ -901,6 +1191,8 @@
             <span style="margin-top:6px; font-style:italic;" data-i18n="footer_disclaimer">Não afiliado à Wizards of the Coast. Dungeons &amp; Dragons é marca registrada da WotC.</span>
         </div>
     </footer>
+    </div><!-- #content-area -->
+    </div><!-- #layout -->
 
 
 <!-- Modal de magia (desktop) -->
@@ -968,7 +1260,7 @@
 
     function forClass(spell) {
         if (selectedClasses.size === 0) return true;
-        return spell.classe.some(function(c) { return selectedClasses.has(c); });
+        return spell.class.some(function(c) { return selectedClasses.has(c); });
     }
 
     function hasComponent(spell, comp) {
@@ -1032,7 +1324,7 @@
         card.className = 'grid-item spell-item';
         card.dataset.name = spell.name;
         card.dataset.level = spell.level;
-        card.dataset.classe = spell.classe.join(',');
+        card.dataset.spellClass = spell.class.join(',');
 
         var lvl = spell.level;
         card.style.setProperty('--accent', levelAccent(lvl));
@@ -1266,21 +1558,7 @@
 
     var menuPaddingTop = null;
 
-    function alignMenu() {
-        if (window.innerWidth <= 600) return;
-        var menuContainer = document.getElementById('menu-container');
-        var firstCard = document.querySelector('.spell-item:not([style*="display: none"])');
-        if (!firstCard) {
-            if (menuPaddingTop !== null)
-                menuContainer.style.paddingTop = menuPaddingTop;
-            return;
-        }
-        menuContainer.style.paddingTop = '0';
-        var menuTop = menuContainer.getBoundingClientRect().top;
-        var cardTop = firstCard.getBoundingClientRect().top;
-        menuPaddingTop = Math.max(0, cardTop - menuTop) + 'px';
-        menuContainer.style.paddingTop = menuPaddingTop;
-    }
+    function alignMenu() {}
 
     function fadeOut(el) {
         if (el.style.display === 'none') return;
@@ -1356,6 +1634,7 @@
         document.querySelector('#show-known img').src = src;
         document.querySelector('#show-known-m img').src = src;
         document.querySelector('#known-mobile img').src = src;
+        document.querySelector('#strip-show-known img').src = src;
     }
     document.getElementById('show-known').addEventListener('click', function() {
         onlyKnown = !onlyKnown;
@@ -1376,10 +1655,20 @@
         popEl(this);
     });
 
+    function updateSortSliders() {
+        document.querySelectorAll('.sort-control').forEach(function(ctrl) {
+            var slider = ctrl.querySelector('.sort-slider');
+            var active = ctrl.querySelector('.sort-btn.active');
+            if (!slider || !active) return;
+            slider.style.left = active.offsetLeft + 'px';
+            slider.style.width = active.offsetWidth + 'px';
+        });
+    }
     function syncSortToggle() {
         document.querySelectorAll('.sort-btn').forEach(function(btn) {
             btn.classList.toggle('active', (btn.dataset.sort === 'alpha') === sortAlpha);
         });
+        updateSortSliders();
     }
     document.querySelectorAll('.sort-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -1388,6 +1677,7 @@
             render();
         });
     });
+    setTimeout(updateSortSliders, 0);
 
 
     // Versões disponíveis — adicione aqui novos arquivos no futuro
@@ -1496,7 +1786,7 @@
     function buildClassFilter(resetState) {
         if (resetState !== false) selectedClasses.clear();
         var allClasses = Array.from(new Set(
-            spells2.reduce(function(acc, s) { return acc.concat(s.classe); }, [])
+            spells2.reduce(function(acc, s) { return acc.concat(s.class); }, [])
         )).sort();
         ['filter-classes', 'filter-classes-m'].forEach(function(id) {
             var container = document.getElementById(id);
@@ -1545,6 +1835,7 @@
 
     function loadSpells(file) {
         currentBook = file;
+        try { localStorage.setItem('selectedBook', file); } catch(e) {}
         fetch('js/' + file + '.json')
             .then(function(r) { return r.json(); })
             .then(function(data) {
@@ -1573,24 +1864,18 @@
             selected = langVersions.length ? langVersions[0].file : (VERSIONS[0] && VERSIONS[0].file);
         }
         currentBook = selected;
-        ['filter-versions', 'filter-versions-m'].forEach(function(containerId, idx) {
-            var container = document.getElementById(containerId);
-            if (!container) return;
-            container.innerHTML = '';
+        ['version-select', 'version-select-m'].forEach(function(selectId) {
+            var sel = document.getElementById(selectId);
+            if (!sel) return;
+            sel.innerHTML = '';
             langVersions.forEach(function(ver) {
-                var label = document.createElement('label');
-                var rb = document.createElement('input');
-                rb.type = 'radio';
-                rb.name = 'version-radio-' + idx;
-                rb.value = ver.file;
-                rb.checked = (ver.file === selected);
-                rb.addEventListener('change', function() {
-                    loadSpells(this.value);
-                });
-                label.appendChild(rb);
-                label.appendChild(document.createTextNode('\u00a0' + ver.label));
-                container.appendChild(label);
+                var opt = document.createElement('option');
+                opt.value = ver.file;
+                opt.textContent = ver.label;
+                opt.selected = (ver.file === selected);
+                sel.appendChild(opt);
             });
+            sel.onchange = function() { loadSpells(this.value); };
         });
     }
 
@@ -1601,9 +1886,14 @@
         // 2. Filtra as versões disponíveis para o idioma detectado
         var langVersions = VERSIONS.filter(function(v) { return v.lang === currentLang; });
         
-        // 3. Escolhe qual livro carregar (prioriza o que veio na URL)
-        var targetBook = (langParam && VERSIONS.find(v => v.file === 'spells-' + langParam)) 
-                         ? 'spells-' + langParam : (langVersions.length ? langVersions[0].file : VERSIONS[0].file);
+        // 3. Escolhe qual livro carregar (prioriza URL > localStorage > primeiro disponível)
+        var savedBook = null;
+        try { savedBook = localStorage.getItem('selectedBook'); } catch(e) {}
+        var targetBook = (langParam && VERSIONS.find(v => v.file === 'spells-' + langParam))
+                         ? 'spells-' + langParam
+                         : (savedBook && langVersions.find(v => v.file === savedBook))
+                         ? savedBook
+                         : (langVersions.length ? langVersions[0].file : VERSIONS[0].file);
         
         currentBook = targetBook;
 
@@ -1811,6 +2101,32 @@
     applyTheme(currentTheme);
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
     document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+    // ── Sidebar toggle (desktop) ──
+    (function() {
+        try { if (localStorage.getItem('sidebar-closed') === '1') document.body.classList.add('sidebar-closed'); } catch(e) {}
+        document.getElementById('sidebar-toggle').addEventListener('click', function() {
+            document.body.classList.add('sidebar-closed');
+            try { localStorage.setItem('sidebar-closed', '1'); } catch(e) {}
+        });
+        document.getElementById('sidebar-open').addEventListener('click', function() {
+            document.body.classList.remove('sidebar-closed');
+            try { localStorage.setItem('sidebar-closed', '0'); } catch(e) {}
+        });
+        document.getElementById('strip-sidebar-open').addEventListener('click', function() {
+            document.body.classList.remove('sidebar-closed');
+            try { localStorage.setItem('sidebar-closed', '0'); } catch(e) {}
+        });
+        document.getElementById('strip-show-known').addEventListener('click', function() {
+            document.getElementById('show-known').click();
+        });
+        document.getElementById('strip-share-copy').addEventListener('click', function() {
+            document.getElementById('share-copy').click();
+            this.classList.add('copied');
+            var self = this;
+            setTimeout(function() { self.classList.remove('copied'); }, 2000);
+        });
+    })();
 
     fetch('js/versions.json')
         .then(function(r) { return r.json(); })

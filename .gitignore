@@ -6,3 +6,17 @@ ehthumbs.db
 # Claude Code
 .claude/
 gerador_spells/
+
+# Arquivos de desenvolvimento / conversão (não usados pelo site)
+js/json-to-md.js
+js/md-to-json.js
+js/formatar.js
+js/output.json
+js/spells-5E-2014-PTBR.md
+
+# Arquivos gerados
+output.md
+output_sem_classe.txt
+
+# Diretórios vazios / temporários
+data/
