@@ -1,0 +1,27 @@
+﻿abreviação;nome_magia;escola_completa;status;qtd_magias;observação
+abj;(todas);abjuration;AUTO;37;
+can;acid splash;evocation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;chill touch;necromancy;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;dancing lights;illusion;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;guidance;divination;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;light;evocation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;mage hand;conjuration;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;mending;transmutation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;message;transmutation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;minor illusion;illusion;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;prestidigitation;transmutation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;produce flame;conjuration;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;ray of frost;evocation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;resistance;abjuration;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;sacred flame;evocation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;shillelagh;transmutation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;shocking grasp;evocation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;thaumaturgy;transmutation;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+can;true strike;divination;AUTO;1;"can = cantrip (não é escola); escola buscada no 2024-EN pelo nome"
+con;(todas);conjuration;AUTO;43;
+div;(todas);divination;AUTO;26;
+enc;(todas);enchantment;AUTO;26;
+evo;(todas);evocation;AUTO;53;
+ill;(todas);illusion;AUTO;26;
+nec;(todas);necromancy;AUTO;23;
+trs;(todas);transmutation;AUTO;52;

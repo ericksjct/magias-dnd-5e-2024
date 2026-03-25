@@ -586,7 +586,9 @@
         background-size: 200px 200px;
     }
     /* Cards */
-    .spell-body { color: var(--subtext1); padding: 15px; box-shadow: 2px 3px 6px rgba(0,0,0,0.08); }
+    .material-note { font-size: 8pt; color: var(--subtext0); margin: 6px 0 4px; }
+    .spell-source { position: absolute; bottom: 6px; left: 15px; margin: 0; font-size: 8pt; font-style: italic; color: var(--subtext0); }
+    .spell-body { color: var(--subtext1); padding: 15px 15px 28px; box-shadow: 2px 3px 6px rgba(0,0,0,0.08); }
     [data-theme="dark"] .spell-body { box-shadow: 2px 3px 8px rgba(0,0,0,0.25); }
     .spell-item[data-level] .spell-body { background: var(--surface0); border-color: var(--surface1); }
     [data-theme="light"] .spell-item[data-level] .spell-body { background: var(--base); border-color: var(--surface1); }
@@ -1039,6 +1041,10 @@
                 <div class="filter-title"><span data-i18n="filter_duration">Duração</span><span class="filter-arrow">▾</span></div>
                 <div class="filter-body" id="filter-durations"></div>
             </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_source">Fonte</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-sources"></div>
+            </div>
 
             <div class="legend-separator"></div>
             <div class="filter-section collapsed" id="legenda">
@@ -1047,11 +1053,14 @@
                     <span class="filter-arrow">▾</span>
                 </div>
                 <div class="filter-body" id="legenda-body">
-                    <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
-                    <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
-                    <div class="legenda-item"><img class="unknown-icon" src="img/unknown-dark.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
-                    <div class="legenda-item"><span class="ritual-pill">📖</span> <span data-i18n="leg_ritual">Ritual</span></div>
-                    <div class="legenda-item"><span class="conc-badge">🧠</span> <span data-i18n="leg_concentration">Concentração</span></div>
+                    <div class="legenda-table">
+                        <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
+                        <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
+                        <div class="legenda-item"><img class="unknown-icon" src="img/unknown-dark.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
+                        <div class="legenda-item"><span class="ritual-pill">📖</span> <span data-i18n="leg_ritual">Ritual</span></div>
+                        <div class="legenda-item"><span class="conc-badge">🧠</span> <span data-i18n="leg_concentration">Concentração</span></div>
+                        <div class="legenda-item"><span class="statblock-indicator" style="margin-left:0"></span> <span data-i18n="leg_statblock">Possui Stat Block</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1115,6 +1124,10 @@
                 <div class="filter-title"><span data-i18n="filter_duration">Duração</span><span class="filter-arrow">▾</span></div>
                 <div class="filter-body" id="filter-durations-m"></div>
             </div>
+            <div class="filter-section collapsed">
+                <div class="filter-title"><span data-i18n="filter_source">Fonte</span><span class="filter-arrow">▾</span></div>
+                <div class="filter-body" id="filter-sources-m"></div>
+            </div>
             <div class="legend-separator"></div>
             <div class="filter-section collapsed" id="legenda-m">
                 <div class="filter-title">
@@ -1122,11 +1135,14 @@
                     <span class="filter-arrow">▾</span>
                 </div>
                 <div class="filter-body">
-                    <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
-                    <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
-                    <div class="legenda-item"><img class="unknown-icon" src="img/unknown-dark.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
-                    <div class="legenda-item"><span class="ritual-pill">📖</span> <span data-i18n="leg_ritual">Ritual</span></div>
-                    <div class="legenda-item"><span class="conc-badge">🧠</span> <span data-i18n="leg_concentration">Concentração</span></div>
+                    <div class="legenda-table">
+                        <div class="legenda-item"><img src="img/known.svg"> <span data-i18n="leg_known">Magia conhecida</span></div>
+                        <div class="legenda-item"><img src="img/outside.svg"> <span data-i18n="leg_outside">Conhecida, fora da classe</span></div>
+                        <div class="legenda-item"><img class="unknown-icon" src="img/unknown-dark.svg"> <span data-i18n="leg_unknown">Não conhecida</span></div>
+                        <div class="legenda-item"><span class="ritual-pill">📖</span> <span data-i18n="leg_ritual">Ritual</span></div>
+                        <div class="legenda-item"><span class="conc-badge">🧠</span> <span data-i18n="leg_concentration">Concentração</span></div>
+                        <div class="legenda-item"><span class="statblock-indicator" style="margin-left:0"></span> <span data-i18n="leg_statblock">Possui Stat Block</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1270,7 +1286,8 @@
         castTimes:  new Set(),
         ranges:     new Set(),
         components: new Set(),
-        durations:  new Set()
+        durations:  new Set(),
+        sources:    new Set()
     };
 
     var TIER_SYMBOLS = ['○','◆','◆◆','◆◆◆','◆◆◆◆','★','★★','★★★','✶','✶✶'];
@@ -1304,6 +1321,7 @@
         if (filters.castTimes.size  > 0 && !filters.castTimes.has(spell.castTime))  return false;
         if (filters.ranges.size     > 0 && !filters.ranges.has(spell.range))        return false;
         if (filters.durations.size  > 0 && !filters.durations.has(spell.duration))  return false;
+        if (filters.sources.size    > 0 && !filters.sources.has(sourceGroupKey(spell.source))) return false;
         if (filters.components.size > 0) {
             var allPresent = true;
             filters.components.forEach(function(comp) {
@@ -1344,6 +1362,50 @@
             .join('\u00a0');
     }
 
+    function buildStatBlockHTML(sb) {
+        function parseStat(val) {
+            if (!val) return '—';
+            return val.replace(/\/[^)]+/, '');
+        }
+        var metaHTML = '';
+        if (sb.resistances && sb.resistances.length)
+            metaHTML += '<div><strong>Resistances</strong> ' + sb.resistances.join(', ') + '</div>';
+        if (sb.immunities && sb.immunities.length)
+            metaHTML += '<div><strong>Immunities</strong> ' + sb.immunities.join(', ') + '</div>';
+        if (sb.senses)
+            metaHTML += '<div><strong>Senses</strong> ' + sb.senses + '</div>';
+        if (sb.languages)
+            metaHTML += '<div><strong>Languages</strong> ' + sb.languages + '</div>';
+        if (sb.cr)
+            metaHTML += '<div><strong>CR</strong> ' + sb.cr + '</div>';
+        function buildSection(title, items) {
+            if (!items || !items.length) return '';
+            return '<section><h4>' + title + '</h4>' +
+                items.map(function(i) {
+                    return '<p><strong>' + i.name + '.</strong> ' + i.description + '</p>';
+                }).join('') +
+                '</section>';
+        }
+        return '<div class="stat-block">' +
+            '<h3>' + sb.name + '</h3>' +
+            '<div class="sb-type">' + sb.type + '</div>' +
+            '<div class="sb-defenses">' +
+                '<strong>AC</strong> ' + sb.ac +
+                ' &nbsp;|&nbsp; <strong>HP</strong> ' + sb.hp +
+                ' &nbsp;|&nbsp; <strong>Speed</strong> ' + sb.speed +
+            '</div>' +
+            '<div class="sb-stats-grid">' +
+                ['str','dex','con','int','wis','cha'].map(function(s) {
+                    return '<div class="sb-stat"><div class="sb-stat-name">' + s.toUpperCase() + '</div>' + parseStat(sb.stats[s]) + '</div>';
+                }).join('') +
+            '</div>' +
+            '<div class="sb-meta">' + metaHTML + '</div>' +
+            buildSection('Traits', sb.traits) +
+            buildSection('Actions', sb.actions) +
+            buildSection('Reactions', sb.reactions) +
+        '</div>';
+    }
+
     function buildCard(spell) {
         var card = document.createElement('div');
         card.className = 'grid-item spell-item';
@@ -1358,12 +1420,15 @@
         var ritualPill = spell.ritual
             ? '<span class="meta-sep">·</span><span class="meta-pill ritual-pill">📖 Ritual</span>'
             : '';
+        var statblockBadge = spell.statBlock
+            ? '<span class="statblock-indicator" title="Has Stat Block"></span>'
+            : '';
 
         card.innerHTML =
             '<div class="spell-body">' +
                 '<div class="title">' +
                     '<div class="name">' +
-                        '<p>' + spell.displayName + '</p>' +
+                        '<p>' + spell.displayName + statblockBadge + '</p>' +
                         '<p class="school">' + spell.school + '</p>' +
                     '</div>' +
                     '<div class="known"><img src="' + knownIcon(spell) + '"></div>' +
@@ -1378,7 +1443,11 @@
                     '<span class="meta-pill">⏳\u00a0' + spell.duration + concBadge + '</span>' +
                     ritualPill +
                 '</div>' +
+                (spell.componentsNote ? '<p class="material-note"><strong>Material:</strong> ' + spell.componentsNote + '</p>' : '') +
+                (spell.castTimeNote ? '<p class="material-note"><strong>' + spell.castTime.charAt(0).toUpperCase() + spell.castTime.slice(1) + ':</strong> ' + spell.castTimeNote + '</p>' : '') +
                 '<div class="description">' + spell.description + '</div>' +
+                (spell.classNote && spell.classNote.length ? '<p class="material-note"><strong><em>' + i18n[currentLang].class_note + '</em></strong> ' + spell.classNote.join(', ') + ' ' + i18n[currentLang].class_note_suffix + '</p>' : '') +
+                (spell.source ? '<p class="spell-source">' + spell.source + '</p>' : '') +
                 '<div class="tier-badge" aria-label="Spell level ' + lvl + '">(' + lvl + ') ' + TIER_SYMBOLS[lvl] + '</div>' +
             '</div>';
 
@@ -1399,6 +1468,11 @@
             var modal = document.getElementById('spell-modal');
             var body = modal.querySelector('.spell-modal-body');
             body.innerHTML = card.querySelector('.spell-body').outerHTML;
+            // Renderiza stat block no modal, se existir
+            if (spell.statBlock) {
+                var descEl = body.querySelector('.description');
+                if (descEl) descEl.insertAdjacentHTML('afterend', buildStatBlockHTML(spell.statBlock));
+            }
             // Conecta o botão known do modal ao botão original do card
             var modalKnown = body.querySelector('.known');
             if (modalKnown) {
@@ -1429,11 +1503,12 @@
         return card;
     }
 
-    function renderCheckboxes(container, values, isCheckedFn, onChangeFn, labelFn) {
+    function renderCheckboxes(container, values, isCheckedFn, onChangeFn, labelFn, visibleCount) {
+        if (visibleCount === undefined) visibleCount = 5;
         container.innerHTML = '';
         values.forEach(function(val, idx) {
             var label = document.createElement('label');
-            if (idx >= 5) {
+            if (idx >= visibleCount) {
                 label.style.display = 'none';
                 label.classList.add('hidden-item');
             }
@@ -1450,7 +1525,7 @@
             container.appendChild(label);
         });
 
-        if (values.length > 5) {
+        if (values.length > visibleCount) {
             var moreBtn = document.createElement('div');
             moreBtn.className = 'see-more-btn';
             moreBtn.setAttribute('data-i18n', 'see_more');
@@ -1469,7 +1544,7 @@
         }
     }
 
-    function buildCheckboxGroup(containerId, values, filterSet, labelFn) {
+    function buildCheckboxGroup(containerId, values, filterSet, labelFn, visibleCount) {
         [containerId, containerId + '-m'].forEach(function(id) {
             var container = document.getElementById(id);
             if (!container) return;
@@ -1481,16 +1556,24 @@
                     if (checked) filterSet.add(val);
                     else filterSet.delete(val);
                 },
-                labelFn
+                labelFn,
+                visibleCount
             );
         });
+    }
+
+    function sourceGroupKey(source) {
+        if (!source) return null;
+        var slashIdx = source.indexOf('/');
+        if (slashIdx > -1) return source.substring(0, slashIdx).trim();
+        return source;
     }
 
     function buildFilterUI(resetState) {
         var t = i18n[currentLang];
         if (resetState !== false) {
             filters.levels.clear(); filters.schools.clear(); filters.castTimes.clear();
-            filters.ranges.clear(); filters.components.clear(); filters.durations.clear();
+            filters.ranges.clear(); filters.components.clear(); filters.durations.clear(); filters.sources.clear();
             filters.text = '';
             document.getElementById('search-input').value = '';
         }
@@ -1520,6 +1603,15 @@
             Array.from(new Set(spells2.map(function(s) { return s.duration; }))).sort(),
             filters.durations, function(v) { return v; }
         );
+        var sourceCounts = {};
+        spells2.forEach(function(s) {
+            var k = sourceGroupKey(s.source);
+            if (k) sourceCounts[k] = (sourceCounts[k] || 0) + 1;
+        });
+        var sourceGroups = Object.keys(sourceCounts).sort(function(a, b) {
+            return sourceCounts[b] - sourceCounts[a];
+        });
+        buildCheckboxGroup('filter-sources', sourceGroups, filters.sources, function(v) { return v; }, 3);
     }
 
     function buildShareUrl() {
@@ -1538,7 +1630,8 @@
                 castTimes:  Array.from(filters.castTimes),
                 ranges:     Array.from(filters.ranges),
                 components: Array.from(filters.components),
-                durations:  Array.from(filters.durations)
+                durations:  Array.from(filters.durations),
+                sources:    Array.from(filters.sources)
             }
         };
         var encoded = btoa(unescape(encodeURIComponent(JSON.stringify(state))));
@@ -1733,6 +1826,7 @@
             leg_unknown:       'Não conhecida',
             leg_ritual:        'Ritual',
             leg_concentration: 'Concentração',
+            leg_statblock:     'Possui Stat Block',
             level_cantrip:     'Truques',
             level_n:           'Nível ',
             filter_version:    'Versão',
@@ -1743,6 +1837,9 @@
             filter_range:      'Alcance',
             filter_components: 'Componentes',
             filter_duration:   'Duração',
+            filter_source:     'Fonte',
+            class_note:        'Nota:',
+            class_note_suffix: 'são classes opcionais definidas pelo Mestre.',
             see_more:          'Ver mais',
             see_less:          'Ver menos',
             save_grimoire:     'Salvar Grimório',
@@ -1774,6 +1871,7 @@
             leg_unknown:       'Unknown spell',
             leg_ritual:        'Ritual',
             leg_concentration: 'Concentration',
+            leg_statblock:     'Has Stat Block',
             level_cantrip:     'Cantrips',
             level_n:           'Level ',
             filter_version:    'Version',
@@ -1784,6 +1882,9 @@
             filter_range:      'Range',
             filter_components: 'Components',
             filter_duration:   'Duration',
+            filter_source:     'Source',
+            class_note:        'Note:',
+            class_note_suffix: 'are optional classes allowed at the DM\'s discretion.',
             see_more:          'See more',
             see_less:          'See less',
             save_grimoire:     'Save Grimoire',
@@ -1856,6 +1957,7 @@
         filters.ranges.clear();     (f.ranges     || []).forEach(function(v) { filters.ranges.add(v); });
         filters.components.clear(); (f.components || []).forEach(function(v) { filters.components.add(v); });
         filters.durations.clear();  (f.durations  || []).forEach(function(v) { filters.durations.add(v); });
+        filters.sources.clear();    (f.sources    || []).forEach(function(v) { filters.sources.add(v); });
     }
 
     function loadSpells(file) {

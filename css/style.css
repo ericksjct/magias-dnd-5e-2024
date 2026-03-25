@@ -102,14 +102,26 @@ button, input, select, textarea {
     width: 5px;
 }
 
+.legenda-table {
+    display: block;
+}
 .legenda-item {
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    margin: 0.3em 0;
+    margin: 0.25em 0;
+}
+.legenda-item > :first-child {
+    width: 1.6em;
+    min-width: 1.6em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5em;
 }
 .legenda-item img {
     height: 1.2em;
+    width: auto;
 }
 #empty-message {
     padding: 1em;
@@ -306,6 +318,7 @@ footer p {
     position: absolute;
     bottom: 6px;
     right: 8px;
+    font-size: 8pt;
     color: var(--accent, #888);
     opacity: 0.9;
     white-space: nowrap;
@@ -399,8 +412,13 @@ footer p {
         font-size: 13pt;
         padding: 1em 1.2em 2em 1.2em;
     }
-    .spell-modal-body .description {
+    .spell-modal-body .description,
+    .spell-modal-body .material-note,
+    .spell-modal-body .spell-source {
         font-size: 10pt;
+    }
+    .spell-modal-body .spell-source {
+        left: 1.2em;
     }
     .spell-modal-body .name p:not(.school) {
         font-size: 18pt;
@@ -408,4 +426,98 @@ footer p {
     .spell-modal-body .known {
         margin-right: 1.8em;
     }
+}
+
+/* ── Statblock indicator badge on spell cards ─────────────── */
+.statblock-indicator {
+    display: inline-block;
+    width: 16px;
+    height: 11px;
+    background: linear-gradient(135deg, var(--mauve), var(--sapphire), var(--teal));
+    -webkit-mask-image: url('../img/summon.svg');
+    mask-image: url('../img/summon.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    vertical-align: 1px;
+    margin-left: 5px;
+    opacity: 0.75;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* ── Stat Block (renderizado no modal) ───────────────────────── */
+.stat-block {
+    margin-top: 1.2em;
+    border: 1.5px solid var(--overlay1, #888);
+    border-top: 3px solid var(--accent, var(--overlay1, #888));
+    border-radius: 6px;
+    padding: 0.75em 1em 0.75em 1em;
+    background: var(--mantle, #f0f0f0);
+    line-height: 1.5;
+    break-inside: avoid;
+}
+.stat-block h3 {
+    margin: 0 0 0.1em 0;
+    font-family: 'Texturina', serif;
+    font-size: 1.1em;
+    color: var(--accent, var(--text));
+    font-variant: small-caps;
+}
+.sb-type {
+    font-style: italic;
+    color: var(--subtext1, #777);
+    margin-bottom: 0.5em;
+    font-size: 0.85em;
+}
+.sb-defenses {
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--overlay0, #ccc);
+    font-size: 0.9em;
+}
+.sb-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.2em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--overlay0, #ccc);
+}
+.sb-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.85em;
+}
+.sb-stat-name {
+    font-weight: bold;
+    font-size: 0.75em;
+    color: var(--subtext1, #777);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.sb-meta > div {
+    margin-bottom: 0.2em;
+    font-size: 0.9em;
+}
+.stat-block section {
+    margin-top: 0.5em;
+}
+.stat-block section h4 {
+    margin: 0 0 0.2em 0;
+    font-size: 0.85em;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: var(--accent, var(--text));
+    border-bottom: 1px solid var(--overlay0, #ccc);
+    padding-bottom: 0.15em;
+}
+.stat-block section p {
+    margin: 0.15em 0;
+    font-size: 0.9em;
 }
