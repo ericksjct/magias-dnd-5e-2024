@@ -20,7 +20,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:acid-splash"
+      "url": "http://dnd2024.wikidot.com/spell:acid-splash",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "blade-ward",
@@ -43,7 +45,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:blade-ward"
+      "url": "http://dnd2024.wikidot.com/spell:blade-ward",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "chill-touch",
@@ -65,7 +69,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:chill-touch"
+      "url": "http://dnd2024.wikidot.com/spell:chill-touch",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dancing-lights",
@@ -88,7 +94,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dancing-lights"
+      "url": "http://dnd2024.wikidot.com/spell:dancing-lights",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "druidcraft",
@@ -108,7 +116,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:druidcraft"
+      "url": "http://dnd2024.wikidot.com/spell:druidcraft",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "eldritch-blast",
@@ -128,7 +138,9 @@
       "class": [
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:eldritch-blast"
+      "url": "http://dnd2024.wikidot.com/spell:eldritch-blast",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "elementalism",
@@ -151,7 +163,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:elementalism"
+      "url": "http://dnd2024.wikidot.com/spell:elementalism",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fire-bolt",
@@ -173,7 +187,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fire-bolt"
+      "url": "http://dnd2024.wikidot.com/spell:fire-bolt",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "friends",
@@ -196,7 +212,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:friends"
+      "url": "http://dnd2024.wikidot.com/spell:friends",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "guidance",
@@ -218,7 +236,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:guidance"
+      "url": "http://dnd2024.wikidot.com/spell:guidance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "light",
@@ -242,7 +262,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:light"
+      "url": "http://dnd2024.wikidot.com/spell:light",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mage-hand",
@@ -266,7 +288,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mage-hand"
+      "url": "http://dnd2024.wikidot.com/spell:mage-hand",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mending",
@@ -290,7 +314,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mending"
+      "url": "http://dnd2024.wikidot.com/spell:mending",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "message",
@@ -314,7 +340,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:message"
+      "url": "http://dnd2024.wikidot.com/spell:message",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mind-sliver",
@@ -336,7 +364,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mind-sliver"
+      "url": "http://dnd2024.wikidot.com/spell:mind-sliver",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "minor-illusion",
@@ -359,7 +389,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:minor-illusion"
+      "url": "http://dnd2024.wikidot.com/spell:minor-illusion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "poison-spray",
@@ -383,7 +415,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:poison-spray"
+      "url": "http://dnd2024.wikidot.com/spell:poison-spray",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "prestidigitation",
@@ -407,7 +441,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:prestidigitation"
+      "url": "http://dnd2024.wikidot.com/spell:prestidigitation",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "produce-flame",
@@ -427,7 +463,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:produce-flame"
+      "url": "http://dnd2024.wikidot.com/spell:produce-flame",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "ray-of-frost",
@@ -449,7 +487,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:ray-of-frost"
+      "url": "http://dnd2024.wikidot.com/spell:ray-of-frost",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "resistance",
@@ -471,7 +511,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:resistance"
+      "url": "http://dnd2024.wikidot.com/spell:resistance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sacred-flame",
@@ -491,7 +533,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sacred-flame"
+      "url": "http://dnd2024.wikidot.com/spell:sacred-flame",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "shillelagh",
@@ -511,7 +555,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:shillelagh"
+      "url": "http://dnd2024.wikidot.com/spell:shillelagh",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "shocking-grasp",
@@ -533,7 +579,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:shocking-grasp"
+      "url": "http://dnd2024.wikidot.com/spell:shocking-grasp",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sorcerous-burst",
@@ -553,7 +601,9 @@
       "class": [
         "sorcerer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sorcerous-burst"
+      "url": "http://dnd2024.wikidot.com/spell:sorcerous-burst",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "spare-the-dying",
@@ -575,7 +625,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:spare-the-dying"
+      "url": "http://dnd2024.wikidot.com/spell:spare-the-dying",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "starry-wisp",
@@ -596,7 +648,9 @@
         "bard",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:starry-wisp"
+      "url": "http://dnd2024.wikidot.com/spell:starry-wisp",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "thaumaturgy",
@@ -616,7 +670,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:thaumaturgy"
+      "url": "http://dnd2024.wikidot.com/spell:thaumaturgy",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "thorn-whip",
@@ -637,7 +693,9 @@
         "artificer",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:thorn-whip"
+      "url": "http://dnd2024.wikidot.com/spell:thorn-whip",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "thunderclap",
@@ -662,7 +720,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:thunderclap"
+      "url": "http://dnd2024.wikidot.com/spell:thunderclap",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "toll-the-dead",
@@ -684,7 +744,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:toll-the-dead"
+      "url": "http://dnd2024.wikidot.com/spell:toll-the-dead",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "true-strike",
@@ -708,7 +770,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:true-strike"
+      "url": "http://dnd2024.wikidot.com/spell:true-strike",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "vicious-mockery",
@@ -728,7 +792,9 @@
       "class": [
         "bard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:vicious-mockery"
+      "url": "http://dnd2024.wikidot.com/spell:vicious-mockery",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "word-of-radiance",
@@ -748,7 +814,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:word-of-radiance"
+      "url": "http://dnd2024.wikidot.com/spell:word-of-radiance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "alarm",
@@ -770,7 +838,9 @@
         "ranger",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:alarm"
+      "url": "http://dnd2024.wikidot.com/spell:alarm",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "animal-friendship",
@@ -792,7 +862,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:animal-friendship"
+      "url": "http://dnd2024.wikidot.com/spell:animal-friendship",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "armor-of-agathys",
@@ -812,7 +884,9 @@
       "class": [
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:armor-of-agathys"
+      "url": "http://dnd2024.wikidot.com/spell:armor-of-agathys",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "arms-of-hadar",
@@ -832,7 +906,9 @@
       "class": [
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:arms-of-hadar"
+      "url": "http://dnd2024.wikidot.com/spell:arms-of-hadar",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "bane",
@@ -854,7 +930,9 @@
         "cleric",
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:bane"
+      "url": "http://dnd2024.wikidot.com/spell:bane",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "bless",
@@ -875,7 +953,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:bless"
+      "url": "http://dnd2024.wikidot.com/spell:bless",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "burning-hands",
@@ -896,7 +976,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:burning-hands"
+      "url": "http://dnd2024.wikidot.com/spell:burning-hands",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "charm-person",
@@ -920,7 +1002,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:charm-person"
+      "url": "http://dnd2024.wikidot.com/spell:charm-person",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "chromatic-orb",
@@ -941,7 +1025,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:chromatic-orb"
+      "url": "http://dnd2024.wikidot.com/spell:chromatic-orb",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "color-spray",
@@ -963,7 +1049,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:color-spray"
+      "url": "http://dnd2024.wikidot.com/spell:color-spray",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "command",
@@ -985,7 +1073,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:command"
+      "url": "http://dnd2024.wikidot.com/spell:command",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "compelled-duel",
@@ -1005,7 +1095,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:compelled-duel"
+      "url": "http://dnd2024.wikidot.com/spell:compelled-duel",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "comprehend-languages",
@@ -1028,7 +1120,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:comprehend-languages"
+      "url": "http://dnd2024.wikidot.com/spell:comprehend-languages",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "create-or-destroy-water",
@@ -1049,7 +1143,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:create-or-destroy-water"
+      "url": "http://dnd2024.wikidot.com/spell:create-or-destroy-water",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "cure-wounds",
@@ -1074,7 +1170,9 @@
         "paladin",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:cure-wounds"
+      "url": "http://dnd2024.wikidot.com/spell:cure-wounds",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "detect-evil-and-good",
@@ -1095,7 +1193,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:detect-evil-and-good"
+      "url": "http://dnd2024.wikidot.com/spell:detect-evil-and-good",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "detect-magic",
@@ -1123,7 +1223,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:detect-magic"
+      "url": "http://dnd2024.wikidot.com/spell:detect-magic",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "detect-poison-and-disease",
@@ -1146,7 +1248,9 @@
         "paladin",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:detect-poison-and-disease"
+      "url": "http://dnd2024.wikidot.com/spell:detect-poison-and-disease",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "disguise-self",
@@ -1169,7 +1273,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:disguise-self"
+      "url": "http://dnd2024.wikidot.com/spell:disguise-self",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dissonant-whispers",
@@ -1189,7 +1295,9 @@
       "class": [
         "bard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dissonant-whispers"
+      "url": "http://dnd2024.wikidot.com/spell:dissonant-whispers",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "divine-favor",
@@ -1209,7 +1317,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:divine-favor"
+      "url": "http://dnd2024.wikidot.com/spell:divine-favor",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "divine-smite",
@@ -1229,7 +1339,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:divine-smite"
+      "url": "http://dnd2024.wikidot.com/spell:divine-smite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "ensnaring-strike",
@@ -1249,7 +1361,9 @@
       "class": [
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:ensnaring-strike"
+      "url": "http://dnd2024.wikidot.com/spell:ensnaring-strike",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "entangle",
@@ -1270,7 +1384,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:entangle"
+      "url": "http://dnd2024.wikidot.com/spell:entangle",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "expeditious-retreat",
@@ -1293,7 +1409,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:expeditious-retreat"
+      "url": "http://dnd2024.wikidot.com/spell:expeditious-retreat",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "faerie-fire",
@@ -1315,7 +1433,9 @@
         "bard",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:faerie-fire"
+      "url": "http://dnd2024.wikidot.com/spell:faerie-fire",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "false-life",
@@ -1337,7 +1457,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:false-life"
+      "url": "http://dnd2024.wikidot.com/spell:false-life",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "feather-fall",
@@ -1360,7 +1482,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:feather-fall"
+      "url": "http://dnd2024.wikidot.com/spell:feather-fall",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "find-familiar",
@@ -1380,7 +1504,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:find-familiar"
+      "url": "http://dnd2024.wikidot.com/spell:find-familiar",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fog-cloud",
@@ -1403,7 +1529,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fog-cloud"
+      "url": "http://dnd2024.wikidot.com/spell:fog-cloud",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "goodberry",
@@ -1424,7 +1552,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:goodberry"
+      "url": "http://dnd2024.wikidot.com/spell:goodberry",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "grease",
@@ -1446,7 +1576,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:grease"
+      "url": "http://dnd2024.wikidot.com/spell:grease",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "guiding-bolt",
@@ -1466,7 +1598,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:guiding-bolt"
+      "url": "http://dnd2024.wikidot.com/spell:guiding-bolt",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hail-of-thorns",
@@ -1486,7 +1620,9 @@
       "class": [
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hail-of-thorns"
+      "url": "http://dnd2024.wikidot.com/spell:hail-of-thorns",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "healing-word",
@@ -1508,7 +1644,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:healing-word"
+      "url": "http://dnd2024.wikidot.com/spell:healing-word",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hellish-rebuke",
@@ -1528,7 +1666,9 @@
       "class": [
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hellish-rebuke"
+      "url": "http://dnd2024.wikidot.com/spell:hellish-rebuke",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "heroism",
@@ -1549,7 +1689,9 @@
         "bard",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:heroism"
+      "url": "http://dnd2024.wikidot.com/spell:heroism",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hex",
@@ -1569,7 +1711,9 @@
       "class": [
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hex"
+      "url": "http://dnd2024.wikidot.com/spell:hex",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hunter-s-mark",
@@ -1589,7 +1733,9 @@
       "class": [
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hunter-s-mark"
+      "url": "http://dnd2024.wikidot.com/spell:hunter-s-mark",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "ice-knife",
@@ -1611,7 +1757,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:ice-knife"
+      "url": "http://dnd2024.wikidot.com/spell:ice-knife",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "identify",
@@ -1633,7 +1781,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:identify"
+      "url": "http://dnd2024.wikidot.com/spell:identify",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "illusory-script",
@@ -1655,7 +1805,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:illusory-script"
+      "url": "http://dnd2024.wikidot.com/spell:illusory-script",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "inflict-wounds",
@@ -1675,7 +1827,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:inflict-wounds"
+      "url": "http://dnd2024.wikidot.com/spell:inflict-wounds",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "jump",
@@ -1699,7 +1853,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:jump"
+      "url": "http://dnd2024.wikidot.com/spell:jump",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "longstrider",
@@ -1723,7 +1879,9 @@
         "ranger",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:longstrider"
+      "url": "http://dnd2024.wikidot.com/spell:longstrider",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mage-armor",
@@ -1744,7 +1902,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mage-armor"
+      "url": "http://dnd2024.wikidot.com/spell:mage-armor",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "magic-missile",
@@ -1765,7 +1925,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:magic-missile"
+      "url": "http://dnd2024.wikidot.com/spell:magic-missile",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "protection-from-evil-and-good",
@@ -1789,7 +1951,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:protection-from-evil-and-good"
+      "url": "http://dnd2024.wikidot.com/spell:protection-from-evil-and-good",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "purify-food-and-drink",
@@ -1812,7 +1976,9 @@
         "druid",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:purify-food-and-drink"
+      "url": "http://dnd2024.wikidot.com/spell:purify-food-and-drink",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "ray-of-sickness",
@@ -1833,7 +1999,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:ray-of-sickness"
+      "url": "http://dnd2024.wikidot.com/spell:ray-of-sickness",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sanctuary",
@@ -1854,7 +2022,9 @@
         "artificer",
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sanctuary"
+      "url": "http://dnd2024.wikidot.com/spell:sanctuary",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "searing-smite",
@@ -1874,7 +2044,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:searing-smite"
+      "url": "http://dnd2024.wikidot.com/spell:searing-smite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "shield",
@@ -1895,7 +2067,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:shield"
+      "url": "http://dnd2024.wikidot.com/spell:shield",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "shield-of-faith",
@@ -1916,7 +2090,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:shield-of-faith"
+      "url": "http://dnd2024.wikidot.com/spell:shield-of-faith",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "silent-image",
@@ -1938,7 +2114,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:silent-image"
+      "url": "http://dnd2024.wikidot.com/spell:silent-image",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sleep",
@@ -1960,7 +2138,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sleep"
+      "url": "http://dnd2024.wikidot.com/spell:sleep",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "speak-with-animals",
@@ -1983,7 +2163,9 @@
         "ranger",
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:speak-with-animals"
+      "url": "http://dnd2024.wikidot.com/spell:speak-with-animals",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "spellfire-flare",
@@ -2004,7 +2186,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:spellfire-flare"
+      "url": "http://dnd2024.wikidot.com/spell:spellfire-flare",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "tasha-s-hideous-laughter",
@@ -2026,7 +2210,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:tasha-s-hideous-laughter"
+      "url": "http://dnd2024.wikidot.com/spell:tasha-s-hideous-laughter",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "tenser-s-floating-disk",
@@ -2046,7 +2232,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:tenser-s-floating-disk"
+      "url": "http://dnd2024.wikidot.com/spell:tenser-s-floating-disk",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "thunderous-smite",
@@ -2066,7 +2254,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:thunderous-smite"
+      "url": "http://dnd2024.wikidot.com/spell:thunderous-smite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "thunderwave",
@@ -2089,7 +2279,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:thunderwave"
+      "url": "http://dnd2024.wikidot.com/spell:thunderwave",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "unseen-servant",
@@ -2111,7 +2303,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:unseen-servant"
+      "url": "http://dnd2024.wikidot.com/spell:unseen-servant",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wardaway",
@@ -2134,7 +2328,9 @@
         "paladin",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wardaway"
+      "url": "http://dnd2024.wikidot.com/spell:wardaway",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "witch-bolt",
@@ -2156,7 +2352,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:witch-bolt"
+      "url": "http://dnd2024.wikidot.com/spell:witch-bolt",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wrathful-smite",
@@ -2176,7 +2374,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wrathful-smite"
+      "url": "http://dnd2024.wikidot.com/spell:wrathful-smite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "aid",
@@ -2201,7 +2401,9 @@
         "paladin",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:aid"
+      "url": "http://dnd2024.wikidot.com/spell:aid",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "alter-self",
@@ -2223,7 +2425,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:alter-self"
+      "url": "http://dnd2024.wikidot.com/spell:alter-self",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "animal-messenger",
@@ -2245,7 +2449,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:animal-messenger"
+      "url": "http://dnd2024.wikidot.com/spell:animal-messenger",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "arcane-lock",
@@ -2266,7 +2472,9 @@
         "artificer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:arcane-lock"
+      "url": "http://dnd2024.wikidot.com/spell:arcane-lock",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "arcane-vigor",
@@ -2288,7 +2496,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:arcane-vigor"
+      "url": "http://dnd2024.wikidot.com/spell:arcane-vigor",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "augury",
@@ -2310,7 +2520,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:augury"
+      "url": "http://dnd2024.wikidot.com/spell:augury",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "barkskin",
@@ -2331,7 +2543,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:barkskin"
+      "url": "http://dnd2024.wikidot.com/spell:barkskin",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "beast-sense",
@@ -2352,7 +2566,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:beast-sense"
+      "url": "http://dnd2024.wikidot.com/spell:beast-sense",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "blindness-deafness",
@@ -2375,7 +2591,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:blindness-deafness"
+      "url": "http://dnd2024.wikidot.com/spell:blindness-deafness",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "blur",
@@ -2397,7 +2615,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:blur"
+      "url": "http://dnd2024.wikidot.com/spell:blur",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "calm-emotions",
@@ -2418,7 +2638,9 @@
         "bard",
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:calm-emotions"
+      "url": "http://dnd2024.wikidot.com/spell:calm-emotions",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "cloud-of-daggers",
@@ -2441,7 +2663,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:cloud-of-daggers"
+      "url": "http://dnd2024.wikidot.com/spell:cloud-of-daggers",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "continual-flame",
@@ -2464,7 +2688,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:continual-flame"
+      "url": "http://dnd2024.wikidot.com/spell:continual-flame",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "cordon-of-arrows",
@@ -2484,7 +2710,9 @@
       "class": [
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:cordon-of-arrows"
+      "url": "http://dnd2024.wikidot.com/spell:cordon-of-arrows",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "crown-of-madness",
@@ -2507,7 +2735,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:crown-of-madness"
+      "url": "http://dnd2024.wikidot.com/spell:crown-of-madness",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "darkness",
@@ -2529,7 +2759,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:darkness"
+      "url": "http://dnd2024.wikidot.com/spell:darkness",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "darkvision",
@@ -2553,7 +2785,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:darkvision"
+      "url": "http://dnd2024.wikidot.com/spell:darkvision",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "death-armor",
@@ -2574,7 +2808,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:death-armor"
+      "url": "http://dnd2024.wikidot.com/spell:death-armor",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "deryan-s-helpful-homunculi",
@@ -2595,7 +2831,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:deryan-s-helpful-homunculi"
+      "url": "http://dnd2024.wikidot.com/spell:deryan-s-helpful-homunculi",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "detect-thoughts",
@@ -2617,7 +2855,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:detect-thoughts"
+      "url": "http://dnd2024.wikidot.com/spell:detect-thoughts",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dragon-s-breath",
@@ -2639,7 +2879,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dragon-s-breath"
+      "url": "http://dnd2024.wikidot.com/spell:dragon-s-breath",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "elminster-s-elusion",
@@ -2659,7 +2901,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:elminster-s-elusion"
+      "url": "http://dnd2024.wikidot.com/spell:elminster-s-elusion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "enhance-ability",
@@ -2685,7 +2929,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:enhance-ability"
+      "url": "http://dnd2024.wikidot.com/spell:enhance-ability",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "enlarge-reduce",
@@ -2709,7 +2955,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:enlarge-reduce"
+      "url": "http://dnd2024.wikidot.com/spell:enlarge-reduce",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "enthrall",
@@ -2730,7 +2978,9 @@
         "bard",
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:enthrall"
+      "url": "http://dnd2024.wikidot.com/spell:enthrall",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "find-steed",
@@ -2794,7 +3044,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:find-steed"
+      "url": "http://dnd2024.wikidot.com/spell:find-steed",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "find-traps",
@@ -2816,7 +3068,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:find-traps"
+      "url": "http://dnd2024.wikidot.com/spell:find-traps",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "flame-blade",
@@ -2837,7 +3091,9 @@
         "druid",
         "sorcerer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:flame-blade"
+      "url": "http://dnd2024.wikidot.com/spell:flame-blade",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "flaming-sphere",
@@ -2859,7 +3115,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:flaming-sphere"
+      "url": "http://dnd2024.wikidot.com/spell:flaming-sphere",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "gentle-repose",
@@ -2881,7 +3139,9 @@
         "paladin",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:gentle-repose"
+      "url": "http://dnd2024.wikidot.com/spell:gentle-repose",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "gust-of-wind",
@@ -2904,7 +3164,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:gust-of-wind"
+      "url": "http://dnd2024.wikidot.com/spell:gust-of-wind",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "heat-metal",
@@ -2926,7 +3188,9 @@
         "bard",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:heat-metal"
+      "url": "http://dnd2024.wikidot.com/spell:heat-metal",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hold-person",
@@ -2951,7 +3215,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hold-person"
+      "url": "http://dnd2024.wikidot.com/spell:hold-person",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "homunculus-servant",
@@ -3015,7 +3281,9 @@
       "class": [
         "artificer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:homunculus-servant"
+      "url": "http://dnd2024.wikidot.com/spell:homunculus-servant",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "invisibility",
@@ -3039,7 +3307,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:invisibility"
+      "url": "http://dnd2024.wikidot.com/spell:invisibility",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "knock",
@@ -3061,7 +3331,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:knock"
+      "url": "http://dnd2024.wikidot.com/spell:knock",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "lesser-restoration",
@@ -3086,7 +3358,9 @@
         "paladin",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:lesser-restoration"
+      "url": "http://dnd2024.wikidot.com/spell:lesser-restoration",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "levitate",
@@ -3108,7 +3382,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:levitate"
+      "url": "http://dnd2024.wikidot.com/spell:levitate",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "locate-animals-or-plants",
@@ -3130,7 +3406,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:locate-animals-or-plants"
+      "url": "http://dnd2024.wikidot.com/spell:locate-animals-or-plants",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "locate-object",
@@ -3155,7 +3433,9 @@
         "ranger",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:locate-object"
+      "url": "http://dnd2024.wikidot.com/spell:locate-object",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "magic-mouth",
@@ -3177,7 +3457,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:magic-mouth"
+      "url": "http://dnd2024.wikidot.com/spell:magic-mouth",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "magic-weapon",
@@ -3201,7 +3483,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:magic-weapon"
+      "url": "http://dnd2024.wikidot.com/spell:magic-weapon",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "melfs-acid-arrow",
@@ -3221,7 +3505,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:melfs-acid-arrow"
+      "url": "http://dnd2024.wikidot.com/spell:melfs-acid-arrow",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mind-spike",
@@ -3243,7 +3529,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mind-spike"
+      "url": "http://dnd2024.wikidot.com/spell:mind-spike",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mirror-image",
@@ -3266,7 +3554,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mirror-image"
+      "url": "http://dnd2024.wikidot.com/spell:mirror-image",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "misty-step",
@@ -3288,7 +3578,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:misty-step"
+      "url": "http://dnd2024.wikidot.com/spell:misty-step",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "moonbeam",
@@ -3308,7 +3600,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:moonbeam"
+      "url": "http://dnd2024.wikidot.com/spell:moonbeam",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "nystul-s-magic-aura",
@@ -3328,7 +3622,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:nystul-s-magic-aura"
+      "url": "http://dnd2024.wikidot.com/spell:nystul-s-magic-aura",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "pass-without-trace",
@@ -3349,7 +3645,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:pass-without-trace"
+      "url": "http://dnd2024.wikidot.com/spell:pass-without-trace",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "phantasmal-force",
@@ -3371,7 +3669,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:phantasmal-force"
+      "url": "http://dnd2024.wikidot.com/spell:phantasmal-force",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "prayer-of-healing",
@@ -3392,7 +3692,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:prayer-of-healing"
+      "url": "http://dnd2024.wikidot.com/spell:prayer-of-healing",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "protection-from-poison",
@@ -3416,7 +3718,9 @@
         "paladin",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:protection-from-poison"
+      "url": "http://dnd2024.wikidot.com/spell:protection-from-poison",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "ray-of-enfeeblement",
@@ -3437,7 +3741,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:ray-of-enfeeblement"
+      "url": "http://dnd2024.wikidot.com/spell:ray-of-enfeeblement",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "rope-trick",
@@ -3458,7 +3764,9 @@
         "artificer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:rope-trick"
+      "url": "http://dnd2024.wikidot.com/spell:rope-trick",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "scorching-ray",
@@ -3479,7 +3787,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:scorching-ray"
+      "url": "http://dnd2024.wikidot.com/spell:scorching-ray",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "see-invisibility",
@@ -3502,7 +3812,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:see-invisibility"
+      "url": "http://dnd2024.wikidot.com/spell:see-invisibility",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "shatter",
@@ -3524,7 +3836,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:shatter"
+      "url": "http://dnd2024.wikidot.com/spell:shatter",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "shining-smite",
@@ -3544,7 +3858,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:shining-smite"
+      "url": "http://dnd2024.wikidot.com/spell:shining-smite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "silence",
@@ -3566,7 +3882,9 @@
         "cleric",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:silence"
+      "url": "http://dnd2024.wikidot.com/spell:silence",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "spider-climb",
@@ -3589,7 +3907,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:spider-climb"
+      "url": "http://dnd2024.wikidot.com/spell:spider-climb",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "spike-growth",
@@ -3610,7 +3930,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:spike-growth"
+      "url": "http://dnd2024.wikidot.com/spell:spike-growth",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "spiritual-weapon",
@@ -3630,7 +3952,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:spiritual-weapon"
+      "url": "http://dnd2024.wikidot.com/spell:spiritual-weapon",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "suggestion",
@@ -3653,7 +3977,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:suggestion"
+      "url": "http://dnd2024.wikidot.com/spell:suggestion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-beast",
@@ -3714,7 +4040,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-beast"
+      "url": "http://dnd2024.wikidot.com/spell:summon-beast",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "warding-bond",
@@ -3735,7 +4063,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:warding-bond"
+      "url": "http://dnd2024.wikidot.com/spell:warding-bond",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "web",
@@ -3757,7 +4087,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:web"
+      "url": "http://dnd2024.wikidot.com/spell:web",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "zone-of-truth",
@@ -3779,7 +4111,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:zone-of-truth"
+      "url": "http://dnd2024.wikidot.com/spell:zone-of-truth",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "animate-dead",
@@ -3800,7 +4134,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:animate-dead"
+      "url": "http://dnd2024.wikidot.com/spell:animate-dead",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "aura-of-vitality",
@@ -3822,7 +4158,9 @@
         "druid",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:aura-of-vitality"
+      "url": "http://dnd2024.wikidot.com/spell:aura-of-vitality",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "beacon-of-hope",
@@ -3842,7 +4180,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:beacon-of-hope"
+      "url": "http://dnd2024.wikidot.com/spell:beacon-of-hope",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "bestow-curse",
@@ -3864,7 +4204,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:bestow-curse"
+      "url": "http://dnd2024.wikidot.com/spell:bestow-curse",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "blinding-smite",
@@ -3884,7 +4226,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:blinding-smite"
+      "url": "http://dnd2024.wikidot.com/spell:blinding-smite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "blink",
@@ -3906,7 +4250,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:blink"
+      "url": "http://dnd2024.wikidot.com/spell:blink",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "cacophonic-shield",
@@ -3928,7 +4274,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:cacophonic-shield"
+      "url": "http://dnd2024.wikidot.com/spell:cacophonic-shield",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "call-lightning",
@@ -3948,7 +4296,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:call-lightning"
+      "url": "http://dnd2024.wikidot.com/spell:call-lightning",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "clairvoyance",
@@ -3971,7 +4321,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:clairvoyance"
+      "url": "http://dnd2024.wikidot.com/spell:clairvoyance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-animals",
@@ -3992,7 +4344,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-animals"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-animals",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-barrage",
@@ -4012,7 +4366,9 @@
       "class": [
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-barrage"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-barrage",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-constructs",
@@ -4032,7 +4388,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-constructs"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-constructs",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "counterspell",
@@ -4054,7 +4412,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:counterspell"
+      "url": "http://dnd2024.wikidot.com/spell:counterspell",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "create-food-and-water",
@@ -4076,7 +4436,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:create-food-and-water"
+      "url": "http://dnd2024.wikidot.com/spell:create-food-and-water",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "crusader-s-mantle",
@@ -4096,7 +4458,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:crusader-s-mantle"
+      "url": "http://dnd2024.wikidot.com/spell:crusader-s-mantle",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "daylight",
@@ -4120,7 +4484,9 @@
         "ranger",
         "sorcerer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:daylight"
+      "url": "http://dnd2024.wikidot.com/spell:daylight",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dispel-magic",
@@ -4148,7 +4514,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dispel-magic"
+      "url": "http://dnd2024.wikidot.com/spell:dispel-magic",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "elemental-weapon",
@@ -4171,7 +4539,9 @@
         "paladin",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:elemental-weapon"
+      "url": "http://dnd2024.wikidot.com/spell:elemental-weapon",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fear",
@@ -4194,7 +4564,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fear"
+      "url": "http://dnd2024.wikidot.com/spell:fear",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "feign-death",
@@ -4217,7 +4589,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:feign-death"
+      "url": "http://dnd2024.wikidot.com/spell:feign-death",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fireball",
@@ -4238,7 +4612,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fireball"
+      "url": "http://dnd2024.wikidot.com/spell:fireball",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fly",
@@ -4261,7 +4637,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fly"
+      "url": "http://dnd2024.wikidot.com/spell:fly",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "gaseous-form",
@@ -4283,7 +4661,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:gaseous-form"
+      "url": "http://dnd2024.wikidot.com/spell:gaseous-form",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "glyph-of-warding",
@@ -4306,7 +4686,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:glyph-of-warding"
+      "url": "http://dnd2024.wikidot.com/spell:glyph-of-warding",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "haste",
@@ -4328,7 +4710,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:haste"
+      "url": "http://dnd2024.wikidot.com/spell:haste",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hunger-of-hadar",
@@ -4348,7 +4732,9 @@
       "class": [
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hunger-of-hadar"
+      "url": "http://dnd2024.wikidot.com/spell:hunger-of-hadar",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hypnotic-pattern",
@@ -4371,7 +4757,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hypnotic-pattern"
+      "url": "http://dnd2024.wikidot.com/spell:hypnotic-pattern",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "laeral-s-silver-lance",
@@ -4393,7 +4781,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:laeral-s-silver-lance"
+      "url": "http://dnd2024.wikidot.com/spell:laeral-s-silver-lance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "leomund-s-tiny-hut",
@@ -4414,7 +4804,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:leomund-s-tiny-hut"
+      "url": "http://dnd2024.wikidot.com/spell:leomund-s-tiny-hut",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "lightning-arrow",
@@ -4434,7 +4826,9 @@
       "class": [
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:lightning-arrow"
+      "url": "http://dnd2024.wikidot.com/spell:lightning-arrow",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "lightning-bolt",
@@ -4455,7 +4849,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:lightning-bolt"
+      "url": "http://dnd2024.wikidot.com/spell:lightning-bolt",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "magic-circle",
@@ -4478,7 +4874,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:magic-circle"
+      "url": "http://dnd2024.wikidot.com/spell:magic-circle",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "major-image",
@@ -4501,7 +4899,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:major-image"
+      "url": "http://dnd2024.wikidot.com/spell:major-image",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mass-healing-word",
@@ -4522,7 +4922,9 @@
         "bard",
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mass-healing-word"
+      "url": "http://dnd2024.wikidot.com/spell:mass-healing-word",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "meld-into-stone",
@@ -4544,7 +4946,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:meld-into-stone"
+      "url": "http://dnd2024.wikidot.com/spell:meld-into-stone",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "nondetection",
@@ -4566,7 +4970,9 @@
         "ranger",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:nondetection"
+      "url": "http://dnd2024.wikidot.com/spell:nondetection",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "phantom-steed",
@@ -4586,7 +4992,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:phantom-steed"
+      "url": "http://dnd2024.wikidot.com/spell:phantom-steed",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "plant-growth",
@@ -4608,7 +5016,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:plant-growth"
+      "url": "http://dnd2024.wikidot.com/spell:plant-growth",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "protection-from-energy",
@@ -4633,7 +5043,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:protection-from-energy"
+      "url": "http://dnd2024.wikidot.com/spell:protection-from-energy",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "remove-curse",
@@ -4656,7 +5068,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:remove-curse"
+      "url": "http://dnd2024.wikidot.com/spell:remove-curse",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "revivify",
@@ -4680,7 +5094,9 @@
         "paladin",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:revivify"
+      "url": "http://dnd2024.wikidot.com/spell:revivify",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sending",
@@ -4702,7 +5118,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sending"
+      "url": "http://dnd2024.wikidot.com/spell:sending",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sleet-storm",
@@ -4724,7 +5142,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sleet-storm"
+      "url": "http://dnd2024.wikidot.com/spell:sleet-storm",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "slow",
@@ -4746,7 +5166,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:slow"
+      "url": "http://dnd2024.wikidot.com/spell:slow",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "speak-with-dead",
@@ -4768,7 +5190,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:speak-with-dead"
+      "url": "http://dnd2024.wikidot.com/spell:speak-with-dead",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "speak-with-plants",
@@ -4790,7 +5214,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:speak-with-plants"
+      "url": "http://dnd2024.wikidot.com/spell:speak-with-plants",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "spirit-guardians",
@@ -4810,7 +5236,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:spirit-guardians"
+      "url": "http://dnd2024.wikidot.com/spell:spirit-guardians",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "stinking-cloud",
@@ -4832,7 +5260,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:stinking-cloud"
+      "url": "http://dnd2024.wikidot.com/spell:stinking-cloud",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-fey",
@@ -4900,7 +5330,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-fey"
+      "url": "http://dnd2024.wikidot.com/spell:summon-fey",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-undead",
@@ -4971,7 +5403,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-undead"
+      "url": "http://dnd2024.wikidot.com/spell:summon-undead",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sylune-s-viper",
@@ -4992,7 +5426,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sylune-s-viper"
+      "url": "http://dnd2024.wikidot.com/spell:sylune-s-viper",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "tongues",
@@ -5016,7 +5452,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:tongues"
+      "url": "http://dnd2024.wikidot.com/spell:tongues",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "vampiric-touch",
@@ -5038,7 +5476,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:vampiric-touch"
+      "url": "http://dnd2024.wikidot.com/spell:vampiric-touch",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "water-breathing",
@@ -5062,7 +5502,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:water-breathing"
+      "url": "http://dnd2024.wikidot.com/spell:water-breathing",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "water-walk",
@@ -5086,7 +5528,9 @@
         "ranger",
         "sorcerer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:water-walk"
+      "url": "http://dnd2024.wikidot.com/spell:water-walk",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wind-wall",
@@ -5107,7 +5551,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wind-wall"
+      "url": "http://dnd2024.wikidot.com/spell:wind-wall",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "arcane-eye",
@@ -5128,7 +5574,9 @@
         "artificer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:arcane-eye"
+      "url": "http://dnd2024.wikidot.com/spell:arcane-eye",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "aura-of-life",
@@ -5149,7 +5597,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:aura-of-life"
+      "url": "http://dnd2024.wikidot.com/spell:aura-of-life",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "aura-of-purity",
@@ -5170,7 +5620,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:aura-of-purity"
+      "url": "http://dnd2024.wikidot.com/spell:aura-of-purity",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "backlash",
@@ -5193,7 +5645,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:backlash"
+      "url": "http://dnd2024.wikidot.com/spell:backlash",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "banishment",
@@ -5217,7 +5671,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:banishment"
+      "url": "http://dnd2024.wikidot.com/spell:banishment",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "blight",
@@ -5240,7 +5696,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:blight"
+      "url": "http://dnd2024.wikidot.com/spell:blight",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "charm-monster",
@@ -5264,7 +5722,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:charm-monster"
+      "url": "http://dnd2024.wikidot.com/spell:charm-monster",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "compulsion",
@@ -5284,7 +5744,9 @@
       "class": [
         "bard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:compulsion"
+      "url": "http://dnd2024.wikidot.com/spell:compulsion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "confusion",
@@ -5307,7 +5769,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:confusion"
+      "url": "http://dnd2024.wikidot.com/spell:confusion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-minor-elementals",
@@ -5328,7 +5792,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-minor-elementals"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-minor-elementals",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-woodland-beings",
@@ -5349,7 +5815,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-woodland-beings"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-woodland-beings",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "control-water",
@@ -5371,7 +5839,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:control-water"
+      "url": "http://dnd2024.wikidot.com/spell:control-water",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "death-ward",
@@ -5392,7 +5862,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:death-ward"
+      "url": "http://dnd2024.wikidot.com/spell:death-ward",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dimension-door",
@@ -5415,7 +5887,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dimension-door"
+      "url": "http://dnd2024.wikidot.com/spell:dimension-door",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "divination",
@@ -5437,7 +5911,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:divination"
+      "url": "http://dnd2024.wikidot.com/spell:divination",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dominate-beast",
@@ -5459,7 +5935,9 @@
         "ranger",
         "sorcerer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dominate-beast"
+      "url": "http://dnd2024.wikidot.com/spell:dominate-beast",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "doomtide",
@@ -5481,7 +5959,9 @@
         "cleric",
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:doomtide"
+      "url": "http://dnd2024.wikidot.com/spell:doomtide",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "evard-s-black-tentacles",
@@ -5501,7 +5981,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:evard-s-black-tentacles"
+      "url": "http://dnd2024.wikidot.com/spell:evard-s-black-tentacles",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fabricate",
@@ -5522,7 +6004,9 @@
         "artificer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fabricate"
+      "url": "http://dnd2024.wikidot.com/spell:fabricate",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fire-shield",
@@ -5544,7 +6028,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fire-shield"
+      "url": "http://dnd2024.wikidot.com/spell:fire-shield",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fount-of-moonlight",
@@ -5565,7 +6051,9 @@
         "bard",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fount-of-moonlight"
+      "url": "http://dnd2024.wikidot.com/spell:fount-of-moonlight",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "freedom-of-movement",
@@ -5589,7 +6077,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:freedom-of-movement"
+      "url": "http://dnd2024.wikidot.com/spell:freedom-of-movement",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "giant-insect",
@@ -5649,7 +6139,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:giant-insect"
+      "url": "http://dnd2024.wikidot.com/spell:giant-insect",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "grasping-vine",
@@ -5670,7 +6162,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:grasping-vine"
+      "url": "http://dnd2024.wikidot.com/spell:grasping-vine",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "greater-invisibility",
@@ -5692,7 +6186,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:greater-invisibility"
+      "url": "http://dnd2024.wikidot.com/spell:greater-invisibility",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "guardian-of-faith",
@@ -5712,7 +6208,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:guardian-of-faith"
+      "url": "http://dnd2024.wikidot.com/spell:guardian-of-faith",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hallucinatory-terrain",
@@ -5735,7 +6233,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hallucinatory-terrain"
+      "url": "http://dnd2024.wikidot.com/spell:hallucinatory-terrain",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "ice-storm",
@@ -5757,7 +6257,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:ice-storm"
+      "url": "http://dnd2024.wikidot.com/spell:ice-storm",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "leomunds-secret-chest",
@@ -5778,7 +6280,9 @@
         "artificer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:leomunds-secret-chest"
+      "url": "http://dnd2024.wikidot.com/spell:leomunds-secret-chest",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "locate-creature",
@@ -5803,7 +6307,9 @@
         "ranger",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:locate-creature"
+      "url": "http://dnd2024.wikidot.com/spell:locate-creature",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mordenkainen-s-faithful-hound",
@@ -5823,7 +6329,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-faithful-hound"
+      "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-faithful-hound",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mordenkainen-s-private-sanctum",
@@ -5844,7 +6352,9 @@
         "artificer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-private-sanctum"
+      "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-private-sanctum",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "otilukes-resilient-sphere",
@@ -5865,7 +6375,9 @@
         "artificer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:otilukes-resilient-sphere"
+      "url": "http://dnd2024.wikidot.com/spell:otilukes-resilient-sphere",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "phantasmal-killer",
@@ -5886,7 +6398,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:phantasmal-killer"
+      "url": "http://dnd2024.wikidot.com/spell:phantasmal-killer",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "polymorph",
@@ -5909,7 +6423,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:polymorph"
+      "url": "http://dnd2024.wikidot.com/spell:polymorph",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "spellfire-storm",
@@ -5930,7 +6446,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:spellfire-storm"
+      "url": "http://dnd2024.wikidot.com/spell:spellfire-storm",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "staggering-smite",
@@ -5950,7 +6468,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:staggering-smite"
+      "url": "http://dnd2024.wikidot.com/spell:staggering-smite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "stone-shape",
@@ -5973,7 +6493,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:stone-shape"
+      "url": "http://dnd2024.wikidot.com/spell:stone-shape",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "stoneskin",
@@ -5997,7 +6519,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:stoneskin"
+      "url": "http://dnd2024.wikidot.com/spell:stoneskin",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-aberration",
@@ -6064,7 +6588,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-aberration"
+      "url": "http://dnd2024.wikidot.com/spell:summon-aberration",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-construct",
@@ -6134,7 +6660,9 @@
         "artificer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-construct"
+      "url": "http://dnd2024.wikidot.com/spell:summon-construct",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-elemental",
@@ -6198,7 +6726,9 @@
         "ranger",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-elemental"
+      "url": "http://dnd2024.wikidot.com/spell:summon-elemental",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "vitriolic-sphere",
@@ -6219,7 +6749,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:vitriolic-sphere"
+      "url": "http://dnd2024.wikidot.com/spell:vitriolic-sphere",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wall-of-fire",
@@ -6241,7 +6773,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wall-of-fire"
+      "url": "http://dnd2024.wikidot.com/spell:wall-of-fire",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "alustriel-s-mooncloak",
@@ -6264,7 +6798,9 @@
         "ranger",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:alustriel-s-mooncloak"
+      "url": "http://dnd2024.wikidot.com/spell:alustriel-s-mooncloak",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "animate-objects",
@@ -6317,7 +6853,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:animate-objects"
+      "url": "http://dnd2024.wikidot.com/spell:animate-objects",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "antilife-shell",
@@ -6337,7 +6875,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:antilife-shell"
+      "url": "http://dnd2024.wikidot.com/spell:antilife-shell",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "awaken",
@@ -6358,7 +6898,9 @@
         "bard",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:awaken"
+      "url": "http://dnd2024.wikidot.com/spell:awaken",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "banishing-smite",
@@ -6378,7 +6920,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:banishing-smite"
+      "url": "http://dnd2024.wikidot.com/spell:banishing-smite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "bigby-s-hand",
@@ -6400,7 +6944,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:bigby-s-hand"
+      "url": "http://dnd2024.wikidot.com/spell:bigby-s-hand",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "circle-of-power",
@@ -6423,7 +6969,9 @@
         "paladin",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:circle-of-power"
+      "url": "http://dnd2024.wikidot.com/spell:circle-of-power",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "cloudkill",
@@ -6444,7 +6992,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:cloudkill"
+      "url": "http://dnd2024.wikidot.com/spell:cloudkill",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "commune",
@@ -6464,7 +7014,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:commune"
+      "url": "http://dnd2024.wikidot.com/spell:commune",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "commune-with-nature",
@@ -6485,7 +7037,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:commune-with-nature"
+      "url": "http://dnd2024.wikidot.com/spell:commune-with-nature",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "cone-of-cold",
@@ -6507,7 +7061,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:cone-of-cold"
+      "url": "http://dnd2024.wikidot.com/spell:cone-of-cold",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-elemental",
@@ -6528,7 +7084,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-elemental"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-elemental",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-volley",
@@ -6548,7 +7106,9 @@
       "class": [
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-volley"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-volley",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "contact-other-plane",
@@ -6569,7 +7129,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:contact-other-plane"
+      "url": "http://dnd2024.wikidot.com/spell:contact-other-plane",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "contagion",
@@ -6590,7 +7152,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:contagion"
+      "url": "http://dnd2024.wikidot.com/spell:contagion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "creation",
@@ -6612,7 +7176,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:creation"
+      "url": "http://dnd2024.wikidot.com/spell:creation",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "destructive-wave",
@@ -6632,7 +7198,9 @@
       "class": [
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:destructive-wave"
+      "url": "http://dnd2024.wikidot.com/spell:destructive-wave",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dispel-evil-and-good",
@@ -6653,7 +7221,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dispel-evil-and-good"
+      "url": "http://dnd2024.wikidot.com/spell:dispel-evil-and-good",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dominate-person",
@@ -6675,7 +7245,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dominate-person"
+      "url": "http://dnd2024.wikidot.com/spell:dominate-person",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dream",
@@ -6697,7 +7269,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dream"
+      "url": "http://dnd2024.wikidot.com/spell:dream",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "flame-strike",
@@ -6717,7 +7291,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:flame-strike"
+      "url": "http://dnd2024.wikidot.com/spell:flame-strike",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "geas",
@@ -6741,7 +7317,9 @@
         "paladin",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:geas"
+      "url": "http://dnd2024.wikidot.com/spell:geas",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "greater-restoration",
@@ -6766,7 +7344,9 @@
         "paladin",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:greater-restoration"
+      "url": "http://dnd2024.wikidot.com/spell:greater-restoration",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hallow",
@@ -6786,7 +7366,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hallow"
+      "url": "http://dnd2024.wikidot.com/spell:hallow",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "hold-monster",
@@ -6809,7 +7391,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:hold-monster"
+      "url": "http://dnd2024.wikidot.com/spell:hold-monster",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "insect-plague",
@@ -6831,7 +7415,9 @@
         "druid",
         "sorcerer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:insect-plague"
+      "url": "http://dnd2024.wikidot.com/spell:insect-plague",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "jallarzi-s-storm-of-radiance",
@@ -6852,7 +7438,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:jallarzi-s-storm-of-radiance"
+      "url": "http://dnd2024.wikidot.com/spell:jallarzi-s-storm-of-radiance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "legend-lore",
@@ -6874,7 +7462,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:legend-lore"
+      "url": "http://dnd2024.wikidot.com/spell:legend-lore",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mass-cure-wounds",
@@ -6896,7 +7486,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mass-cure-wounds"
+      "url": "http://dnd2024.wikidot.com/spell:mass-cure-wounds",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mislead",
@@ -6918,7 +7510,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mislead"
+      "url": "http://dnd2024.wikidot.com/spell:mislead",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "modify-memory",
@@ -6939,7 +7533,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:modify-memory"
+      "url": "http://dnd2024.wikidot.com/spell:modify-memory",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "passwall",
@@ -6959,7 +7555,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:passwall"
+      "url": "http://dnd2024.wikidot.com/spell:passwall",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "planar-binding",
@@ -6983,7 +7581,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:planar-binding"
+      "url": "http://dnd2024.wikidot.com/spell:planar-binding",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "raise-dead",
@@ -7005,7 +7605,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:raise-dead"
+      "url": "http://dnd2024.wikidot.com/spell:raise-dead",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "rary-s-telepathic-bond",
@@ -7026,7 +7628,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:rary-s-telepathic-bond"
+      "url": "http://dnd2024.wikidot.com/spell:rary-s-telepathic-bond",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "reincarnate",
@@ -7046,7 +7650,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:reincarnate"
+      "url": "http://dnd2024.wikidot.com/spell:reincarnate",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "scrying",
@@ -7070,7 +7676,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:scrying"
+      "url": "http://dnd2024.wikidot.com/spell:scrying",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "seeming",
@@ -7092,7 +7700,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:seeming"
+      "url": "http://dnd2024.wikidot.com/spell:seeming",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "songal-s-elemental-suffusion",
@@ -7114,7 +7724,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:songal-s-elemental-suffusion"
+      "url": "http://dnd2024.wikidot.com/spell:songal-s-elemental-suffusion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "steel-wind-strike",
@@ -7135,7 +7747,9 @@
         "ranger",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:steel-wind-strike"
+      "url": "http://dnd2024.wikidot.com/spell:steel-wind-strike",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-celestial",
@@ -7196,7 +7810,9 @@
         "cleric",
         "paladin"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-celestial"
+      "url": "http://dnd2024.wikidot.com/spell:summon-celestial",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-dragon",
@@ -7262,7 +7878,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-dragon"
+      "url": "http://dnd2024.wikidot.com/spell:summon-dragon",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "swift-quiver",
@@ -7282,7 +7900,9 @@
       "class": [
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:swift-quiver"
+      "url": "http://dnd2024.wikidot.com/spell:swift-quiver",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "synaptic-static",
@@ -7305,7 +7925,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:synaptic-static"
+      "url": "http://dnd2024.wikidot.com/spell:synaptic-static",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "telekinesis",
@@ -7326,7 +7948,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:telekinesis"
+      "url": "http://dnd2024.wikidot.com/spell:telekinesis",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "teleportation-circle",
@@ -7349,7 +7973,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:teleportation-circle"
+      "url": "http://dnd2024.wikidot.com/spell:teleportation-circle",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "tree-stride",
@@ -7370,7 +7996,9 @@
         "druid",
         "ranger"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:tree-stride"
+      "url": "http://dnd2024.wikidot.com/spell:tree-stride",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wall-of-force",
@@ -7390,7 +8018,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wall-of-force"
+      "url": "http://dnd2024.wikidot.com/spell:wall-of-force",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wall-of-stone",
@@ -7413,7 +8043,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wall-of-stone"
+      "url": "http://dnd2024.wikidot.com/spell:wall-of-stone",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "yolande-s-regal-presence",
@@ -7434,7 +8066,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:yolande-s-regal-presence"
+      "url": "http://dnd2024.wikidot.com/spell:yolande-s-regal-presence",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "arcane-gate",
@@ -7456,7 +8090,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:arcane-gate"
+      "url": "http://dnd2024.wikidot.com/spell:arcane-gate",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "blade-barrier",
@@ -7476,7 +8112,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:blade-barrier"
+      "url": "http://dnd2024.wikidot.com/spell:blade-barrier",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "chain-lightning",
@@ -7497,7 +8135,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:chain-lightning"
+      "url": "http://dnd2024.wikidot.com/spell:chain-lightning",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "circle-of-death",
@@ -7519,7 +8159,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:circle-of-death"
+      "url": "http://dnd2024.wikidot.com/spell:circle-of-death",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-fey",
@@ -7539,7 +8181,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-fey"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-fey",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "contingency",
@@ -7559,7 +8203,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:contingency"
+      "url": "http://dnd2024.wikidot.com/spell:contingency",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "create-undead",
@@ -7581,7 +8227,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:create-undead"
+      "url": "http://dnd2024.wikidot.com/spell:create-undead",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dirge",
@@ -7602,7 +8250,9 @@
         "bard",
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dirge"
+      "url": "http://dnd2024.wikidot.com/spell:dirge",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "disintegrate",
@@ -7623,7 +8273,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:disintegrate"
+      "url": "http://dnd2024.wikidot.com/spell:disintegrate",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "drawmij-s-instant-summons",
@@ -7643,7 +8295,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:drawmij-s-instant-summons"
+      "url": "http://dnd2024.wikidot.com/spell:drawmij-s-instant-summons",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "elminster-s-effulgent-spheres",
@@ -7665,7 +8319,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:elminster-s-effulgent-spheres"
+      "url": "http://dnd2024.wikidot.com/spell:elminster-s-effulgent-spheres",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "eyebite",
@@ -7688,7 +8344,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:eyebite"
+      "url": "http://dnd2024.wikidot.com/spell:eyebite",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "find-the-path",
@@ -7710,7 +8368,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:find-the-path"
+      "url": "http://dnd2024.wikidot.com/spell:find-the-path",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "flesh-to-stone",
@@ -7732,7 +8392,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:flesh-to-stone"
+      "url": "http://dnd2024.wikidot.com/spell:flesh-to-stone",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "forbiddance",
@@ -7752,7 +8414,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:forbiddance"
+      "url": "http://dnd2024.wikidot.com/spell:forbiddance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "globe-of-invulnerability",
@@ -7773,7 +8437,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:globe-of-invulnerability"
+      "url": "http://dnd2024.wikidot.com/spell:globe-of-invulnerability",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "guards-and-wards",
@@ -7794,7 +8460,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:guards-and-wards"
+      "url": "http://dnd2024.wikidot.com/spell:guards-and-wards",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "harm",
@@ -7814,7 +8482,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:harm"
+      "url": "http://dnd2024.wikidot.com/spell:harm",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "heal",
@@ -7835,7 +8505,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:heal"
+      "url": "http://dnd2024.wikidot.com/spell:heal",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "heroes-feast",
@@ -7857,7 +8529,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:heroes-feast"
+      "url": "http://dnd2024.wikidot.com/spell:heroes-feast",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "magic-jar",
@@ -7877,7 +8551,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:magic-jar"
+      "url": "http://dnd2024.wikidot.com/spell:magic-jar",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mass-suggestion",
@@ -7899,7 +8575,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mass-suggestion"
+      "url": "http://dnd2024.wikidot.com/spell:mass-suggestion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "move-earth",
@@ -7921,7 +8599,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:move-earth"
+      "url": "http://dnd2024.wikidot.com/spell:move-earth",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "otiluke-s-freezing-sphere",
@@ -7942,7 +8622,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:otiluke-s-freezing-sphere"
+      "url": "http://dnd2024.wikidot.com/spell:otiluke-s-freezing-sphere",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "otto-s-irresistible-dance",
@@ -7963,7 +8645,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:otto-s-irresistible-dance"
+      "url": "http://dnd2024.wikidot.com/spell:otto-s-irresistible-dance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "planar-ally",
@@ -7983,7 +8667,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:planar-ally"
+      "url": "http://dnd2024.wikidot.com/spell:planar-ally",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "programmed-illusion",
@@ -8004,7 +8690,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:programmed-illusion"
+      "url": "http://dnd2024.wikidot.com/spell:programmed-illusion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "summon-fiend",
@@ -8077,7 +8765,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:summon-fiend"
+      "url": "http://dnd2024.wikidot.com/spell:summon-fiend",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sunbeam",
@@ -8100,7 +8790,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sunbeam"
+      "url": "http://dnd2024.wikidot.com/spell:sunbeam",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "tasha-s-bubbling-cauldron",
@@ -8121,7 +8813,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:tasha-s-bubbling-cauldron"
+      "url": "http://dnd2024.wikidot.com/spell:tasha-s-bubbling-cauldron",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "transport-via-plants",
@@ -8141,7 +8835,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:transport-via-plants"
+      "url": "http://dnd2024.wikidot.com/spell:transport-via-plants",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "true-seeing",
@@ -8165,7 +8861,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:true-seeing"
+      "url": "http://dnd2024.wikidot.com/spell:true-seeing",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wall-of-ice",
@@ -8185,7 +8883,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wall-of-ice"
+      "url": "http://dnd2024.wikidot.com/spell:wall-of-ice",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wall-of-thorns",
@@ -8205,7 +8905,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wall-of-thorns"
+      "url": "http://dnd2024.wikidot.com/spell:wall-of-thorns",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wind-walk",
@@ -8225,7 +8927,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wind-walk"
+      "url": "http://dnd2024.wikidot.com/spell:wind-walk",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "word-of-recall",
@@ -8245,7 +8949,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:word-of-recall"
+      "url": "http://dnd2024.wikidot.com/spell:word-of-recall",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "conjure-celestial",
@@ -8265,7 +8971,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:conjure-celestial"
+      "url": "http://dnd2024.wikidot.com/spell:conjure-celestial",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "delayed-blast-fireball",
@@ -8286,7 +8994,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:delayed-blast-fireball"
+      "url": "http://dnd2024.wikidot.com/spell:delayed-blast-fireball",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "divine-word",
@@ -8306,7 +9016,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:divine-word"
+      "url": "http://dnd2024.wikidot.com/spell:divine-word",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "etherealness",
@@ -8330,7 +9042,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:etherealness"
+      "url": "http://dnd2024.wikidot.com/spell:etherealness",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "finger-of-death",
@@ -8352,7 +9066,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:finger-of-death"
+      "url": "http://dnd2024.wikidot.com/spell:finger-of-death",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "fire-storm",
@@ -8374,7 +9090,9 @@
         "druid",
         "sorcerer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:fire-storm"
+      "url": "http://dnd2024.wikidot.com/spell:fire-storm",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "forcecage",
@@ -8396,7 +9114,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:forcecage"
+      "url": "http://dnd2024.wikidot.com/spell:forcecage",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mirage-arcane",
@@ -8418,7 +9138,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mirage-arcane"
+      "url": "http://dnd2024.wikidot.com/spell:mirage-arcane",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mordenkainen-s-magnificent-mansion",
@@ -8439,7 +9161,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-magnificent-mansion"
+      "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-magnificent-mansion",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mordenkainen-s-sword",
@@ -8460,7 +9184,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-sword"
+      "url": "http://dnd2024.wikidot.com/spell:mordenkainen-s-sword",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "plane-shift",
@@ -8484,7 +9210,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:plane-shift"
+      "url": "http://dnd2024.wikidot.com/spell:plane-shift",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "power-word-fortify",
@@ -8505,7 +9233,9 @@
         "bard",
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:power-word-fortify"
+      "url": "http://dnd2024.wikidot.com/spell:power-word-fortify",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "prismatic-spray",
@@ -8527,7 +9257,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:prismatic-spray"
+      "url": "http://dnd2024.wikidot.com/spell:prismatic-spray",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "project-image",
@@ -8548,7 +9280,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:project-image"
+      "url": "http://dnd2024.wikidot.com/spell:project-image",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "regenerate",
@@ -8570,7 +9304,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:regenerate"
+      "url": "http://dnd2024.wikidot.com/spell:regenerate",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "resurrection",
@@ -8591,7 +9327,9 @@
         "bard",
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:resurrection"
+      "url": "http://dnd2024.wikidot.com/spell:resurrection",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "reverse-gravity",
@@ -8613,7 +9351,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:reverse-gravity"
+      "url": "http://dnd2024.wikidot.com/spell:reverse-gravity",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sequester",
@@ -8633,7 +9373,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sequester"
+      "url": "http://dnd2024.wikidot.com/spell:sequester",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "simbul-s-synostodweomer",
@@ -8654,7 +9396,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:simbul-s-synostodweomer"
+      "url": "http://dnd2024.wikidot.com/spell:simbul-s-synostodweomer",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "simulacrum",
@@ -8674,7 +9418,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:simulacrum"
+      "url": "http://dnd2024.wikidot.com/spell:simulacrum",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "symbol",
@@ -8697,7 +9443,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:symbol"
+      "url": "http://dnd2024.wikidot.com/spell:symbol",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "teleport",
@@ -8719,7 +9467,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:teleport"
+      "url": "http://dnd2024.wikidot.com/spell:teleport",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "animal-shapes",
@@ -8739,7 +9489,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:animal-shapes"
+      "url": "http://dnd2024.wikidot.com/spell:animal-shapes",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "antimagic-field",
@@ -8760,7 +9512,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:antimagic-field"
+      "url": "http://dnd2024.wikidot.com/spell:antimagic-field",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "antipathy-sympathy",
@@ -8782,7 +9536,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:antipathy-sympathy"
+      "url": "http://dnd2024.wikidot.com/spell:antipathy-sympathy",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "befuddlement",
@@ -8805,7 +9561,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:befuddlement"
+      "url": "http://dnd2024.wikidot.com/spell:befuddlement",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "clone",
@@ -8825,7 +9583,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:clone"
+      "url": "http://dnd2024.wikidot.com/spell:clone",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "control-weather",
@@ -8847,7 +9607,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:control-weather"
+      "url": "http://dnd2024.wikidot.com/spell:control-weather",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "demiplane",
@@ -8869,7 +9631,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:demiplane"
+      "url": "http://dnd2024.wikidot.com/spell:demiplane",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "dominate-monster",
@@ -8892,7 +9656,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:dominate-monster"
+      "url": "http://dnd2024.wikidot.com/spell:dominate-monster",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "earthquake",
@@ -8914,7 +9680,9 @@
         "druid",
         "sorcerer"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:earthquake"
+      "url": "http://dnd2024.wikidot.com/spell:earthquake",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "glibness",
@@ -8935,7 +9703,9 @@
         "bard",
         "warlock"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:glibness"
+      "url": "http://dnd2024.wikidot.com/spell:glibness",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "holy-aura",
@@ -8955,7 +9725,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:holy-aura"
+      "url": "http://dnd2024.wikidot.com/spell:holy-aura",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "holy-star-of-mystra",
@@ -8976,7 +9748,9 @@
         "cleric",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:holy-star-of-mystra"
+      "url": "http://dnd2024.wikidot.com/spell:holy-star-of-mystra",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "incendiary-cloud",
@@ -8998,7 +9772,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:incendiary-cloud"
+      "url": "http://dnd2024.wikidot.com/spell:incendiary-cloud",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "maze",
@@ -9018,7 +9794,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:maze"
+      "url": "http://dnd2024.wikidot.com/spell:maze",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mind-blank",
@@ -9039,7 +9817,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mind-blank"
+      "url": "http://dnd2024.wikidot.com/spell:mind-blank",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "power-word-stun",
@@ -9062,7 +9842,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:power-word-stun"
+      "url": "http://dnd2024.wikidot.com/spell:power-word-stun",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "sunburst",
@@ -9085,7 +9867,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:sunburst"
+      "url": "http://dnd2024.wikidot.com/spell:sunburst",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "telepathy",
@@ -9105,7 +9889,9 @@
       "class": [
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:telepathy"
+      "url": "http://dnd2024.wikidot.com/spell:telepathy",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "tsunami",
@@ -9125,7 +9911,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:tsunami"
+      "url": "http://dnd2024.wikidot.com/spell:tsunami",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "astral-projection",
@@ -9147,7 +9935,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:astral-projection"
+      "url": "http://dnd2024.wikidot.com/spell:astral-projection",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "blade-of-disaster",
@@ -9169,7 +9959,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:blade-of-disaster"
+      "url": "http://dnd2024.wikidot.com/spell:blade-of-disaster",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "foresight",
@@ -9192,7 +9984,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:foresight"
+      "url": "http://dnd2024.wikidot.com/spell:foresight",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "gate",
@@ -9215,7 +10009,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:gate"
+      "url": "http://dnd2024.wikidot.com/spell:gate",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "imprisonment",
@@ -9236,7 +10032,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:imprisonment"
+      "url": "http://dnd2024.wikidot.com/spell:imprisonment",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "mass-heal",
@@ -9256,7 +10054,9 @@
       "class": [
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:mass-heal"
+      "url": "http://dnd2024.wikidot.com/spell:mass-heal",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "meteor-swarm",
@@ -9277,7 +10077,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:meteor-swarm"
+      "url": "http://dnd2024.wikidot.com/spell:meteor-swarm",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "power-word-heal",
@@ -9298,7 +10100,9 @@
         "bard",
         "cleric"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:power-word-heal"
+      "url": "http://dnd2024.wikidot.com/spell:power-word-heal",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "power-word-kill",
@@ -9321,7 +10125,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:power-word-kill"
+      "url": "http://dnd2024.wikidot.com/spell:power-word-kill",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "prismatic-wall",
@@ -9342,7 +10148,9 @@
         "bard",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:prismatic-wall"
+      "url": "http://dnd2024.wikidot.com/spell:prismatic-wall",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "shapechange",
@@ -9363,7 +10171,9 @@
         "druid",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:shapechange"
+      "url": "http://dnd2024.wikidot.com/spell:shapechange",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "storm-of-vengeance",
@@ -9383,7 +10193,9 @@
       "class": [
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:storm-of-vengeance"
+      "url": "http://dnd2024.wikidot.com/spell:storm-of-vengeance",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "time-stop",
@@ -9404,7 +10216,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:time-stop"
+      "url": "http://dnd2024.wikidot.com/spell:time-stop",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "true-polymorph",
@@ -9426,7 +10240,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:true-polymorph"
+      "url": "http://dnd2024.wikidot.com/spell:true-polymorph",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "true-resurrection",
@@ -9447,7 +10263,9 @@
         "cleric",
         "druid"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:true-resurrection"
+      "url": "http://dnd2024.wikidot.com/spell:true-resurrection",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "weird",
@@ -9468,7 +10286,9 @@
         "warlock",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:weird"
+      "url": "http://dnd2024.wikidot.com/spell:weird",
+      "source": "Player's Handbook",
+      "classNote": []
     },
     {
       "name": "wish",
@@ -9489,7 +10309,9 @@
         "sorcerer",
         "wizard"
       ],
-      "url": "http://dnd2024.wikidot.com/spell:wish"
+      "url": "http://dnd2024.wikidot.com/spell:wish",
+      "source": "Player's Handbook",
+      "classNote": []
     }
   ]
 }
