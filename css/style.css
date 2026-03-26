@@ -452,8 +452,7 @@ footer p {
 /* ── Stat Block (renderizado no modal) ───────────────────────── */
 .stat-block {
     margin-top: 1.2em;
-    border: 1.5px solid var(--overlay1, #888);
-    border-top: 3px solid var(--accent, var(--overlay1, #888));
+    border: 1px solid var(--accent, var(--overlay1, #888));
     border-radius: 6px;
     padding: 0.75em 1em 0.75em 1em;
     background: var(--mantle, #f0f0f0);

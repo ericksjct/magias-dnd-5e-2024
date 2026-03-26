@@ -1716,7 +1716,7 @@
       "classNote": []
     },
     {
-      "name": "hunter-s-mark",
+      "name": "hunters-mark",
       "displayName": "Hunter's Mark",
       "level": 1,
       "school": "divination",
@@ -2191,7 +2191,7 @@
       "classNote": []
     },
     {
-      "name": "tasha-s-hideous-laughter",
+      "name": "tashas-hideous-laughter",
       "displayName": "Tasha's Hideous Laughter",
       "level": 1,
       "school": "enchantment",
@@ -2215,7 +2215,7 @@
       "classNote": []
     },
     {
-      "name": "tenser-s-floating-disk",
+      "name": "tensers-floating-disk",
       "displayName": "Tenser's Floating Disk",
       "level": 1,
       "school": "conjuration",
@@ -2813,7 +2813,7 @@
       "classNote": []
     },
     {
-      "name": "deryan-s-helpful-homunculi",
+      "name": "deryans-helpful-homunculi",
       "displayName": "Deryan's Helpful Homunculi",
       "level": 2,
       "school": "conjuration",
@@ -2860,7 +2860,7 @@
       "classNote": []
     },
     {
-      "name": "dragon-s-breath",
+      "name": "dragons-breath",
       "displayName": "Dragon's Breath",
       "level": 2,
       "school": "transmutation",
@@ -2884,7 +2884,7 @@
       "classNote": []
     },
     {
-      "name": "elminster-s-elusion",
+      "name": "elminsters-elusion",
       "displayName": "Elminster's Elusion",
       "level": 2,
       "school": "abjuration",
@@ -3605,7 +3605,7 @@
       "classNote": []
     },
     {
-      "name": "nystul-s-magic-aura",
+      "name": "nystuls-magic-aura",
       "displayName": "Nystul's Magic Aura",
       "level": 2,
       "school": "illusion",
@@ -4441,7 +4441,7 @@
       "classNote": []
     },
     {
-      "name": "crusader-s-mantle",
+      "name": "crusaders-mantle",
       "displayName": "Crusader's Mantle",
       "level": 3,
       "school": "evocation",
@@ -4762,7 +4762,7 @@
       "classNote": []
     },
     {
-      "name": "laeral-s-silver-lance",
+      "name": "laerals-silver-lance",
       "displayName": "Laeral's Silver Lance",
       "level": 3,
       "school": "evocation",
@@ -4786,7 +4786,7 @@
       "classNote": []
     },
     {
-      "name": "leomund-s-tiny-hut",
+      "name": "leomunds-tiny-hut",
       "displayName": "Leomund's Tiny Hut",
       "level": 3,
       "school": "evocation",
@@ -5408,7 +5408,7 @@
       "classNote": []
     },
     {
-      "name": "sylune-s-viper",
+      "name": "sylunes-viper",
       "displayName": "Sylune's Viper",
       "level": 3,
       "school": "conjuration",
@@ -5964,7 +5964,7 @@
       "classNote": []
     },
     {
-      "name": "evard-s-black-tentacles",
+      "name": "evards-black-tentacles",
       "displayName": "Evard's Black Tentacles",
       "level": 4,
       "school": "conjuration",
@@ -6312,7 +6312,7 @@
       "classNote": []
     },
     {
-      "name": "mordenkainen-s-faithful-hound",
+      "name": "mordenkainens-faithful-hound",
       "displayName": "Mordenkainen's Faithful Hound",
       "level": 4,
       "school": "conjuration",
@@ -6334,7 +6334,7 @@
       "classNote": []
     },
     {
-      "name": "mordenkainen-s-private-sanctum",
+      "name": "mordenkainens-private-sanctum",
       "displayName": "Mordenkainen's Private Sanctum",
       "level": 4,
       "school": "abjuration",
@@ -6778,7 +6778,7 @@
       "classNote": []
     },
     {
-      "name": "alustriel-s-mooncloak",
+      "name": "alustriels-mooncloak",
       "displayName": "Alustriel's Mooncloak",
       "level": 5,
       "school": "abjuration",
@@ -6925,7 +6925,7 @@
       "classNote": []
     },
     {
-      "name": "bigby-s-hand",
+      "name": "bigbys-hand",
       "displayName": "Bigby's Hand",
       "level": 5,
       "school": "evocation",
@@ -7420,7 +7420,7 @@
       "classNote": []
     },
     {
-      "name": "jallarzi-s-storm-of-radiance",
+      "name": "jallarzis-storm-of-radiance",
       "displayName": "Jallarzi's Storm of Radiance",
       "level": 5,
       "school": "evocation",
@@ -7610,7 +7610,7 @@
       "classNote": []
     },
     {
-      "name": "rary-s-telepathic-bond",
+      "name": "rarys-telepathic-bond",
       "displayName": "Rary's Telepathic Bond",
       "level": 5,
       "school": "divination",
@@ -7705,7 +7705,7 @@
       "classNote": []
     },
     {
-      "name": "songal-s-elemental-suffusion",
+      "name": "songals-elemental-suffusion",
       "displayName": "Songal's Elemental Suffusion",
       "level": 5,
       "school": "transmutation",
@@ -8048,7 +8048,7 @@
       "classNote": []
     },
     {
-      "name": "yolande-s-regal-presence",
+      "name": "yolandes-regal-presence",
       "displayName": "Yolande's Regal Presence",
       "level": 5,
       "school": "enchantment",
@@ -8278,7 +8278,7 @@
       "classNote": []
     },
     {
-      "name": "drawmij-s-instant-summons",
+      "name": "drawmijs-instant-summons",
       "displayName": "Drawmij's Instant Summons",
       "level": 6,
       "school": "conjuration",
@@ -8300,7 +8300,7 @@
       "classNote": []
     },
     {
-      "name": "elminster-s-effulgent-spheres",
+      "name": "elminsters-effulgent-spheres",
       "displayName": "Elminster's Effulgent Spheres",
       "level": 6,
       "school": "evocation",
@@ -8604,7 +8604,7 @@
       "classNote": []
     },
     {
-      "name": "otiluke-s-freezing-sphere",
+      "name": "otilukes-freezing-sphere",
       "displayName": "Otiluke's Freezing Sphere",
       "level": 6,
       "school": "evocation",
@@ -8627,7 +8627,7 @@
       "classNote": []
     },
     {
-      "name": "otto-s-irresistible-dance",
+      "name": "ottos-irresistible-dance",
       "displayName": "Otto's Irresistible Dance",
       "level": 6,
       "school": "enchantment",
@@ -8795,7 +8795,7 @@
       "classNote": []
     },
     {
-      "name": "tasha-s-bubbling-cauldron",
+      "name": "tashas-bubbling-cauldron",
       "displayName": "Tasha's Bubbling Cauldron",
       "level": 6,
       "school": "conjuration",
@@ -9143,7 +9143,7 @@
       "classNote": []
     },
     {
-      "name": "mordenkainen-s-magnificent-mansion",
+      "name": "mordenkainens-magnificent-mansion",
       "displayName": "Mordenkainen's Magnificent Mansion",
       "level": 7,
       "school": "conjuration",
@@ -9166,7 +9166,7 @@
       "classNote": []
     },
     {
-      "name": "mordenkainen-s-sword",
+      "name": "mordenkainens-sword",
       "displayName": "Mordenkainen's Sword",
       "level": 7,
       "school": "evocation",
@@ -9378,7 +9378,7 @@
       "classNote": []
     },
     {
-      "name": "simbul-s-synostodweomer",
+      "name": "simbuls-synostodweomer",
       "displayName": "Simbul's Synostodweomer",
       "level": 7,
       "school": "transmutation",

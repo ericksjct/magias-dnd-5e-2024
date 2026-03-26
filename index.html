@@ -1350,6 +1350,22 @@
         return unknownIcon();
     }
 
+    function formatCastTime(val) {
+        var t = i18n[currentLang];
+        var key = 'castTime_' + val.replace(/\s+/g, '').replace(/or/g, 'or');
+        return t[key] || val;
+    }
+
+    function formatSchool(val) {
+        var t = i18n[currentLang];
+        return t['school_' + val] || val;
+    }
+
+    function formatClass(val) {
+        var t = i18n[currentLang];
+        return t['class_' + val] || val;
+    }
+
     function levelLabel(level) {
         var t = i18n[currentLang];
         return level === 0 ? t.level_cantrip : t.level_n + level;
@@ -1363,21 +1379,24 @@
     }
 
     function buildStatBlockHTML(sb) {
+        var t = i18n[currentLang];
         function parseStat(val) {
             if (!val) return '—';
             return val.replace(/\/[^)]+/, '');
         }
+        var statKeys = ['str','dex','con','int','wis','cha'];
+        var statLabels = [t.sb_str, t.sb_dex, t.sb_con, t.sb_int, t.sb_wis, t.sb_cha];
         var metaHTML = '';
         if (sb.resistances && sb.resistances.length)
-            metaHTML += '<div><strong>Resistances</strong> ' + sb.resistances.join(', ') + '</div>';
+            metaHTML += '<div><strong>' + t.sb_resistances + '</strong> ' + sb.resistances.join(', ') + '</div>';
         if (sb.immunities && sb.immunities.length)
-            metaHTML += '<div><strong>Immunities</strong> ' + sb.immunities.join(', ') + '</div>';
+            metaHTML += '<div><strong>' + t.sb_immunities + '</strong> ' + sb.immunities.join(', ') + '</div>';
         if (sb.senses)
-            metaHTML += '<div><strong>Senses</strong> ' + sb.senses + '</div>';
+            metaHTML += '<div><strong>' + t.sb_senses + '</strong> ' + sb.senses + '</div>';
         if (sb.languages)
-            metaHTML += '<div><strong>Languages</strong> ' + sb.languages + '</div>';
+            metaHTML += '<div><strong>' + t.sb_languages + '</strong> ' + sb.languages + '</div>';
         if (sb.cr)
-            metaHTML += '<div><strong>CR</strong> ' + sb.cr + '</div>';
+            metaHTML += '<div><strong>' + t.sb_cr + '</strong> ' + sb.cr + '</div>';
         function buildSection(title, items) {
             if (!items || !items.length) return '';
             return '<section><h4>' + title + '</h4>' +
@@ -1390,19 +1409,19 @@
             '<h3>' + sb.name + '</h3>' +
             '<div class="sb-type">' + sb.type + '</div>' +
             '<div class="sb-defenses">' +
-                '<strong>AC</strong> ' + sb.ac +
-                ' &nbsp;|&nbsp; <strong>HP</strong> ' + sb.hp +
-                ' &nbsp;|&nbsp; <strong>Speed</strong> ' + sb.speed +
+                '<strong>' + t.sb_ac + '</strong> ' + sb.ac +
+                ' &nbsp;|&nbsp; <strong>' + t.sb_hp + '</strong> ' + sb.hp +
+                ' &nbsp;|&nbsp; <strong>' + t.sb_speed + '</strong> ' + sb.speed +
             '</div>' +
             '<div class="sb-stats-grid">' +
-                ['str','dex','con','int','wis','cha'].map(function(s) {
-                    return '<div class="sb-stat"><div class="sb-stat-name">' + s.toUpperCase() + '</div>' + parseStat(sb.stats[s]) + '</div>';
+                statKeys.map(function(s, i) {
+                    return '<div class="sb-stat"><div class="sb-stat-name">' + statLabels[i] + '</div>' + parseStat(sb.stats[s]) + '</div>';
                 }).join('') +
             '</div>' +
             '<div class="sb-meta">' + metaHTML + '</div>' +
-            buildSection('Traits', sb.traits) +
-            buildSection('Actions', sb.actions) +
-            buildSection('Reactions', sb.reactions) +
+            buildSection(t.sb_traits, sb.traits) +
+            buildSection(t.sb_actions, sb.actions) +
+            buildSection(t.sb_reactions, sb.reactions) +
         '</div>';
     }
 
@@ -1429,12 +1448,12 @@
                 '<div class="title">' +
                     '<div class="name">' +
                         '<p>' + spell.displayName + statblockBadge + '</p>' +
-                        '<p class="school">' + spell.school + '</p>' +
+                        '<p class="school">' + formatSchool(spell.school) + '</p>' +
                     '</div>' +
                     '<div class="known"><img src="' + knownIcon(spell) + '"></div>' +
                 '</div>' +
                 '<div class="meta-line">' +
-                    '<span class="meta-pill">⚡\u00a0' + spell.castTime + '</span>' +
+                    '<span class="meta-pill">⚡\u00a0' + formatCastTime(spell.castTime) + '</span>' +
                     '<span class="meta-sep">·</span>' +
                     '<span class="meta-pill">📏\u00a0' + spell.range + '</span>' +
                     '<span class="meta-sep">·</span>' +
@@ -1444,7 +1463,7 @@
                     ritualPill +
                 '</div>' +
                 (spell.componentsNote ? '<p class="material-note"><strong>Material:</strong> ' + spell.componentsNote + '</p>' : '') +
-                (spell.castTimeNote ? '<p class="material-note"><strong>' + spell.castTime.charAt(0).toUpperCase() + spell.castTime.slice(1) + ':</strong> ' + spell.castTimeNote + '</p>' : '') +
+                (spell.castTimeNote ? '<p class="material-note"><strong>' + formatCastTime(spell.castTime) + ':</strong> ' + spell.castTimeNote + '</p>' : '') +
                 '<div class="description">' + spell.description + '</div>' +
                 (spell.classNote && spell.classNote.length ? '<p class="material-note"><strong><em>' + i18n[currentLang].class_note + '</em></strong> ' + spell.classNote.join(', ') + ' ' + i18n[currentLang].class_note_suffix + '</p>' : '') +
                 (spell.source ? '<p class="spell-source">' + spell.source + '</p>' : '') +
@@ -1460,6 +1479,20 @@
         }
 
         card.querySelector('.known').addEventListener('click', toggleKnown);
+
+        // Mostra/esconde stat block no mobile ao clicar no ícone
+        if (spell.statBlock) {
+            card.querySelector('.statblock-indicator').addEventListener('click', function(e) {
+                if (window.matchMedia('(pointer: fine) and (min-width: 700px)').matches) return;
+                e.stopPropagation();
+                var existing = card.querySelector('.stat-block');
+                if (existing) {
+                    existing.remove();
+                } else {
+                    card.querySelector('.spell-body').insertAdjacentHTML('beforeend', buildStatBlockHTML(spell.statBlock));
+                }
+            });
+        }
 
         // Abre modal no desktop ao clicar na magia
         card.addEventListener('click', function(e) {
@@ -1585,11 +1618,11 @@
         );
         buildCheckboxGroup('filter-schools',
             Array.from(new Set(spells2.map(function(s) { return s.school; }))).sort(),
-            filters.schools, function(v) { return v; }
+            filters.schools, function(v) { return formatSchool(v); }
         );
         buildCheckboxGroup('filter-casttimes',
             Array.from(new Set(spells2.map(function(s) { return s.castTime; }))).sort(),
-            filters.castTimes, function(v) { return v; }
+            filters.castTimes, function(v) { return formatCastTime(v); }
         );
         buildCheckboxGroup('filter-ranges',
             Array.from(new Set(spells2.map(function(s) { return s.range; }))).sort(),
@@ -1853,7 +1886,51 @@
             footer_credits:    'Créditos',
             footer_license:    'Licença',
             footer_copyright:  '© 2026 Erick Teixeira',
-            footer_disclaimer: 'Não afiliado à Wizards of the Coast. Dungeons & Dragons é marca registrada da WotC.'
+            footer_disclaimer: 'Não afiliado à Wizards of the Coast. Dungeons & Dragons é marca registrada da WotC.',
+            school_abjuration:   'Abjuração',
+            school_conjuration:  'Conjuração',
+            school_divination:   'Adivinhação',
+            school_enchantment:  'Encantamento',
+            school_evocation:    'Evocação',
+            school_illusion:     'Ilusão',
+            school_necromancy:   'Necromancia',
+            school_transmutation:'Transmutação',
+            class_artificer: 'Artífice',
+            class_bard:      'Bardo',
+            class_cleric:    'Clérigo',
+            class_druid:     'Druida',
+            class_paladin:   'Paladino',
+            class_ranger:    'Patrulheiro',
+            class_sorcerer:  'Feiticeiro',
+            class_warlock:   'Bruxo',
+            class_wizard:    'Mago',
+            castTime_action:      'Ação',
+            castTime_bonusAction: 'Ação Bônus',
+            castTime_reaction:    'Reação',
+            castTime_1minute:     '1 minuto',
+            castTime_10minutes:   '10 minutos',
+            castTime_1hour:       '1 hora',
+            castTime_8hours:      '8 horas',
+            castTime_12hours:     '12 horas',
+            castTime_24hours:     '24 horas',
+            castTime_1actionor8hours: '1 ação ou 8 horas',
+            sb_ac:          'CA',
+            sb_hp:          'PV',
+            sb_speed:       'Deslocamento',
+            sb_str:         'FOR',
+            sb_dex:         'DES',
+            sb_con:         'CON',
+            sb_int:         'INT',
+            sb_wis:         'SAB',
+            sb_cha:         'CAR',
+            sb_resistances: 'Resistências',
+            sb_immunities:  'Imunidades',
+            sb_senses:      'Sentidos',
+            sb_languages:   'Idiomas',
+            sb_cr:          'ND',
+            sb_traits:      'Traços',
+            sb_actions:     'Ações',
+            sb_reactions:   'Reações'
         },
         en: {
             theme_toggle:      'Toggle Theme',
@@ -1898,7 +1975,51 @@
             footer_credits:    'Credits',
             footer_license:    'License',
             footer_copyright:  '© 2026 Erick Teixeira',
-            footer_disclaimer: 'Not affiliated with Wizards of the Coast. Dungeons & Dragons is a trademark of WotC.'
+            footer_disclaimer: 'Not affiliated with Wizards of the Coast. Dungeons & Dragons is a trademark of WotC.',
+            school_abjuration:   'Abjuration',
+            school_conjuration:  'Conjuration',
+            school_divination:   'Divination',
+            school_enchantment:  'Enchantment',
+            school_evocation:    'Evocation',
+            school_illusion:     'Illusion',
+            school_necromancy:   'Necromancy',
+            school_transmutation:'Transmutation',
+            class_artificer: 'Artificer',
+            class_bard:      'Bard',
+            class_cleric:    'Cleric',
+            class_druid:     'Druid',
+            class_paladin:   'Paladin',
+            class_ranger:    'Ranger',
+            class_sorcerer:  'Sorcerer',
+            class_warlock:   'Warlock',
+            class_wizard:    'Wizard',
+            castTime_action:      'Action',
+            castTime_bonusAction: 'Bonus Action',
+            castTime_reaction:    'Reaction',
+            castTime_1minute:     '1 minute',
+            castTime_10minutes:   '10 minutes',
+            castTime_1hour:       '1 hour',
+            castTime_8hours:      '8 hours',
+            castTime_12hours:     '12 hours',
+            castTime_24hours:     '24 hours',
+            castTime_1actionor8hours: '1 action or 8 hours',
+            sb_ac:          'AC',
+            sb_hp:          'HP',
+            sb_speed:       'Speed',
+            sb_str:         'STR',
+            sb_dex:         'DEX',
+            sb_con:         'CON',
+            sb_int:         'INT',
+            sb_wis:         'WIS',
+            sb_cha:         'CHA',
+            sb_resistances: 'Resistances',
+            sb_immunities:  'Immunities',
+            sb_senses:      'Senses',
+            sb_languages:   'Languages',
+            sb_cr:          'CR',
+            sb_traits:      'Traits',
+            sb_actions:     'Actions',
+            sb_reactions:   'Reactions'
         }
     };
 
@@ -1925,7 +2046,7 @@
                     if (checked) selectedClasses.add(val); 
                     else selectedClasses.delete(val); 
                 }, 
-                function(val) { return val; }
+                function(val) { return formatClass(val); }
             );
         });
     }
