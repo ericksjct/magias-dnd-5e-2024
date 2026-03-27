@@ -23,16 +23,24 @@
 <link rel="stylesheet" href="css/style.css">
 <style>
     .spell-grid {
-        columns: 3;
-        column-gap: 10px;
         width: 1130px; /* 3×370 + 2×10 */
         margin: 20px auto 0;
     }
+    .masonry-columns {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    .masonry-col {
+        flex: 0 0 370px;
+        display: flex;
+        flex-direction: column;
+    }
     @media (max-width: 1430px) {
-        .spell-grid { columns: 2; width: 750px; } /* 2×370 + 1×10 */
+        .spell-grid { width: 750px; } /* 2×370 + 1×10 */
     }
     @media (max-width: 1050px) {
-        .spell-grid { columns: 1; width: 370px; }
+        .spell-grid { width: 370px; }
     }
     #grid-wrapper {
         width: fit-content;
@@ -53,8 +61,6 @@
         justify-content: flex-end;
     }
     .spell-item {
-        break-inside: avoid;
-        display: inline-block;
         width: 100%;
         box-sizing: border-box;
         background: transparent;
@@ -81,7 +87,6 @@
         opacity: 0;
     }
     .level-separator {
-        column-span: all;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -1465,6 +1470,7 @@
                 (spell.componentsNote ? '<p class="material-note"><strong>Material:</strong> ' + spell.componentsNote + '</p>' : '') +
                 (spell.castTimeNote ? '<p class="material-note"><strong>' + formatCastTime(spell.castTime) + ':</strong> ' + spell.castTimeNote + '</p>' : '') +
                 '<div class="description">' + spell.description + '</div>' +
+                (spell.upgradeDescription ? '<div class="description upgrade-description">' + spell.upgradeDescription + '</div>' : '') +
                 (spell.classNote && spell.classNote.length ? '<p class="material-note"><strong><em>' + i18n[currentLang].class_note + '</em></strong> ' + spell.classNote.join(', ') + ' ' + i18n[currentLang].class_note_suffix + '</p>' : '') +
                 (spell.source ? '<p class="spell-source">' + spell.source + '</p>' : '') +
                 '<div class="tier-badge" aria-label="Spell level ' + lvl + '">(' + lvl + ') ' + TIER_SYMBOLS[lvl] + '</div>' +
@@ -1680,27 +1686,58 @@
 
         var displaySpells = spells2.slice().sort(function(a, b) {
             return sortAlpha
-                ? a.name.localeCompare(b.name)
-                : a.level - b.level || a.name.localeCompare(b.name);
+                ? a.displayName.localeCompare(b.displayName)
+                : a.level - b.level || a.displayName.localeCompare(b.displayName);
         });
 
-        var lastKey = null;
+        var cols = window.innerWidth <= 1050 ? 1 : window.innerWidth <= 1430 ? 2 : 3;
+
+        // Agrupar por separador
+        var groups = [];
+        var currentGroup = null;
         displaySpells.forEach(function(spell) {
-            var key = sortAlpha ? spell.name.charAt(0).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') : spell.level;
-            if (key !== lastKey) {
-                lastKey = key;
-                var sep = document.createElement('div');
-                sep.className = 'level-separator';
-                if (sortAlpha) {
-                    sep.dataset.sepLetter = key;
-                    sep.textContent = key;
-                } else {
-                    sep.dataset.sepLevel = spell.level;
-                    sep.textContent = levelLabel(spell.level);
-                }
-                grid.appendChild(sep);
+            var key = sortAlpha ? spell.displayName.charAt(0).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') : spell.level;
+            if (!currentGroup || key !== currentGroup.key) {
+                currentGroup = { key: key, level: spell.level, spells: [] };
+                groups.push(currentGroup);
             }
-            grid.appendChild(buildCard(spell));
+            currentGroup.spells.push(spell);
+        });
+
+        groups.forEach(function(group) {
+            // Separador
+            var sep = document.createElement('div');
+            sep.className = 'level-separator';
+            if (sortAlpha) {
+                sep.dataset.sepLetter = group.key;
+                sep.textContent = group.key;
+            } else {
+                sep.dataset.sepLevel = group.level;
+                sep.textContent = levelLabel(group.level);
+            }
+            grid.appendChild(sep);
+
+            // Colunas do masonry
+            var masonryRow = document.createElement('div');
+            masonryRow.className = 'masonry-columns';
+            grid.appendChild(masonryRow);
+
+            var columns = [];
+            for (var i = 0; i < cols; i++) {
+                var col = document.createElement('div');
+                col.className = 'masonry-col';
+                masonryRow.appendChild(col);
+                columns.push(col);
+            }
+
+            // Distribuir na coluna mais curta (shortest-column masonry)
+            group.spells.forEach(function(spell) {
+                var card = buildCard(spell);
+                var shortest = columns.reduce(function(a, b) {
+                    return a.offsetHeight <= b.offsetHeight ? a : b;
+                });
+                shortest.appendChild(card);
+            });
         });
 
         applyFilter(true);
@@ -1746,7 +1783,7 @@
             if (sep.dataset.sepLetter !== undefined) {
                 var letter = sep.dataset.sepLetter;
                 hasVisible = spells2.some(function(s) {
-                    return s.name.charAt(0).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') === letter && shouldShow(s);
+                    return s.displayName.charAt(0).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') === letter && shouldShow(s);
                 });
             } else {
                 var level = parseInt(sep.dataset.sepLevel);
@@ -1754,7 +1791,11 @@
                     return s.level === level && shouldShow(s);
                 });
             }
+            var masonryRow = sep.nextElementSibling;
             (hasVisible ? toShow : toHide).push(sep);
+            if (masonryRow && masonryRow.classList.contains('masonry-columns')) {
+                (hasVisible ? toShow : toHide).push(masonryRow);
+            }
         });
 
         if (instant) {
