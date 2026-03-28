@@ -420,7 +420,9 @@ body.sidebar-closed #sidebar-open { display: none; }
     #grid-wrapper { width: 100%; }
     #sort-control-row { display: none; }
     #site-title { display: none; }
-    .spell-grid { columns: 1 !important; width: 100% !important; margin: 0 !important; box-sizing: border-box; }
+    .spell-grid { width: 100% !important; margin: 0 !important; box-sizing: border-box; }
+    .masonry-columns { display: block; }
+    .masonry-col { width: 100%; }
     .spell-item { width: 100% !important; }
     #menu-backdrop { display: none; position: fixed; inset: 0; z-index: 198; background: rgba(0,0,0,0.35); }
     #menu-backdrop.open { display: block; }
