@@ -1,78 +1,61 @@
+/* ── Fontes ── */
+@font-face {
+    font-family: 'Marauder';
+    src: url('../marauder/webfonts/Marauder-Text-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Marauder';
+    src: url('../marauder/webfonts/Marauder-Text-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Marauder';
+    src: url('../marauder/webfonts/Marauder-Text-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Marauder';
+    src: url('../marauder/webfonts/Marauder-Text-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Marauder Display';
+    src: url('../marauder/webfonts/Marauder-Display-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Marauder Display';
+    src: url('../marauder/webfonts/Marauder-Display-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ── Base ── */
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Marauder', Helvetica, Arial, sans-serif;
     font-size: 11pt;
     margin: 0;
 }
-
 button, input, select, textarea {
     font-family: inherit;
     font-size: inherit;
 }
 
-#menu-container {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    z-index: 1;
-    background: linear-gradient(white 80%, transparent);
-}
-#menu {
-    width: 20cm;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 12px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    user-select: none;
-    display: flex;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    background: #EEEEEE;
-}
-.menu-space {
-    flex-grow: 1;
-}
-.menu-item {
-    height: 1.8em;
-    display: flex;
-}
-.menu-item p {
-    margin: auto;
-    margin-right: 5px;
-    margin-left: 0;
-}
-.menu-item select {
-    width: 8em;
-    margin: 0.1em;
-}
-.menu-item button {
-    padding: 0 0.6em;
-    height: 100%;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background: #EEEEEE;
-    cursor: pointer;
-}
-.menu-item button:hover {
-    background: #e0e0e0;
-}
-#show-known:hover {
-    cursor: pointer;
-}
-
+/* ── Sort control ── */
 .sort-control {
     display: flex;
-    background: #e0e0e0;
     border: 1px solid #ccc;
     border-radius: 999px;
     padding: 2px;
     height: 30px;
     box-sizing: border-box;
+    position: relative;
 }
 .sort-btn {
     min-width: 60px;
@@ -81,48 +64,24 @@ button, input, select, textarea {
     border-radius: 999px;
     background: transparent;
     cursor: pointer;
-    color: #777;
     transition: all 0.2s ease;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
 }
-.sort-btn:hover { color: #444; }
-.sort-btn.active { background: white; color: #111; font-weight: bold; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
-#spell-list {
-    margin: auto;
-    margin-top: 65px;
-    max-width: 20cm;
-    box-sizing: border-box;
-    padding: 0 10px;
-    font-size: 0;
-}
-.grid-size, .spell-item {
-    width: calc(50% - 3px);
-}
-.gutter-size {
-    width: 5px;
-}
+.sort-btn.active { font-weight: bold; }
 
-.legenda-table {
-    display: block;
-}
+/* ── Legenda ── */
+.legenda-table { display: block; }
 .legenda-item {
     display: flex;
     align-items: center;
-    margin: 0.25em 0;
+    gap: 0.5em;
+    padding: 1px 2px;
 }
-.legenda-item > :first-child {
-    width: 1.6em;
-    min-width: 1.6em;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.5em;
-}
-.legenda-item img {
-    height: 1.2em;
-    width: auto;
-}
+.legenda-item img { height: 1.2em; width: auto; }
+
+/* ── Empty message ── */
 #empty-message {
     padding: 1em;
     box-sizing: border-box;
@@ -133,66 +92,82 @@ button, input, select, textarea {
     text-align: center;
     display: none;
 }
+
+/* ── Spell item ── */
 .spell-item {
+    width: 100%;
     font-size: 11pt;
     box-sizing: border-box;
-    vertical-align: top;
-    page-break-inside: avoid;
-    display: inline-block;
-    border: none;
-    background: white;
-    margin-bottom: 5px;
-}
-.level {
-    padding: 0.1em 1em 0.1em 1em;
-    box-sizing: border-box;
-    background: gray;
-    color: white;
-    border-color: gray;
-    font-weight: bold;
+    background: transparent;
+    margin-bottom: 10px;
     border-radius: 8px;
-    margin-bottom: 5px;
+    page-break-inside: avoid;
+    box-shadow: 0 6px 16px rgba(0,0,0,0);
+    transition: opacity 0.2s ease, transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
+.spell-item:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    z-index: 2;
+}
+.spell-item.fading { opacity: 0; }
+
+/* ── Level separator ── */
+.level-separator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+    color: #666;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+.level-separator.fading { opacity: 0; }
+.level-separator::before,
+.level-separator::after {
+    content: '';
+    flex: 1;
+    border-top: 1px dotted #aaa;
+}
+
+/* ── Spell body ── */
 .spell-body {
     margin: 0;
-    padding: 0.1em 0.2em 1.4em 0.7em;
-    border: 1px solid;
+    padding: 15px 15px 28px;
+    border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
 }
-.long-spell {
-    width: 100%;
-}
-.level-dummy {
-    width: 100%;
-    height: 0;
-}
+
+/* ── Title block ── */
 .title {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 .name {
     border-bottom: 1px solid;
     display: flex;
     align-items: baseline;
     flex-grow: 1;
-    margin: 0.2em;
+    margin: 0;
     min-width: 0;
-    padding-bottom: 3px;
-}
-.name img {
-    height: 1em;
-    margin-bottom: 0.1em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    user-select: none;
+    padding-bottom: 10px;
 }
 .name p {
     margin: 0;
     line-height: 1;
 }
+.name p:not(.school) {
+    font-size: 15pt;
+    font-weight: bold;
+    font-family: 'Texturina', serif;
+    font-variant: small-caps;
+}
 .school {
+    font-size: 8pt;
+    font-weight: normal;
     font-variant: normal;
     font-style: italic;
     text-align: right;
@@ -201,119 +176,96 @@ button, input, select, textarea {
     margin-right: 0.2em;
 }
 .known {
-    height: 1.5em;
+    width: 2.2em;
+    height: 2.2em;
     cursor: pointer;
     margin-left: 10px;
+    transform-origin: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .known img {
     user-select: none;
-    height: 100%;
+    height: 60%;
     width: auto;
 }
-.details {
-    margin-top: 0.1em;
-    margin-right: 0.4em;
+@keyframes known-pop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.4); }
+    100% { transform: scale(1); }
 }
-.meta {
+.known-popping { animation: known-pop 0.22s ease-out; }
+
+/* ── Meta line ── */
+.meta-line {
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 4px;
+    margin: 0 0 2px 0;
+    font-size: 9pt;
+    line-height: 1.5;
 }
-.meta-item {
-    flex-grow: 1;
-    display: flex;
-    height: 1.2em;
-    margin: 1%;
+.meta-sep { user-select: none; }
+.meta-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 2px;
 }
-.meta-item img {
-    max-height: 100%;
-    user-select: none;
+.conc-badge {
+    font-size: 9pt;
+    margin-left: 3px;
 }
-.meta-content {
-    flex-grow: 1;
-    margin: auto;
-    margin-left: 0.5em;
+
+/* ── Notes ── */
+.material-note {
+    font-size: 9pt;
+    margin: 6px 0 4px;
 }
-.description {
+.spell-source {
+    position: absolute;
+    bottom: 6px;
+    left: 15px;
+    margin: 0;
     font-size: 8pt;
+    font-style: italic;
 }
+
+/* ── Description ── */
+.description { font-size: 9pt; }
 .description p {
     margin: 0;
     padding-top: 0.3em;
     padding-bottom: 0.4em;
 }
-.description ul {
-    padding-left: 1.5em;
-}
-.long-spell .description {
-    column-count: 2;
-    padding-bottom: 0.4em;
-}
-.separator {
+.description ul { padding-left: 1.5em; }
+.description table {
     width: 100%;
-    height: 0;
-    position: absolute;
-    left: 0;
-    top: 28.734cm;
-    background : red;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border: none;
+    border-top: 1px dotted var(--surface2, #ccc);
+    border-bottom: 1px dotted var(--surface2, #ccc);
 }
-footer {
-    background: gray;
-    color: white;
-    padding: 15px;
-}
-footer p {
-    margin: 0;
-    margin-top: 0.1em;
-    margin-bottom: 0.1em;
-}
-@page {
-    size: A4 portrait;
-    margin: 5mm;
-}
-@media print {
-    .known + label {
-        display: none;
-    }
-    body {
-        margin: 0px;
-    }
-    footer, #site-footer {
-        display: none !important;
-    }
-    .level-separator {
-        display: none !important;
-    }
-    .known {
-        display: none !important;
-    }
-    #menu {
-        display: none;
-    }
-    .share-label, #print-btn, #print-btn-m {
-        display: none;
-    }
-    .no-print {
-        display: none !important;
-    }
-    #spell-list {
-        margin: 0;
-    }
-}
+.description th,
+.description td { border: none !important; padding: 4px 8px; text-align: left; }
+.description th { font-weight: bold; background: var(--surface0, #eee); color: var(--subtext1, #555); }
+.description tbody tr:nth-child(even) { background: var(--mantle, #f5f5f5); }
 
-.spell-item[data-level] .spell-body {
-    border: 1px solid #ccc;
-    background: #EEEEEE;
+/* ── Bookmark flash ── */
+@keyframes bookmark-flash {
+    0%   { box-shadow: 0 0 0 0px var(--accent); }
+    50%  { box-shadow: 0 0 0 4px var(--accent); }
+    100% { box-shadow: 0 0 0 0px var(--accent); }
 }
+.bookmark-flash .spell-body { animation: bookmark-flash 0.4s ease-out; }
 
-
-/* Borda uniforme para títulos de nível */
-.spell-item[data-level] .level {
-    background: #EEEEEE;
-    color: #333;
-    border: 1px solid #ccc;
-}
-
-/* Tier badge */
+/* ── Tier badge ── */
 .tier-badge {
     position: absolute;
     bottom: 6px;
@@ -327,35 +279,28 @@ footer p {
     line-height: 1;
 }
 
-.description table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    border: none;
-    border-top: 1px dotted var(--surface2, #ccc);
-    border-bottom: 1px dotted var(--surface2, #ccc);
+/* ── Statblock indicator ── */
+.statblock-indicator {
+    display: inline-block;
+    width: 16px;
+    height: 11px;
+    background: linear-gradient(135deg, var(--mauve), var(--sapphire), var(--teal));
+    -webkit-mask-image: url('../img/summon.svg');
+    mask-image: url('../img/summon.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    vertical-align: 1px;
+    margin-left: 5px;
+    opacity: 0.75;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
-.description th,
-.description td {
-    border: none !important;
-    padding: 4px 8px;
-    text-align: left;
-}
-
-.description th {
-    font-weight: bold;
-    background: var(--surface0, #eee);
-    color: var(--subtext1, #555);
-}
-
-.description tbody tr:nth-child(even) {
-    background: var(--mantle, #f5f5f5);
-}
-
-/* ── Modal de magia (apenas desktop) ─────────────────────────── */
+/* ── Modal (desktop only) ── */
 @media (pointer: fine) and (min-width: 700px) {
     .spell-modal-overlay {
         display: none;
@@ -367,9 +312,7 @@ footer p {
         justify-content: center;
         cursor: pointer;
     }
-    .spell-modal-overlay.open {
-        display: flex;
-    }
+    .spell-modal-overlay.open { display: flex; }
     .spell-modal-card {
         width: min(680px, 90vw);
         max-height: 88vh;
@@ -380,9 +323,7 @@ footer p {
         background: var(--base, white);
         animation: modal-in 0.15s ease-out;
     }
-    .spell-modal-overlay.closing .spell-modal-card {
-        animation: modal-out 0.12s ease-in forwards;
-    }
+    .spell-modal-overlay.closing .spell-modal-card { animation: modal-out 0.12s ease-in forwards; }
     @keyframes modal-in {
         from { transform: scale(0.88); opacity: 0; }
         to   { transform: scale(1);    opacity: 1; }
@@ -404,9 +345,7 @@ footer p {
         padding: 0;
         line-height: 1;
     }
-    .spell-modal-close:hover {
-        color: var(--text, #333);
-    }
+    .spell-modal-close:hover { color: var(--text, #333); }
     .spell-modal-body .spell-body {
         border-radius: 12px;
         font-size: 13pt;
@@ -414,47 +353,18 @@ footer p {
     }
     .spell-modal-body .description,
     .spell-modal-body .material-note,
-    .spell-modal-body .spell-source {
-        font-size: 10pt;
-    }
-    .spell-modal-body .spell-source {
-        left: 1.2em;
-    }
-    .spell-modal-body .name p:not(.school) {
-        font-size: 18pt;
-    }
-    .spell-modal-body .known {
-        margin-right: 1.8em;
-    }
+    .spell-modal-body .spell-source { font-size: 10pt; }
+    .spell-modal-body .spell-source { left: 1.2em; }
+    .spell-modal-body .name p:not(.school) { font-size: 18pt; }
+    .spell-modal-body .known { margin-right: 1.8em; }
 }
 
-/* ── Statblock indicator badge on spell cards ─────────────── */
-.statblock-indicator {
-    display: inline-block;
-    width: 16px;
-    height: 11px;
-    background: linear-gradient(135deg, var(--mauve), var(--sapphire), var(--teal));
-    -webkit-mask-image: url('../img/summon.svg');
-    mask-image: url('../img/summon.svg');
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    vertical-align: 1px;
-    margin-left: 5px;
-    opacity: 0.75;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-/* ── Stat Block (renderizado no modal) ───────────────────────── */
+/* ── Stat block ── */
 .stat-block {
     margin-top: 1.2em;
     border: 1px solid var(--accent, var(--overlay1, #888));
     border-radius: 6px;
-    padding: 0.75em 1em 0.75em 1em;
+    padding: 0.75em 1em;
     background: var(--mantle, #f0f0f0);
     line-height: 1.5;
     break-inside: avoid;
@@ -466,12 +376,7 @@ footer p {
     color: var(--accent, var(--text));
     font-variant: small-caps;
 }
-.sb-type {
-    font-style: italic;
-    color: var(--subtext1, #777);
-    margin-bottom: 0.5em;
-    font-size: 0.85em;
-}
+.sb-type { font-style: italic; color: var(--subtext1, #777); margin-bottom: 0.5em; font-size: 0.85em; }
 .sb-defenses {
     margin-bottom: 0.5em;
     padding-bottom: 0.5em;
@@ -487,26 +392,10 @@ footer p {
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--overlay0, #ccc);
 }
-.sb-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.85em;
-}
-.sb-stat-name {
-    font-weight: bold;
-    font-size: 0.75em;
-    color: var(--subtext1, #777);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-.sb-meta > div {
-    margin-bottom: 0.2em;
-    font-size: 0.9em;
-}
-.stat-block section {
-    margin-top: 0.5em;
-}
+.sb-stat { display: flex; flex-direction: column; align-items: center; font-size: 0.85em; }
+.sb-stat-name { font-weight: bold; font-size: 0.75em; color: var(--subtext1, #777); letter-spacing: 0.05em; text-transform: uppercase; }
+.sb-meta > div { margin-bottom: 0.2em; font-size: 0.9em; }
+.stat-block section { margin-top: 0.5em; }
 .stat-block section h4 {
     margin: 0 0 0.2em 0;
     font-size: 0.85em;
@@ -516,7 +405,7 @@ footer p {
     border-bottom: 1px solid var(--overlay0, #ccc);
     padding-bottom: 0.15em;
 }
-.stat-block section p {
-    margin: 0.15em 0;
-    font-size: 0.9em;
-}
+.stat-block section p { margin: 0.15em 0; font-size: 0.9em; }
+
+/* ── Print (página) ── */
+@page { size: A4 portrait; margin: 5mm; }

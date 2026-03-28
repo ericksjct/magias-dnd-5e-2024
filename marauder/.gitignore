@@ -1,0 +1,22 @@
+# Apenas os 6 arquivos usados pelo site são commitados.
+# Excluídos: otf, ttf e variantes de peso não utilizadas.
+otf/
+ttf/
+webfonts/Marauder-Caption-*.woff2
+webfonts/Marauder-Display-Black.woff2
+webfonts/Marauder-Display-BlackItalic.woff2
+webfonts/Marauder-Display-ExtraBold.woff2
+webfonts/Marauder-Display-ExtraBoldItalic.woff2
+webfonts/Marauder-Display-Italic.woff2
+webfonts/Marauder-Display-Medium.woff2
+webfonts/Marauder-Display-MediumItalic.woff2
+webfonts/Marauder-Display-SemiBold.woff2
+webfonts/Marauder-Display-SemiBoldItalic.woff2
+webfonts/Marauder-Text-Black.woff2
+webfonts/Marauder-Text-BlackItalic.woff2
+webfonts/Marauder-Text-ExtraBold.woff2
+webfonts/Marauder-Text-ExtraBoldItalic.woff2
+webfonts/Marauder-Text-Medium.woff2
+webfonts/Marauder-Text-MediumItalic.woff2
+webfonts/Marauder-Text-SemiBold.woff2
+webfonts/Marauder-Text-SemiBoldItalic.woff2
