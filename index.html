@@ -230,12 +230,18 @@
     <div id="spell-tracker">
         <div id="spell-tracker-body">
             <div id="tracker-fields">
-                <div class="tracker-field"><span class="tracker-label">Atributo de conjuração</span><span class="tracker-box"></span></div>
-                <div class="tracker-field"><span class="tracker-label">Mod. de atributo de conjuração</span><span class="tracker-box"></span></div>
-                <div class="tracker-field"><span class="tracker-label">CD para evitar magia</span><span class="tracker-box"></span></div>
-                <div class="tracker-field"><span class="tracker-label">Bônus de ataque mágico</span><span class="tracker-box"></span></div>
+                <div class="tracker-field"><span class="tracker-label">Jogador</span><span class="tracker-box tracker-box-name"></span></div>
+                <div class="tracker-field"><span class="tracker-label">Personagem</span><span class="tracker-box tracker-box-name"></span></div>
+                <div class="tracker-field"><span class="tracker-label">Atributo de conjuração</span><span class="tracker-box tracker-box-str"></span></div>
+                <div id="tracker-int-row">
+                    <div class="tracker-field"><span class="tracker-label">Mod.</span><span class="tracker-box tracker-box-int"></span></div>
+                    <div class="tracker-field"><span class="tracker-label">CD</span><span class="tracker-box tracker-box-int"></span></div>
+                    <div class="tracker-field"><span class="tracker-label">Atq. mágico</span><span class="tracker-box tracker-box-int"></span></div>
+                </div>
             </div>
             <div id="tracker-slots">
+                <div id="tracker-title">Grimório do Jogador</div>
+                <div id="tracker-url">players-grimoire.netlify.app</div>
                 <div class="tracker-slots-title">ESPAÇOS DE MAGIA</div>
                 <div id="tracker-slots-grid">
                     <div class="tracker-slot-col">
@@ -522,6 +528,7 @@
                     '</div>' +
                     '<div class="known"><img src="' + knownIcon(spell) + '"></div>' +
                 '</div>' +
+                '<hr class="spell-sep">' +
                 '<div class="meta-line">' +
                     '<span class="meta-pill">⚡\u00a0' + formatCastTime(spell.castTime) + '</span>' +
                     '<span class="meta-sep">·</span>' +
@@ -536,9 +543,11 @@
                 (spell.castTimeNote ? '<p class="material-note"><strong>' + formatCastTime(spell.castTime) + ':</strong> ' + spell.castTimeNote + '</p>' : '') +
                 '<div class="description">' + spell.description + '</div>' +
                 (spell.upgradeDescription ? '<div class="description upgrade-description">' + spell.upgradeDescription + '</div>' : '') +
-                (spell.classNote && spell.classNote.length ? '<p class="material-note"><strong><em>' + i18n[currentLang].class_note + '</em></strong> ' + spell.classNote.join(', ') + ' ' + i18n[currentLang].class_note_suffix + '</p>' : '') +
-                (spell.source ? '<p class="spell-source">' + spell.source + '</p>' : '') +
-                '<div class="tier-badge" aria-label="Spell level ' + lvl + '">(' + lvl + ') ' + TIER_SYMBOLS[lvl] + '</div>' +
+                (spell.classNote && spell.classNote.length ? '<p class="class-note"><strong><em>' + i18n[currentLang].class_note + '</em></strong> ' + spell.classNote.join(', ') + ' ' + i18n[currentLang].class_note_suffix + '</p>' : '') +
+                '<div class="spell-footer">' +
+                    (spell.source ? '<p class="spell-source">' + spell.source + '</p>' : '<span></span>') +
+                    '<div class="tier-badge" aria-label="Spell level ' + lvl + '">(' + lvl + ') ' + TIER_SYMBOLS[lvl] + '</div>' +
+                '</div>' +
             '</div>';
 
         function toggleKnown() {
@@ -1400,6 +1409,39 @@
     document.getElementById('share-copy-m').addEventListener('click', function() { shareGrimoire('share-copy-m'); });
     document.getElementById('print-btn').addEventListener('click', function() { window.print(); });
     document.getElementById('print-btn-m').addEventListener('click', function() { window.print(); });
+
+    // ── Print layout: flat CSS columns (flows left→right across page breaks) ──
+    (function() {
+        var printLayout = null;
+
+        function buildPrintLayout() {
+            if (printLayout) return;
+            var grid = document.getElementById('spell-grid');
+            var items = Array.from(grid.querySelectorAll('.spell-item'));
+            if (!items.length) return;
+
+            // Flat container — CSS columns handles flow & page breaks natively
+            printLayout = document.createElement('div');
+            printLayout.id = 'print-layout';
+            items.forEach(function(el) {
+                printLayout.appendChild(el.cloneNode(true));
+            });
+
+            grid.parentNode.insertBefore(printLayout, grid);
+            grid.classList.add('print-hidden');
+        }
+
+        function teardownPrintLayout() {
+            if (!printLayout) return;
+            var grid = document.getElementById('spell-grid');
+            grid.classList.remove('print-hidden');
+            printLayout.parentNode.removeChild(printLayout);
+            printLayout = null;
+        }
+
+        window.addEventListener('beforeprint', buildPrintLayout);
+        window.addEventListener('afterprint', teardownPrintLayout);
+    })();
 
     document.getElementById('hamburger').addEventListener('click', toggleMenu);
     document.getElementById('menu-backdrop').addEventListener('click', toggleMenu);

@@ -36,6 +36,26 @@
     font-style: normal;
 }
 
+/* ── Geometria dos cards ── */
+:root {
+    /* Shell */
+    --card-padding:         10px;  /* padding interno do .spell-body */
+    --card-margin:          10px;  /* margem vertical entre cards */
+
+    /* Dentro do título */
+    --gap-name-to-school:    5px;  /* nome → escola */
+    --gap-school-to-sep:     3px;  /* escola → separador (padding-bottom do .name) */
+
+    /* Entre blocos */
+    --gap-sep-to-meta:       5px;  /* separador → meta-line (margin-bottom do .title) */
+    --gap-meta-to-desc:      5px;  /* meta-line → description */
+    --gap-meta-to-note:      5px;  /* meta-line → material-note */
+    --gap-note-to-desc:      0.3em;  /* material-note → description */
+    --gap-desc-to-upgrade:   0.3em;  /* description → upgrade-description */
+    --gap-desc-to-classnote: 5px; /* upgrade/description → class-note */
+    --gap-desc-to-source:    5px;  /* último bloco → source */
+}
+
 /* ── Base ── */
 body {
     font-family: 'Marauder', Helvetica, Arial, sans-serif;
@@ -99,7 +119,7 @@ button, input, select, textarea {
     font-size: 11pt;
     box-sizing: border-box;
     background: transparent;
-    margin-bottom: 10px;
+    margin-bottom: var(--card-margin);
     border-radius: 8px;
     page-break-inside: avoid;
     box-shadow: 0 6px 16px rgba(0,0,0,0);
@@ -133,7 +153,7 @@ button, input, select, textarea {
 /* ── Spell body ── */
 .spell-body {
     margin: 0;
-    padding: 15px 15px 28px;
+    padding: var(--card-padding);
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
@@ -143,53 +163,51 @@ button, input, select, textarea {
 /* ── Title block ── */
 .title {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: flex-start;
+    margin-top: -5px; /* compensa leading do Texturina */
+}
+.spell-sep {
+    border: none;
+    border-top: 1px dotted;
+    margin: var(--gap-school-to-sep) 0 var(--gap-sep-to-meta);
 }
 .name {
-    border-bottom: 1px solid;
-    display: flex;
-    align-items: baseline;
     flex-grow: 1;
     margin: 0;
     min-width: 0;
-    padding-bottom: 10px;
 }
 .name p {
     margin: 0;
-    line-height: 1;
+    line-height: 1.2;
 }
 .name p:not(.school) {
     font-size: 15pt;
     font-weight: bold;
     font-family: 'Texturina', serif;
     font-variant: small-caps;
+    line-height: 1;
 }
-.school {
+.name p.school {
     font-size: 8pt;
     font-weight: normal;
     font-variant: normal;
     font-style: italic;
-    text-align: right;
-    white-space: nowrap;
-    flex-grow: 1;
-    margin-right: 0.2em;
+    margin: var(--gap-name-to-school) 0 0 0;
 }
 .known {
-    width: 2.2em;
-    height: 2.2em;
     cursor: pointer;
-    margin-left: 10px;
     transform-origin: center;
     flex-shrink: 0;
-    border-radius: 50%;
+    align-self: stretch;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 5px; /* compensa o margin-top: -5px do .title (leading do Texturina) */
 }
 .known img {
+    display: block;
     user-select: none;
-    height: 60%;
+    height: 1.2em;
     width: auto;
 }
 @keyframes known-pop {
@@ -205,7 +223,7 @@ button, input, select, textarea {
     flex-wrap: wrap;
     align-items: baseline;
     gap: 2px 4px;
-    margin: 0 0 2px 0;
+    margin: 0 0 var(--gap-meta-to-desc) 0;
     font-size: 9pt;
     line-height: 1.5;
 }
@@ -223,15 +241,23 @@ button, input, select, textarea {
 /* ── Notes ── */
 .material-note {
     font-size: 9pt;
-    margin: 6px 0 4px;
+    margin: var(--gap-meta-to-note) 0 var(--gap-note-to-desc);
+}
+.class-note {
+    font-size: 9pt;
+    margin: var(--gap-desc-to-classnote) 0 0;
+}
+.spell-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: var(--gap-desc-to-source);
 }
 .spell-source {
-    position: absolute;
-    bottom: 6px;
-    left: 15px;
     margin: 0;
     font-size: 8pt;
     font-style: italic;
+    line-height: 1;
 }
 
 /* ── Description ── */
@@ -241,6 +267,8 @@ button, input, select, textarea {
     padding-top: 0.3em;
     padding-bottom: 0.4em;
 }
+.description p:first-child { padding-top: 0; }
+.description p:last-child  { padding-bottom: 0; }
 .description ul { padding-left: 1.5em; }
 .description table {
     width: 100%;
@@ -256,6 +284,7 @@ button, input, select, textarea {
 .description td { border: none !important; padding: 4px 8px; text-align: left; }
 .description th { font-weight: bold; background: var(--surface0, #eee); color: var(--subtext1, #555); }
 .description tbody tr:nth-child(even) { background: var(--mantle, #f5f5f5); }
+.upgrade-description { margin-top: var(--gap-desc-to-upgrade); }
 
 /* ── Bookmark flash ── */
 @keyframes bookmark-flash {
@@ -267,9 +296,6 @@ button, input, select, textarea {
 
 /* ── Tier badge ── */
 .tier-badge {
-    position: absolute;
-    bottom: 6px;
-    right: 8px;
     font-size: 8pt;
     color: var(--accent, #888);
     opacity: 0.9;
@@ -277,6 +303,7 @@ button, input, select, textarea {
     letter-spacing: 1px;
     user-select: none;
     line-height: 1;
+    flex-shrink: 0;
 }
 
 /* ── Statblock indicator ── */
@@ -354,9 +381,7 @@ button, input, select, textarea {
     .spell-modal-body .description,
     .spell-modal-body .material-note,
     .spell-modal-body .spell-source { font-size: 10pt; }
-    .spell-modal-body .spell-source { left: 1.2em; }
     .spell-modal-body .name p:not(.school) { font-size: 18pt; }
-    .spell-modal-body .known { margin-right: 1.8em; }
 }
 
 /* ── Stat block ── */

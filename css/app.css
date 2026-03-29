@@ -108,10 +108,11 @@ body.sidebar-closed #sidebar-open { display: none; }
 #grid-wrapper   { width: fit-content; margin: 0 auto; }
 #grid-area      { width: 100%; }
 .spell-grid     { width: 1130px; margin: 20px auto 0; }
-.masonry-columns { display: flex; gap: 10px; align-items: flex-start; }
-.masonry-col    { flex: 0 0 370px; display: flex; flex-direction: column; }
-@media (max-width: 1430px) { .spell-grid { width: 750px; } }
-@media (max-width: 1050px) { .spell-grid { width: 370px; } }
+.masonry-columns { columns: 3; column-gap: 10px; }
+.masonry-col    { display: contents; }
+.spell-item     { break-inside: avoid; }
+@media (max-width: 1430px) { .spell-grid { width: 750px; } .masonry-columns { columns: 2; } }
+@media (max-width: 1050px) { .spell-grid { width: 370px; } .masonry-columns { columns: 1; } }
 
 /* ── Sort row ── */
 #sort-control-row {
@@ -421,8 +422,6 @@ body.sidebar-closed #sidebar-open { display: none; }
     #sort-control-row { display: none; }
     #site-title { display: none; }
     .spell-grid { width: 100% !important; margin: 0 !important; box-sizing: border-box; }
-    .masonry-columns { display: block; }
-    .masonry-col { width: 100%; }
     .spell-item { width: 100% !important; }
     #menu-backdrop { display: none; position: fixed; inset: 0; z-index: 198; background: rgba(0,0,0,0.35); }
     #menu-backdrop.open { display: block; }
@@ -461,35 +460,64 @@ body.sidebar-closed #sidebar-open { display: none; }
     #spell-tracker {
         display: block;
         width: 100%;
-        padding-bottom: 10px;
-        margin-bottom: 14px;
-        border-bottom: 1.5px solid #555;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+        overflow: hidden;
         font-family: Helvetica, Arial, sans-serif;
         font-size: 9pt;
         page-break-inside: avoid;
     }
-    #spell-tracker-body { display: flex; gap: 0; }
+    #spell-tracker-body { display: flex; }
     #tracker-fields {
-        flex: 1; padding: 10px 12px;
-        border-right: 1.5px solid #555;
+        flex: 0 0 42%;
+        padding: 12px 16px;
         display: flex; flex-direction: column;
-        justify-content: space-around; gap: 12px;
+        justify-content: space-around; gap: 8px;
+        font-family: 'Texturina', serif;
     }
-    .tracker-field { display: flex; align-items: center; gap: 7px; }
-    .tracker-label { font-weight: bold; white-space: nowrap; font-size: 8pt; }
+    #tracker-title {
+        font-family: 'Texturina', serif;
+        font-size: 14pt;
+        font-weight: 700;
+        color: #111;
+        line-height: 1;
+        margin-bottom: 1px;
+    }
+    #tracker-url {
+        font-size: 7pt;
+        color: #888;
+        margin-bottom: 8px;
+    }
+    .tracker-field { display: flex; align-items: baseline; gap: 8px; }
+    .tracker-label { white-space: nowrap; font-size: 8pt; color: #444; }
     .tracker-label::after { content: ":"; }
-    .tracker-box { width: 52px; height: 18px; border: 1px solid #555; border-radius: 5px; display: inline-block; flex-shrink: 0; }
-    #tracker-slots { flex: 1; padding: 10px 12px; }
-    .tracker-slots-title { font-weight: bold; font-size: 8pt; letter-spacing: 0.5px; margin-bottom: 5px; }
-    #tracker-slots-grid { display: flex; gap: 14px; }
-    .tracker-slot-col { flex: 1; display: flex; flex-direction: column; gap: 4px; }
-    .tracker-slot-row { display: flex; align-items: center; gap: 6px; line-height: 1.7; }
-    .tracker-slot-label { width: 42px; font-size: 8pt; flex-shrink: 0; }
-    .tracker-boxes { letter-spacing: 1px; white-space: nowrap; font-size: 11pt; }
+    .tracker-box { height: 14px; border: none; border-bottom: 1px solid #888; display: inline-block; border-radius: 0; flex-shrink: 0; }
+    .tracker-box-name { flex: 1; }
+    .tracker-box-str  { width: 110px; }
+    .tracker-box-int  { width: 36px; }
+    #tracker-int-row { display: flex; gap: 12px; }
+    #tracker-int-row .tracker-field { flex-shrink: 0; }
+    #tracker-slots { flex: 1; padding: 10px 14px; }
+    .tracker-slots-title {
+        font-family: 'Texturina', serif;
+        font-size: 9.5pt;
+        font-variant: small-caps;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #222;
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+        border-bottom: 1px dotted #ccc;
+    }
+    #tracker-slots-grid { display: flex; gap: 12px; }
+    .tracker-slot-col { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+    .tracker-slot-row { display: flex; align-items: center; gap: 6px; }
+    .tracker-slot-label { width: 42px; font-size: 7.5pt; color: #555; flex-shrink: 0; }
+    .tracker-boxes { letter-spacing: 2px; white-space: nowrap; font-size: 12pt; color: #333; }
 
-    #print-header { display: block !important; text-align: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #999; }
-    #print-header-title { font-size: 20pt; font-weight: bold; letter-spacing: 1px; }
-    #print-header-url { font-size: 10pt; color: #555; margin-top: 2px; }
+    #print-header { display: none !important; }
 
     html, body { height: auto !important; overflow: visible !important; }
     #layout { display: block !important; height: auto !important; overflow: visible !important; }
@@ -497,11 +525,39 @@ body.sidebar-closed #sidebar-open { display: none; }
     #content-area { height: auto !important; overflow: visible !important; padding: 0 !important; }
     #site-title, #sort-control-row { display: none !important; }
     footer, #site-footer { display: none !important; }
+    /* ── Layout ── */
     #grid-wrapper { width: 100% !important; margin: 0 !important; }
-    .spell-grid { columns: 2 !important; column-gap: 10px !important; width: 100% !important; margin: 0 !important; }
-    .spell-item { width: 100% !important; }
+    .spell-grid { width: 100% !important; margin: 0 !important; }
+    .spell-grid.print-hidden { display: none !important; }
+    #print-layout { columns: 2 !important; column-gap: 8px !important; width: 100% !important; }
+    .spell-item { width: 100% !important; break-inside: avoid; margin-bottom: 6px !important; box-shadow: none !important; }
     .known { display: none !important; }
+    .statblock-indicator { display: none !important; }
+    img { display: none !important; }
     .level-separator { display: none !important; }
     .no-print { display: none !important; }
+    #topbar, #mobile-menu, #menu-backdrop { display: none !important; }
+    #spell-modal { display: none !important; }
     body { margin: 0; }
+
+    /* ── Fundos e sombras ── */
+    body::before { display: none !important; }
+    body, .spell-body, .stat-block { background: white !important; }
+    .spell-body { border-color: #bbb !important; box-shadow: none !important; }
+    .spell-item:hover { transform: none !important; }
+    .stat-block { border-color: #bbb !important; }
+
+    /* ── Texto: forçar preto independente do tema ── */
+    .name p:not(.school)                    { color: #111 !important; }
+    .name p.school                          { color: #444 !important; }
+    .meta-line, .meta-pill, .meta-sep       { color: #333 !important; }
+    .conc-badge, .ritual-pill               { color: #333 !important; }
+    .description, .material-note, .class-note { color: #111 !important; }
+    .spell-source, .tier-badge              { color: #555 !important; }
+    .stat-block h3                          { color: #111 !important; }
+    .sb-type, .sb-stat-name                 { color: #444 !important; }
+
+    /* ── Separador e linhas ── */
+    .spell-sep                              { border-top-color: #bbb !important; }
+
 }

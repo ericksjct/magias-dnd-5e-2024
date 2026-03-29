@@ -49,8 +49,8 @@ body::before {
 [data-theme="light"] .spell-item[data-level] .spell-body { background: var(--base); border-color: var(--surface1); }
 .spell-item:hover .spell-body           { border-color: var(--accent) !important; }
 .name p:not(.school)                    { color: var(--text); }
-.school                                 { color: var(--subtext1); }
-.name                                   { border-bottom-color: var(--surface2); }
+.name p.school                          { color: var(--subtext1); }
+.spell-sep                              { border-top-color: var(--surface2); }
 .material-note                          { color: var(--subtext0); }
 .spell-source                           { color: var(--subtext0); }
 .meta-line                              { color: var(--subtext0); }
@@ -60,8 +60,6 @@ body::before {
 .conc-badge                             { color: var(--subtext0); }
 
 /* ── Known button (spell card) ── */
-.known                                  { background: var(--surface1); box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
-[data-theme="light"] .known             { background: var(--base); }
 
 /* ── Separadores ── */
 .level-separator                        { color: var(--subtext1); }

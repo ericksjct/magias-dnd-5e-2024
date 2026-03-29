@@ -17,6 +17,15 @@ js/spells-5E-2014-PTBR.md
 # Arquivos gerados
 output.md
 output_sem_classe.txt
+spells_report.xlsx
+
+# Scripts de análise / relatório
+generate_report.py
+normalize_upgrade.py
+
+# Python
+__pycache__/
+*.pyc
 
 # Diretórios vazios / temporários
 data/
